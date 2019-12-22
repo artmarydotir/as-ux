@@ -1,32 +1,49 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+ <v-navigation-drawer
+      v-model="drawer"
+      app
+      right
+      temporary
+    >
+    <aasaaMmenu />
+    </v-navigation-drawer>
+
+    <v-app-bar
+      app
+      color="cyan"
+      dark
+    >
+      <v-toolbar-title>آسام Ux</v-toolbar-title>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-spacer />
+
+    </v-app-bar>
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import aasaaMmenu from './components/aasaaMmenu.vue';
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'App',
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+  components: {
+    aasaaMmenu,
+  },
+  data() {
+    return {
+      drawer: false,
+    };
+  },
+};
+</script>
+<style>
+/* @import '../node_modules/@aasaam/noto-font/dist/font-face.css';
+.v-btn {
+  font-family: 'aasaam-Noto' !important;
+} */
 </style>

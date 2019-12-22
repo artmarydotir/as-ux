@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import TagForm from '../views/TagForm.vue';
+import ListTag from '../views/ListTag.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +11,16 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+  },
+  {
+    path: '/addTag',
+    name: 'addTag',
+    component: TagForm,
+  },
+  {
+    path: '/listTag',
+    name: 'tagList',
+    component: ListTag,
   },
   {
     path: '/about',

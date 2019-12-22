@@ -1,0 +1,11 @@
+## Add Tag 
+  - title is required.
+  - default text need for description
+  - order weight has been removed.
+  - publish has been removed.
+  - use status instead publish
+  - we have only 2 type of status, undefind or keyword.
+  - system will delete unused tag status by defualt.
+  - child tag only will appear when we choose parent tag.
+  - child tag can be redirect to parent
+  - child tag could not redirect then they could have breadcrumb.
