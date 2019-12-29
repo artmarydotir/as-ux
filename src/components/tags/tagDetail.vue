@@ -138,6 +138,18 @@
               value=""
             ></v-textarea>
           </v-col>
+          <v-col
+            cols="12"
+            md="8"
+          >
+            <v-textarea
+              solo
+              flat
+              name="input-7-1"
+              label="میکرپدیتاهای برچسب ( عنوان)"
+              value=""
+            ></v-textarea>
+          </v-col>
         </v-row>
          <v-row>
           <v-col cols="12">
