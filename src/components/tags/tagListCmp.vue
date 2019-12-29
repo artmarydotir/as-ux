@@ -108,7 +108,7 @@
             md="2"
           >
           <v-autocomplete
-              :items="service"
+              :items="compony"
               dense
               flat
               chips
@@ -182,6 +182,7 @@ export default {
         'Creative Writing',
       ],
       tagTitle: '',
+      select: '',
       parent: false,
       tagStatus: [
         'نامشخص',
@@ -219,6 +220,21 @@ export default {
         { text: 'j' },
         { text: 'k' },
         { text: 'l' },
+      ],
+      service: [
+        'سیاسی',
+        'اقتصادی',
+        'فرهنگی',
+      ],
+      compony: [
+        'ایده',
+        'بیمه اسیا',
+        'بیمه ایران',
+      ],
+      childtag: [
+        'خوشحال',
+        'شادی',
+        'شعف',
       ],
     };
   },
