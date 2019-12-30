@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "کلمه کلیدی",
+      "calories": "single",
+      "fat": 6.0
+    },
+    {
+      "name": "بیمارستان",
+      "calories": "multiple",
+      "fat": 9.0
+    },
+    {
+      "name": "نوع خبر",
+      "calories": "single",
+      "fat": 16.0
+    }
+  ]
+}
