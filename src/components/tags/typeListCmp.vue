@@ -4,7 +4,7 @@
         <template v-slot:top>
             <!-- v-container, v-col and v-row are just for decoration purposes. -->
           <v-container fluid>
-              <v-row>
+            <v-row>
               <v-col cols="6">
                   <v-row class="pa-6">
                       <!-- Filter for dessert name-->
@@ -22,10 +22,30 @@
                       ></v-select>
                   </v-row>
               </v-col>
-
-              </v-row>
+            </v-row>
           </v-container>
         </template>
+        <template v-slot:item.calories="{ item }">
+          <v-chip small class="pink white--text">
+            {{ item.calories }}
+          </v-chip>
+        </template>
+        <template v-slot:item.action="{ item }">
+          <v-icon
+            small
+            class="blue--text ml-4"
+            @click="editItem(item)"
+          >
+            mdi-pencil
+          </v-icon>
+          <v-icon
+            class="red--text"
+            small
+            @click="deleteItem(item)"
+          >
+            mdi-delete
+          </v-icon>
+      </template>
     </v-data-table>
   </v-container>
 </template>
@@ -61,11 +81,11 @@ export default {
           filter: this.nameFilter,
         },
         {
-          text: 'نوع',
+          text: 'نوع تایپ',
           value: 'calories',
           filter: this.caloriesFilter,
         },
-        { text: 'Fat (g)', value: 'fat' },
+        { text: 'تغییرات', value: 'action', sortable: false },
       ];
     },
   },
