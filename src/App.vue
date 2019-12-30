@@ -1,6 +1,6 @@
 <template>
   <v-app>
- <v-navigation-drawer
+  <v-navigation-drawer
       v-model="drawer"
       app
       right
@@ -11,7 +11,7 @@
 
     <v-app-bar
       app
-      color="cyan"
+      color="teal"
       dark
     >
       <v-toolbar-title>آسام Ux</v-toolbar-title>

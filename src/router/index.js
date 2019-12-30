@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import TagForm from '../views/TagForm.vue';
 import ListTag from '../views/ListTag.vue';
+import TypeTag from '../views/TypeTag.vue';
+import ListType from '../views/ListType.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +23,16 @@ const routes = [
     path: '/listTag',
     name: 'tagList',
     component: ListTag,
+  },
+  {
+    path: '/typeList',
+    name: 'typeList',
+    component: ListType,
+  },
+  {
+    path: '/typeTag',
+    name: 'typeTag',
+    component: TypeTag,
   },
   {
     path: '/about',

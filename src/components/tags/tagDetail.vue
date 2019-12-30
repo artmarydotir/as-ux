@@ -1,6 +1,6 @@
 <template>
-<v-container class="ma-8">
-  <v-card class="pa-4 red lighten-5">
+<v-container>
+  <v-card class="pa-4 red lighten-5 my-2">
     <v-card-title>
       افزودن برچسب
     </v-card-title>

@@ -55,6 +55,14 @@ export default {
               title: 'لیست برچسب ها',
               link: '/listTag',
             },
+            {
+              title: 'افزودن نوع برچسب',
+              link: '/typeTag',
+            },
+            {
+              title: 'لیست انواع',
+              link: '/typeList',
+            },
           ],
         },
       ],
