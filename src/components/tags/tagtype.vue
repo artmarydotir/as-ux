@@ -30,6 +30,21 @@
               solo
             ></v-select>
           </v-col>
+          <!-- 3 -->
+          <v-col cols="12" md="4">
+            <v-select
+              flat
+              solo
+              v-model="e7"
+              :items="modules"
+              :rules="[v => !!v || 'الزامی']"
+              label="انتخاب ماژول"
+              multiple
+              chips
+              hint="شما میتوانید یک یا چند ماژول را انتخاب کنید "
+              persistent-hint
+            ></v-select>
+          </v-col>
         </v-row>
         <!-- buttons -->
         <v-row>
@@ -53,6 +68,7 @@ export default {
     return {
       valid: true,
       typeStatusde: '',
+      e7: '',
       tagTitle: '',
       nameRules: [
         v => !!v || ' الزامی است',
@@ -61,6 +77,12 @@ export default {
       typeStatus: [
         'منفرد',
         'چندگانه',
+      ],
+      modules: [
+        'خبر',
+        'تبلیغات',
+        'روزنامه',
+        'مولف',
       ],
     };
   },
