@@ -3,59 +3,64 @@
     {
       "name": "نیویورک",
       "parent": false,
-      "status": "keyword",
-      "services": ["سیاسی","فرهنگی"],
+      "services": "اجتماعی",
+      "status": "verify",
       "lang": "fa"
     },
     {
       "name": "FATF",
-      "parent": true,
-      "status": "keyword",
-      "services": ["سیاسی"],
+      "parent": false,
+      "services": "سیاسی",
+      "status": "verify",
       "lang": "en"
     },
     {
       "name": "آمریکا",
       "parent": false,
-      "status": "keyword",
-      "services": [],
+      "services": "ورزشی",
+      "status": "verify",
       "lang": "fa"
     },
     {
       "name": "فیلوسوفیا",
       "parent": false,
-      "services": ["هنری"],
-      "status": "keyword",
+      "services": "",
+      "status": "verify",
       "lang": "fa"
     },
     {
       "name": "منطقی",
       "parent": true,
-      "status": "undefind",
+      "services": "هنری",
+      "status": "draft",
       "lang": "fa"
     },
     {
       "name": "شگفتی",
       "parent": false,
-      "status": "keyword",
+      "services": "اجتماعی",
+      "status": "verify",
       "lang": "fa"
     },
     {
       "name": "فلسفه معاصر",
       "parent": false,
-      "status": "keyword",
+      "services": "",
+      "status": "verify",
       "lang": "fa"
     },
     {
       "name": "هلنیستی",
-      "parent": false,
-      "status": "undefind",
+      "parent": true,
+      "services": "فلسفی",
+      "status": "draft",
       "lang": "fa"
     },
     {
       "name": "متزلزل",
       "parent": false,
-      "status": "undefind",
+      "services": "",
+      "status": "draft",
       "lang": "fa"
     }
   ]
