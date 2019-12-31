@@ -45,6 +45,20 @@
               persistent-hint
             ></v-select>
           </v-col>
+          <v-col
+            cols="12"
+            md="2"
+          >
+            <v-select
+              flat
+              v-model="langselect"
+              :items="lang"
+              :rules="[v => !!v || 'الزامی']"
+              label="انتخاب زبان"
+              required
+              solo
+            ></v-select>
+          </v-col>
         </v-row>
         <!-- buttons -->
         <v-row>
@@ -77,6 +91,10 @@ export default {
       typeStatus: [
         'منفرد',
         'چندگانه',
+      ],
+      lang: [
+        'فارسی',
+        'انگلیسی',
       ],
       modules: [
         'خبر',

@@ -47,17 +47,16 @@
               solo
             ></v-text-field>
           </v-col>
-
           <v-col
             cols="12"
             md="2"
           >
             <v-select
               flat
-              v-model="select"
-              :items="tagStatus"
+              v-model="langselect"
+              :items="lang"
               :rules="[v => !!v || 'الزامی']"
-              label="وضعیت"
+              label="انتخاب زبان"
               required
               solo
             ></v-select>
@@ -102,20 +101,6 @@
               label="برچسب های مستعار"
               solo
             ></v-autocomplete>
-          </v-col>
-          <v-col
-            cols="12"
-            md="2"
-          >
-            <v-select
-              flat
-              v-model="langselect"
-              :items="lang"
-              :rules="[v => !!v || 'الزامی']"
-              label="انتخاب زبان"
-              required
-              solo
-            ></v-select>
           </v-col>
           <v-col
             cols="12"
