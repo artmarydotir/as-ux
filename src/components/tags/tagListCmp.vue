@@ -9,16 +9,23 @@
           </v-toolbar-title>
         </v-toolbar>
         <v-row class="pa-4">
-          <v-col cols="4">
+          <v-col cols="3">
             <!-- Filter for type name-->
             <v-text-field v-model="dessertFilterValue" type="text" label="جستجو عنوان">
             </v-text-field>
           </v-col>
-          <v-col cols="4">
+          <v-col cols="3">
             <v-select
                 :items="isParent"
                 v-model="typeFilterValue"
                 label="برچسب والد"
+            ></v-select>
+          </v-col>
+          <v-col cols="3">
+            <v-select
+                :items="status"
+                v-model="statusFilterValue"
+                label="وضعیت"
             ></v-select>
           </v-col>
         </v-row>
@@ -66,9 +73,15 @@ export default {
         { text: 'والد', value: true },
         { text: 'فرزند', value: false },
       ],
+      status: [
+        { text: 'همه', value: null },
+        { text: 'کلمه کلیدی', value: 'keyword' },
+        { text: 'نامشخص', value: 'undefind' },
+      ],
       // Filter models.
       dessertFilterValue: '',
       typeFilterValue: null,
+      statusFilterValue: null,
       // Table data.
       desserts: tableData.data,
     };
@@ -85,6 +98,11 @@ export default {
         {
           text: 'نوع ارتباط',
           value: 'parent',
+          filter: this.caloriesFilter,
+        },
+        {
+          text: 'وضعیت',
+          value: 'status',
           filter: this.caloriesFilter,
         },
         { text: 'تغییرات', value: 'action', sortable: false },
