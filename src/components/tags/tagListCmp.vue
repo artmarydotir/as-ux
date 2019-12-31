@@ -196,3 +196,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" >
+  tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .03) !important;
+  }
+</style>
