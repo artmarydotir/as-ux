@@ -1,31 +1,30 @@
 <template>
   <v-container>
-    <v-data-table :headers="headers" :items="desserts" item-key="name" class="elevation-1 pa-6">
-        <template v-slot:top>
-            <!-- v-container, v-col and v-row are just for decoration purposes. -->
-          <v-container fluid>
-            <v-row>
-              <v-col cols="6">
-                  <v-row class="pa-6">
-                      <!-- Filter for dessert name-->
-                      <v-text-field v-model="dessertFilterValue" type="text" label="عنوان">
-                      </v-text-field>
-                  </v-row>
-              </v-col>
-              <v-col cols="6">
-                  <v-row class="pa-6">
-                      <!-- Filter for calories -->
-                      <v-select
-                          :items="typeList"
-                          v-model="typeFilterValue"
-                          label="نوع"
-                      ></v-select>
-                  </v-row>
-              </v-col>
-            </v-row>
-          </v-container>
-        </template>
-        <template v-slot:item.calories="{ item }">
+    <v-data-table :headers="headers" :items="desserts" item-key="name"
+      class="elevation-1">
+      <template v-slot:top>
+        <v-toolbar flat class="grey lighten-2">
+          <v-toolbar-title>
+            لیست نوع برچسب
+          </v-toolbar-title>
+        </v-toolbar>
+        <v-row align="center"
+          justify="center" >
+          <v-col cols="4">
+            <!-- Filter for type name-->
+            <v-text-field v-model="dessertFilterValue" type="text" label="عنوان">
+            </v-text-field>
+          </v-col>
+          <v-col cols="4">
+            <v-select
+                :items="typeList"
+                v-model="typeFilterValue"
+                label="نوع"
+            ></v-select>
+          </v-col>
+        </v-row>
+      </template>
+      <template v-slot:item.calories="{ item }">
           <v-chip small class="pink white--text">
             {{ item.calories }}
           </v-chip>
@@ -49,7 +48,11 @@
     </v-data-table>
   </v-container>
 </template>
-
+<style lang="scss" scoped>
+tbody tr:nth-of-type(even) {
+  background-color: rgba(236, 237, 237);
+}
+</style>
 <script>
 // Table info.
 

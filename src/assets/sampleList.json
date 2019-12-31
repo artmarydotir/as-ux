@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "name": "نیویورک",
+      "parent": false,
+      "status": "keyword",
+      "lang": "fa"
+    },
+    {
+      "name": "FATF",
+      "parent": true,
+      "status": "keyword",
+      "lang": "en"
+    },
+    {
+      "name": "آمریکا",
+      "parent": false,
+      "status": "keyword",
+      "lang": "fa"
+    },
+    {
+      "name": "فیلوسوفیا",
+      "parent": false,
+      "status": "keyword",
+      "lang": "fa"
+    },
+    {
+      "name": "منطقی",
+      "parent": true,
+      "status": "undefind",
+      "lang": "fa"
+    },
+    {
+      "name": "شگفتی",
+      "parent": false,
+      "status": "keyword",
+      "lang": "fa"
+    },
+    {
+      "name": "فلسفه معاصر",
+      "parent": false,
+      "status": "keyword",
+      "lang": "fa"
+    },
+    {
+      "name": "هلنیستی",
+      "parent": false,
+      "status": "undefind",
+      "lang": "fa"
+    },
+    {
+      "name": "متزلزل",
+      "parent": false,
+      "status": "undefind",
+      "lang": "fa"
+    }
+  ]
+}

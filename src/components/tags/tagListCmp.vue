@@ -1,242 +1,126 @@
 <template>
-<v-container>
-  <v-card class="pa-4 red lighten-5 my-2">
-    <v-card-title>
-      لیست برچسب ها
-    </v-card-title>
-    <v-row>
-      <v-col cols="12" md="2">
-        <v-select
-          :items="langSupp"
-          solo
-          flat
-          v-model="langDe"
-          label="بر اساس حروف الفبایی"
-          dense
-        ></v-select>
-      </v-col>
-      <v-col cols="12" md="10">
-        <v-list v-if="langDe == 'fa'">
-          <v-list-item-group color="primary" class="d-flex flex-row mb-4">
-            <v-list-item
-              v-for="(item, i) in itemsFa"
-              :key="i"
-            >
-              <v-list-item-content>
-                <v-list-item-title v-text="item.text"></v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-        <v-list v-if="langDe == 'en'">
-          <v-list-item-group color="primary" class="d-flex flex-row mb-4">
-            <v-list-item
-              v-for="(item, i) in itemsEn"
-              :key="i"
-            >
-              <v-list-item-content>
-                <v-list-item-title v-text="item.text"></v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-col>
-    </v-row>
-        <v-card-title>
-          فیلتر بر اساس :
-        </v-card-title>
-    <v-row>
-      <v-col cols="12" md="2">
-          <v-text-field
-            v-model="tagTitle"
-            flat
-            label="عنوان"
-            required
-            solo
-          ></v-text-field>
-      </v-col>
-      <v-col md="2">
-          <v-switch v-model="parent" label=" برچسب والد">
-          </v-switch>
-      </v-col>
-      <v-col
-          cols="12"
-          md="1"
-        >
-          <v-select
-            flat
-            v-model="select"
-            :items="tagStatus"
-            label="وضعیت"
-            required
-            solo
-          ></v-select>
-        </v-col>
-        <!-- 1 -->
-        <v-col
-            cols="12"
-            md="2"
-          >
-          <v-autocomplete
-              :items="service"
-              dense
-              chips
-              flat
-              small-chips
-              label=" سرویس"
-              multiple
-              solo
-            ></v-autocomplete>
+  <v-container>
+    <v-data-table :headers="headers" :items="desserts" item-key="name"
+      class="elevation-1">
+      <template v-slot:top>
+        <v-toolbar flat class="grey lighten-2">
+          <v-toolbar-title>
+            لیست برچسب ها
+          </v-toolbar-title>
+        </v-toolbar>
+        <v-row class="pa-4">
+          <v-col cols="4">
+            <!-- Filter for type name-->
+            <v-text-field v-model="dessertFilterValue" type="text" label="جستجو عنوان">
+            </v-text-field>
           </v-col>
-          <v-col
-            cols="12"
-            md="2"
-          >
-          <v-autocomplete
-              :items="service"
-              dense
-              flat
-              chips
-              small-chips
-              label=" مولف"
-              multiple
-              solo
-            ></v-autocomplete>
+          <v-col cols="4">
+            <v-select
+                :items="isParent"
+                v-model="typeFilterValue"
+                label="برچسب والد"
+            ></v-select>
           </v-col>
-          <v-col
-            cols="12"
-            md="2"
-          >
-          <v-autocomplete
-              :items="compony"
-              dense
-              flat
-              chips
-              small-chips
-              label=" کمپانی"
-              multiple
-              solo
-            ></v-autocomplete>
-          </v-col>
-    </v-row>
-    <!-- tags  -->
-    <v-row justify="space-around">
-    <v-col cols="12" md="8" lg="12">
-      <v-sheet class="pa-6">
-        <v-chip-group
-          column
-          active-class="primary--text"
-        >
-          <v-chip v-for="tag in tags" :key="tag">
-            {{ tag }}
+        </v-row>
+      </template>
+      <template v-slot:item.calories="{ item }">
+          <v-chip small class="pink white--text">
+            {{ item.calories }}
           </v-chip>
-        </v-chip-group>
-      </v-sheet>
-    </v-col>
-  </v-row>
-  </v-card>
-  <div class="text-center my-11">
-    <v-pagination
-      v-model="page"
-      :length="6"
-    ></v-pagination>
-  </div>
-</v-container>
+        </template>
+        <template v-slot:item.action="{ item }">
+          <v-icon
+            small
+            class="blue--text ml-4"
+            @click="editItem(item)"
+          >
+            mdi-pencil
+          </v-icon>
+          <v-icon
+            class="red--text"
+            small
+            @click="deleteItem(item)"
+          >
+            mdi-delete
+          </v-icon>
+      </template>
+    </v-data-table>
+  </v-container>
 </template>
+<style lang="scss" scoped>
+tbody tr:nth-of-type(even) {
+  background-color: rgba(236, 237, 237);
+}
+</style>
 <script>
+// Table info.
+
+import tableData from '../../assets/sampleList.json';
+
 export default {
-  name: 'tagListCmp',
   data() {
     return {
-      page: 1,
-      tags: [
-        'Work',
-        'Hoffe Improvement',
-        'Home Improvement',
-        'Vacation',
-        'Foofd',
-        'Foodas',
-        'Drawersa',
-        'Food',
-        'Drafweaars',
-        'Shofpping',
-        'Artlk',
-        'Vafcation',
-        'Fofodo',
-        'Fofojd',
-        'Drawers',
-        'Fooaafd',
-        'Drawersfgh',
-        'Shodpping',
-        'Artqw',
-        'Tefch',
-        'Fofodjk',
-        'Fofodaa',
-        'Drawaaers',
-        'Foodaa',
-        'Drdawers',
-        'Shopping',
-        'Aaart',
-        'Tdech',
-        'Tecdh',
-        'Creative Writing',
+      // We need some values for our select.
+      isParent: [
+        { text: 'همه', value: null },
+        { text: 'والد', value: true },
+        { text: 'فرزند', value: false },
       ],
-      tagTitle: '',
-      select: '',
-      parent: false,
-      tagStatus: [
-        'نامشخص',
-        'کلمه کلیدی',
-      ],
-      langSupp: [
-        'fa',
-        'en',
-      ],
-      langDe: ['fa'],
-      itemsFa: [
-        { text: 'ا' },
-        { text: 'ب' },
-        { text: 'ث' },
-        { text: 'د' },
-        { text: 'ذ' },
-        { text: 'ر' },
-        { text: 'ح' },
-        { text: 'ق' },
-        { text: 'ل' },
-        { text: 'م' },
-        { text: 'ن' },
-        { text: 'و' },
-      ],
-      itemsEn: [
-        { text: 'a' },
-        { text: 'b' },
-        { text: 'c' },
-        { text: 'd' },
-        { text: 'e' },
-        { text: 'f' },
-        { text: 'g' },
-        { text: 'h' },
-        { text: 'i' },
-        { text: 'j' },
-        { text: 'k' },
-        { text: 'l' },
-      ],
-      service: [
-        'سیاسی',
-        'اقتصادی',
-        'فرهنگی',
-      ],
-      compony: [
-        'ایده',
-        'بیمه اسیا',
-        'بیمه ایران',
-      ],
-      childtag: [
-        'خوشحال',
-        'شادی',
-        'شعف',
-      ],
+      // Filter models.
+      dessertFilterValue: '',
+      typeFilterValue: null,
+      // Table data.
+      desserts: tableData.data,
     };
+  },
+  computed: {
+    headers() {
+      return [
+        {
+          text: 'عنوان برچسب',
+          sortable: false,
+          value: 'name',
+          filter: this.nameFilter,
+        },
+        {
+          text: 'نوع ارتباط',
+          value: 'parent',
+          filter: this.caloriesFilter,
+        },
+        { text: 'تغییرات', value: 'action', sortable: false },
+      ];
+    },
+  },
+  methods: {
+    /**
+     * Filter for dessert names column.
+     * @param value Value to be tested.
+     * @returns {boolean}
+     */
+    nameFilter(value) {
+      console.log('سرچ فیلتر');
+      // If this filter has no value we just skip the entire filter.
+      if (!this.dessertFilterValue) {
+        return true;
+      }
+      // Check if the current loop value (The dessert name)
+      // partially contains the searched word.
+      return value.toLowerCase().includes(this.dessertFilterValue.toLowerCase());
+    },
+    /**
+     * Filter for calories column.
+     * @param value Value to be tested.
+     * @returns {boolean}
+     */
+    caloriesFilter(value) {
+      // If this filter has no value we just skip the entire filter.
+      if (!this.typeFilterValue) {
+        return true;
+      }
+      // Check if the current loop value (The calories value)
+      // equals to the selected value at the <v-select>.
+      return value === this.typeFilterValue;
+    },
   },
 };
 </script>
