@@ -15,6 +15,11 @@
             </v-text-field>
           </v-col>
           <v-col cols="3">
+            <!-- Filter for type name-->
+            <v-text-field dense solo v-model="dessertFilterValue" type="text" label="جستجو سرویس">
+            </v-text-field>
+          </v-col>
+          <v-col cols="3">
             <v-select
                 :items="isParent"
                 v-model="typeFilterValue"
@@ -50,6 +55,9 @@
           >
             mdi-delete
           </v-icon>
+      </template>
+      <template v-slot:no-results>
+        هیچ داده ای یافت نشد!
       </template>
     </v-data-table>
   </v-container>

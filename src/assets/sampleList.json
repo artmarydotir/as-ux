@@ -4,23 +4,27 @@
       "name": "نیویورک",
       "parent": false,
       "status": "keyword",
+      "services": ["سیاسی","فرهنگی"],
       "lang": "fa"
     },
     {
       "name": "FATF",
       "parent": true,
       "status": "keyword",
+      "services": ["سیاسی"],
       "lang": "en"
     },
     {
       "name": "آمریکا",
       "parent": false,
       "status": "keyword",
+      "services": [],
       "lang": "fa"
     },
     {
       "name": "فیلوسوفیا",
       "parent": false,
+      "services": ["هنری"],
       "status": "keyword",
       "lang": "fa"
     },
