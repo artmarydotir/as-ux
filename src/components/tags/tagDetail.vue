@@ -22,7 +22,7 @@
           </v-col>
           <v-col
             cols="12"
-            md="3"
+            md="5"
           >
             <v-text-field
               v-model="tagTitle"
@@ -31,19 +31,6 @@
               :counter="20"
               label="عنوان"
               required
-              solo
-            ></v-text-field>
-          </v-col>
-
-          <v-col
-            cols="12"
-            md="4"
-          >
-            <v-text-field
-              v-model="tagDesc"
-              label="توضیحات"
-              required
-              flat
               solo
             ></v-text-field>
           </v-col>
@@ -60,6 +47,21 @@
               required
               solo
             ></v-select>
+          </v-col>
+          <v-col
+            cols="12"
+            md="2"
+          >
+            <v-switch v-model="parent"
+            color="pink darken-3"
+            class="ma-4" label="برچسب تایید شده">
+            </v-switch>
+          </v-col>
+          <v-col
+            cols="12"
+            md="5"
+          >
+            <ck msg="Welcome to Your Vue.js App"/>
           </v-col>
           <v-col
             cols="12"
@@ -124,15 +126,6 @@
           </v-col>
           <v-col
             cols="12"
-            md="2"
-          >
-            <v-switch v-model="parent"
-            color="pink darken-3"
-            class="ma-4" label="برچسب تایید شده">
-            </v-switch>
-          </v-col>
-          <v-col
-            cols="12"
             md="8"
           >
             <v-textarea
@@ -172,6 +165,8 @@
 </v-container>
 </template>
 <script>
+import ck from '@/components/ck.vue';
+
 export default {
   name: 'tagDetail',
   data() {
@@ -213,6 +208,9 @@ export default {
         'شعف',
       ],
     };
+  },
+  components: {
+    ck,
   },
 };
 </script>
