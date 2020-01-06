@@ -121,10 +121,10 @@
               cols="12"
               md="2"
             >
-            <label for="">
+            <label>
               ترتیب
             </label>
-            {{ bpm }}
+              {{ bpm }}
               <v-slider
                 v-model="bpm"
                 track-color="grey"
@@ -182,6 +182,42 @@
               md="4"
             >
               <v-file-input flat solo label="افزودن فایل اصلی"></v-file-input>
+            </v-col>
+            <v-col
+              cols="12"
+              md="4"
+            >
+              <v-text-field
+                v-model="tagTitle"
+                flat
+                label="تیتر"
+                required
+                solo
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              md="4"
+            >
+              <v-text-field
+                v-model="tagTitle"
+                flat
+                label="روتیتر"
+                required
+                solo
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              md="4"
+            >
+              <v-text-field
+                v-model="tagTitle"
+                flat
+                label="زیرتیتر"
+                required
+                solo
+              ></v-text-field>
             </v-col>
             <v-col
               cols="12"
