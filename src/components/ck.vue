@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ck-edit">
     <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
     <!-- <div class="ck-edit" v-html="editorData">
 
@@ -8,6 +8,8 @@
 </template>
 
 <script>
+
+import CKEditor from '@ckeditor/ckeditor5-vue';
 // ⚠️ NOTE: We don't use @ckeditor/ckeditor5-build-classic any more!
 // Since we're building CKEditor from source, we use the source version of ClassicEditor.
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
@@ -18,8 +20,8 @@ import LinkPlugin from '@ckeditor/ckeditor5-link/src/link';
 import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 // // image
 // import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
+// import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
+// import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 // import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 // // text-alignment
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -28,7 +30,12 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 // import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 // import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
+// import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
+// import Image from '@ckeditor/ckeditor5-image/src/image';
+// import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
+// import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
+// import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
+// import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 // // fonts
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
@@ -37,22 +44,33 @@ import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 
 
 export default {
-  // name: 'cKbuid',
+  name: 'CKEditor',
+  components: {
+    ckeditor: CKEditor.component,
+  },
+  props: {
+    value: {
+      type: String,
+      default: null,
+    },
+  },
   data() {
     return {
       editor: ClassicEditor,
-      editorData: '<p> سلام من بیلد از سورس هستم.</p>',
+      // editorData: '<p> خر</p>',
       editorConfig: {
+        contentsLangDirection: 'rtl',
+        language: 'fa',
         plugins: [
           EssentialsPlugin,
           BoldPlugin,
           ItalicPlugin,
           LinkPlugin,
           ParagraphPlugin,
-          EasyImage,
+          // EasyImage,
           // Image,
-          ImageToolbar,
-          ImageCaption,
+          // ImageToolbar,
+          // ImageCaption,
           // ImageStyle,
           Alignment,
           // Table,
@@ -106,19 +124,26 @@ export default {
           ],
         },
         image: {
-          toolbar: ['imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side'],
+          toolbar: [
+            'imageTextAlternative',
+            '|',
+            'imageStyle:alignLeft',
+            'imageStyle:full',
+            'imageStyle:alignRight',
+          ],
         },
       },
     };
   },
+  computed: {
+    editorData: {
+      get() {
+        return this.value;
+      },
+      set(value) {
+        this.$emit('input', value);
+      },
+    },
+  },
 };
 </script>
-
-<style>
-.ck-edit {
-  margin: 32px auto;
-  text-align: center;
-  border: 1px solid rgb(60, 171, 190);
-  background-color: rgb(191, 243, 247);
-}
-</style>

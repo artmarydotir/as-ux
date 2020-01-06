@@ -61,7 +61,7 @@
             cols="12"
             md="5"
           >
-            <ck msg="Welcome to Your Vue.js App"/>
+            <CKEditor v-model="texteditorprop" />
           </v-col>
           <v-col
             cols="12"
@@ -165,13 +165,14 @@
 </v-container>
 </template>
 <script>
-import ck from '@/components/ck.vue';
+import CKEditor from '@/components/ck.vue';
 
 export default {
   name: 'tagDetail',
   data() {
     return {
       valid: true,
+      texteditorprop: 'توضیحات',
       parent: true,
       linkToparent: false,
       select: null,
@@ -210,7 +211,7 @@ export default {
     };
   },
   components: {
-    ck,
+    CKEditor,
   },
 };
 </script>
