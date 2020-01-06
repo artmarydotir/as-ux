@@ -27,7 +27,7 @@ import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 // // table
-// import Table from '@ckeditor/ckeditor5-table/src/table';
+import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 // import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 // import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
@@ -73,7 +73,7 @@ export default {
           // ImageCaption,
           // ImageStyle,
           Alignment,
-          // Table,
+          Table,
           TableToolbar,
           // MediaEmbed,
           Font,
@@ -89,15 +89,15 @@ export default {
             'undo',
             'redo',
             '|',
-            'imageUpload',
-            'imageTextAlternative',
-            'imageStyle:full',
-            'imageStyle:side',
+            // 'imageUpload',
+            // 'imageTextAlternative',
+            // 'imageStyle:full',
+            // 'imageStyle:side',
             '|',
             'alignment',
             '|',
-            'tableColumn', 'tableRow', 'mergeTableCells',
-            'mediaEmbed',
+            'insertTable',
+            // 'mediaEmbed',
             '|',
             'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
           ],
@@ -123,15 +123,15 @@ export default {
             },
           ],
         },
-        image: {
-          toolbar: [
-            'imageTextAlternative',
-            '|',
-            'imageStyle:alignLeft',
-            'imageStyle:full',
-            'imageStyle:alignRight',
-          ],
-        },
+        // image: {
+        //   toolbar: [
+        //     'imageTextAlternative',
+        //     '|',
+        //     'imageStyle:alignLeft',
+        //     'imageStyle:full',
+        //     'imageStyle:alignRight',
+        //   ],
+        // },
       },
     };
   },

@@ -7,7 +7,7 @@
     <v-form ref="form" v-model="valid">
       <v-container>
         <v-row>
-          <v-col
+          <!-- <v-col
             cols="12"
             md="3"
           >
@@ -19,7 +19,7 @@
               required
               solo
             ></v-select>
-          </v-col>
+          </v-col> -->
           <v-col
             cols="12"
             md="5"
@@ -59,96 +59,110 @@
           </v-col>
           <v-col
             cols="12"
-            md="5"
+            md="7"
           >
             <CKEditor v-model="texteditorprop" />
           </v-col>
-          <v-col
-            cols="12"
-            md="3"
-          >
-          <v-autocomplete
-              :items="childtag"
-              chips
-              flat
-              small-chips
-              label="انتخاب والد"
-              solo
-            ></v-autocomplete>
+          <v-col cols="12" md="3">
+            <v-btn
+              color="blue-grey"
+              class="white--text"
+              @click='open = !open'
+            >
+              جزیات پیشرفته
+              <v-icon right dark>mdi-cloud-upload</v-icon>
+            </v-btn>
           </v-col>
-          <v-col
-            cols="12"
-            md="3"
-          >
-          <v-autocomplete
-              :items="childtag"
-              chips
-              flat
-              multiple
-              small-chips
-              label="انتخاب فرزند"
-              solo
-            ></v-autocomplete>
-          </v-col>
-          <v-col
-            cols="12"
-            md="4"
-          >
-          <v-autocomplete
-              :items="childtag"
-              chips
-              flat
-              multiple
-              small-chips
-              label="برچسب های مستعار"
-              solo
-            ></v-autocomplete>
-          </v-col>
-          <v-col
-            cols="12"
-            md="3"
-          >
-          <v-autocomplete
-              :items="service"
-              chips
-              flat
-              small-chips
-              label="افزودن سرویس"
-              multiple
-              solo
-            ></v-autocomplete>
-          </v-col>
-          <v-col
-            cols="12"
-            md="3"
-          >
-            <v-file-input flat solo label="افزودن فایل اصلی"></v-file-input>
-          </v-col>
-          <v-col
-            cols="12"
-            md="8"
-          >
-            <v-textarea
-              solo
-              flat
-              name="input-7-1"
-              label="متن برچسب"
-              value=""
-            ></v-textarea>
-          </v-col>
-          <v-col
-            cols="12"
-            md="8"
-          >
-            <v-textarea
-              solo
-              flat
-              name="input-7-1"
-              label="میکرو دیتاهای برچسب"
-              value=""
-            ></v-textarea>
-          </v-col>
+          <!-- advance  -->
+          <v-row class="pa-3" v-show="open">
+            <v-col
+              cols="12"
+              md="2"
+            >
+            <v-autocomplete
+                :items="childtag"
+                chips
+                flat
+                small-chips
+                label="انتخاب والد"
+                solo
+              ></v-autocomplete>
+            </v-col>
+            <v-col
+              cols="12"
+              md="4"
+            >
+            <v-autocomplete
+                :items="childtag"
+                chips
+                flat
+                multiple
+                small-chips
+                label="انتخاب فرزند"
+                solo
+              ></v-autocomplete>
+            </v-col>
+            <v-col
+              cols="12"
+              md="3"
+            >
+            <v-autocomplete
+                :items="childtag"
+                chips
+                flat
+                multiple
+                small-chips
+                label="برچسب های مستعار"
+                solo
+              ></v-autocomplete>
+            </v-col>
+            <v-col
+              cols="12"
+              md="3"
+            >
+            <v-autocomplete
+                :items="service"
+                chips
+                flat
+                small-chips
+                label="افزودن سرویس"
+                multiple
+                solo
+              ></v-autocomplete>
+            </v-col>
+            <v-col
+              cols="12"
+              md="3"
+            >
+              <v-file-input flat solo label="افزودن فایل اصلی"></v-file-input>
+            </v-col>
+            <v-col
+              cols="12"
+              md="8"
+            >
+              <v-textarea
+                solo
+                flat
+                name="input-7-1"
+                label="متن برچسب"
+                value=""
+              ></v-textarea>
+            </v-col>
+            <v-col
+              cols="12"
+              md="8"
+            >
+              <v-textarea
+                solo
+                flat
+                name="input-7-1"
+                label="میکرو دیتاهای برچسب"
+                value=""
+              ></v-textarea>
+            </v-col>
+          </v-row>
         </v-row>
+        <!-- action  -->
         <v-row>
           <v-col cols="12">
             <div class="ma-4 float-left">
@@ -171,6 +185,7 @@ export default {
   name: 'tagDetail',
   data() {
     return {
+      open: false,
       valid: true,
       texteditorprop: 'توضیحات',
       parent: true,
