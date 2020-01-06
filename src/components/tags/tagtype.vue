@@ -59,6 +59,20 @@
               solo
             ></v-select>
           </v-col>
+          <v-col
+            cols="12"
+            md="2"
+          >
+            <v-select
+              flat
+              v-model="layoutseelct"
+              :items="layouts"
+              :rules="[v => !!v || 'الزامی']"
+              label="انتخاب پوسته"
+              required
+              solo
+            ></v-select>
+          </v-col>
         </v-row>
         <!-- buttons -->
         <v-row>
@@ -82,6 +96,17 @@ export default {
     return {
       valid: true,
       typeStatusde: '',
+      layoutseelct: '',
+      layouts: [
+        'default',
+        'tag',
+        'city',
+      ],
+      custom: [
+        'عدد',
+        'رشته کوتاه',
+        'رشته بلند',
+      ],
       e7: '',
       tagTitle: '',
       nameRules: [
