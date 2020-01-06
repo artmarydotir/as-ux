@@ -7,19 +7,6 @@
     <v-form ref="form" v-model="valid">
       <v-container>
         <v-row>
-          <!-- <v-col
-            cols="12"
-            md="3"
-          >
-            <v-select
-              flat
-              :items="typeselect"
-              :rules="[v => !!v || 'الزامی']"
-              label="افزودن نوع"
-              required
-              solo
-            ></v-select>
-          </v-col> -->
           <v-col
             cols="12"
             md="5"
@@ -132,33 +119,43 @@
             </v-col>
             <v-col
               cols="12"
-              md="3"
+              md="4"
+            >
+              <v-text-field
+                v-model="tagTitle"
+                flat
+                :rules="nameRules"
+                :counter="20"
+                label="عنوان سئو"
+                required
+                solo
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              md="4"
+            >
+              <v-text-field
+                v-model="tagTitle"
+                flat
+                :rules="nameRules"
+                :counter="20"
+                label="توضیحات سئو"
+                required
+                solo
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              md="4"
             >
               <v-file-input flat solo label="افزودن فایل اصلی"></v-file-input>
             </v-col>
             <v-col
               cols="12"
-              md="8"
+              md="12"
             >
-              <v-textarea
-                solo
-                flat
-                name="input-7-1"
-                label="متن برچسب"
-                value=""
-              ></v-textarea>
-            </v-col>
-            <v-col
-              cols="12"
-              md="8"
-            >
-              <v-textarea
-                solo
-                flat
-                name="input-7-1"
-                label="میکرو دیتاهای برچسب"
-                value=""
-              ></v-textarea>
+              <CKEditor v-model="ckcontent" />
             </v-col>
           </v-row>
         </v-row>
@@ -188,6 +185,7 @@ export default {
       open: false,
       valid: true,
       texteditorprop: 'توضیحات',
+      ckcontent: 'متن برچسب',
       parent: true,
       linkToparent: false,
       select: null,
