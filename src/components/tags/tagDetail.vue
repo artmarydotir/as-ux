@@ -77,7 +77,7 @@
             </v-col>
             <v-col
               cols="12"
-              md="4"
+              md="3"
             >
             <v-autocomplete
                 :items="childtag"
@@ -105,7 +105,7 @@
             </v-col>
             <v-col
               cols="12"
-              md="3"
+              md="2"
             >
             <v-autocomplete
                 :items="service"
@@ -116,6 +116,38 @@
                 multiple
                 solo
               ></v-autocomplete>
+            </v-col>
+            <v-col
+              cols="12"
+              md="2"
+            >
+            <label for="">
+              ترتیب
+            </label>
+            {{ bpm }}
+              <v-slider
+                v-model="bpm"
+                track-color="grey"
+                always-dirty
+                min="1"
+                max="100"
+              >
+                <template v-slot:prepend>
+                  <v-icon
+                    @click="decrement"
+                  >
+                    mdi-minus
+                  </v-icon>
+                </template>
+
+                <template v-slot:append>
+                  <v-icon
+                    @click="increment"
+                  >
+                    mdi-plus
+                  </v-icon>
+                </template>
+              </v-slider>
             </v-col>
             <v-col
               cols="12"
@@ -183,6 +215,7 @@ export default {
   data() {
     return {
       open: false,
+      bpm: 1,
       valid: true,
       texteditorprop: 'توضیحات',
       ckcontent: 'متن برچسب',
@@ -225,6 +258,16 @@ export default {
   },
   components: {
     CKEditor,
+  },
+  methods: {
+    decrement() {
+      // eslint-disable-next-line no-plusplus
+      this.bpm--;
+    },
+    increment() {
+      // eslint-disable-next-line no-plusplus
+      this.bpm++;
+    },
   },
 };
 </script>
