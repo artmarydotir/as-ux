@@ -5,6 +5,7 @@ const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
 module.exports = {
+  outputDir: './docs',
   transpileDependencies: [
     'vuetify',
     /ckeditor5-[^/\\]+[/\\]src[/\\].+\.js$/,
