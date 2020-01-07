@@ -57,7 +57,9 @@
               @click='open = !open'
             >
               جزیات پیشرفته
-              <v-icon right dark>mdi-cloud-upload</v-icon>
+              <v-icon right>
+                mdi-arrow-down-thick
+              </v-icon>
             </v-btn>
           </v-col>
           <!-- advance  -->

@@ -15,7 +15,7 @@
       <v-list-item-title>داشبورد</v-list-item-title>
     </v-list-item>
     <!-- 3 -->
-    <v-list-group
+    <!-- <v-list-group
       v-for="item in items"
       :key="item.title"
       v-model="item.active"
@@ -33,7 +33,82 @@
           <v-list-item-title v-text="subItem.title"></v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-    </v-list-group>
+    </v-list-group> -->
+    <v-list-group
+        prepend-icon="mdi-file-move"
+        value="true"
+      >
+        <template v-slot:activator>
+          <v-list-item-title class="my-2">
+            برچسب ها
+          </v-list-item-title>
+        </template>
+        <!-- 1 -->
+        <v-list-group
+          no-action
+          sub-group
+          value="true"
+        >
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title>
+                کلمات کلیدی
+              </v-list-item-title>
+            </v-list-item-content>
+          </template>
+
+          <v-list-item
+            class="my-2"
+            v-for="(admin, i) in admins"
+            :key="i"
+            :to="admin.link"
+          >
+            <v-list-item-title v-text="admin.title"></v-list-item-title>
+          </v-list-item>
+        </v-list-group>
+        <!-- 2 -->
+        <v-list-group
+          sub-group
+          no-action
+        >
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title class="my-2">
+                بیمارستان
+              </v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item
+            class="my-2"
+            v-for="(hospital, i) in hospitals"
+            :key="i"
+            :to="hospital.link"
+          >
+            <v-list-item-title v-text="hospital.title"></v-list-item-title>
+          </v-list-item>
+        </v-list-group>
+        <!-- 3 -->
+        <v-list-group
+          sub-group
+          no-action
+        >
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title class="my-2 red--text">
+                انواع برچسب
+              </v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item
+            class="my-2"
+            v-for="(type, i) in types"
+            :key="i"
+            :to="type.link"
+          >
+            <v-list-item-title v-text="type.title"></v-list-item-title>
+          </v-list-item>
+        </v-list-group>
+      </v-list-group>
   </v-list>
 </template>
 
@@ -41,29 +116,51 @@
 export default {
   data() {
     return {
-      items: [
+      // items: [
+      //   {
+      //     action: 'mdi-file-move',
+      //     title: 'برچسب ها',
+      //     active: true,
+      //     items: [
+      //       {
+      //         title: 'افزودن برچسب',
+      //         link: '/addTag',
+      //       },
+      //       {
+      //         title: 'لیست برچسب ها',
+      //         link: '/listTag',
+      //       },
+      //     ],
+      //   },
+      // ],
+      admins: [
         {
-          action: 'mdi-file-move',
-          title: 'برچسب ها',
-          active: true,
-          items: [
-            {
-              title: 'افزودن برچسب',
-              link: '/addTag',
-            },
-            {
-              title: 'لیست برچسب ها',
-              link: '/listTag',
-            },
-            {
-              title: 'افزودن نوع برچسب',
-              link: '/typeTag',
-            },
-            {
-              title: 'لیست انواع',
-              link: '/typeList',
-            },
-          ],
+          title: 'افزودن برچسب',
+          link: '/addTag',
+        },
+        {
+          title: 'لیست برچسب ها',
+          link: '/listTag',
+        },
+      ],
+      types: [
+        {
+          title: 'افزودن نوع برچسب',
+          link: '/typeTag',
+        },
+        {
+          title: 'لیست انواع',
+          link: '/typeList',
+        },
+      ],
+      hospitals: [
+        {
+          title: 'افزودن بیمارستان',
+          link: '/addTag',
+        },
+        {
+          title: 'لیست بیمارستان ها',
+          link: '/listTag',
         },
       ],
     };
