@@ -99,7 +99,7 @@ export default {
      * @returns {boolean}
      */
     nameFilter(value) {
-      console.log('سرچ فیلتر');
+      // console.log('سرچ فیلتر');
       // If this filter has no value we just skip the entire filter.
       if (!this.dessertFilterValue) {
         return true;
