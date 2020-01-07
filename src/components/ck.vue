@@ -27,8 +27,8 @@ import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 // // table
-import Table from '@ckeditor/ckeditor5-table/src/table';
-import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+// import Table from '@ckeditor/ckeditor5-table/src/table';
+// import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 // import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 // import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 // import Image from '@ckeditor/ckeditor5-image/src/image';
@@ -73,8 +73,8 @@ export default {
           // ImageCaption,
           // ImageStyle,
           Alignment,
-          Table,
-          TableToolbar,
+          // Table,
+          // TableToolbar,
           // MediaEmbed,
           Font,
           FontFamily,
@@ -107,9 +107,9 @@ export default {
             'aasaam-Noto',
           ],
         },
-        table: {
-          contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
-        },
+        // table: {
+        //   contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
+        // },
         heading: {
           options: [
             {

@@ -31,7 +31,7 @@
             ></v-select>
           </v-col>
           <!-- 3 -->
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="6">
             <v-select
               flat
               solo
@@ -47,7 +47,7 @@
           </v-col>
           <v-col
             cols="12"
-            md="2"
+            md="3"
           >
             <v-select
               flat
@@ -61,7 +61,7 @@
           </v-col>
           <v-col
             cols="12"
-            md="2"
+            md="3"
           >
             <v-select
               flat
@@ -72,6 +72,67 @@
               required
               solo
             ></v-select>
+          </v-col>
+          <v-col
+            cols="12"
+            md="12"
+          >
+            <v-subheader>
+              شما میتوانید با استفاده از گزینه های زیر فیلد جدیدی ایجاد کنید:
+            </v-subheader>
+          </v-col>
+          <v-col
+            cols="12"
+            md="12"
+          >
+            <v-row>
+              <v-col cols="12" md="8" v-for="(custom, k) in customs" :key="k">
+                <v-row class="my-0 py-0">
+                  <!-- 1 -->
+                  <v-col cols="12" md="5">
+                    <v-text-field
+                      v-model="custom.name"
+                      flat
+                      label="عنوان"
+                      required
+                      solo
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="5">
+                    <!-- <v-text-field
+                      v-model="custom.type"
+                      flat
+                      label="نوع"
+                      required
+                      solo
+                    ></v-text-field> -->
+                    <v-select
+                      flat
+                      v-model="custom.type"
+                      :items="selectCustomTypes"
+                      :rules="[v => !!v || 'الزامی']"
+                      label="نوع"
+                      required
+                      solo
+                    ></v-select>
+                  </v-col>
+                  <v-col cols="2">
+                    <v-btn
+                      v-show="k == customs.length -1"
+                      @click="add(k)"
+                      class="mx-2" fab dark small color="green">
+                      <v-icon dark>mdi-plus</v-icon>
+                    </v-btn>
+                    <v-btn
+                      v-show="k || (!k && customs.length > 1 )"
+                      @click="remove(k)"
+                      class="mx-2" fab dark small color="red">
+                      <v-icon dark>mdi-minus</v-icon>
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
         <!-- buttons -->
@@ -94,18 +155,26 @@ export default {
   name: 'TypeTag',
   data() {
     return {
+      customs: [
+        {
+          name: '',
+          type: '',
+        },
+      ],
+      selectCustomTypes: [
+        'int',
+        'url',
+        'short string',
+        'long string',
+      ],
       valid: true,
       typeStatusde: '',
       layoutseelct: '',
+      langselect: 'fa',
       layouts: [
         'default',
         'tag',
         'city',
-      ],
-      custom: [
-        'عدد',
-        'رشته کوتاه',
-        'رشته بلند',
       ],
       e7: '',
       tagTitle: '',
@@ -128,6 +197,18 @@ export default {
         'مولف',
       ],
     };
+  },
+  methods: {
+    // eslint-disable-next-line no-unused-vars
+    add(index) {
+      this.customs.push({
+        name: '',
+        type: '',
+      });
+    },
+    remove(index) {
+      this.customs.splice(index, 1);
+    },
   },
 };
 </script>
