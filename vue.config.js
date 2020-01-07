@@ -6,6 +6,7 @@ const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
 module.exports = {
   outputDir: './docs',
+  publicPath: '/as-ux/',
   transpileDependencies: [
     'vuetify',
     /ckeditor5-[^/\\]+[/\\]src[/\\].+\.js$/,
