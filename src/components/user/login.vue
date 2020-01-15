@@ -12,7 +12,10 @@
           id="password"
           label="کلمه عبور"
           name="password"
-          type="password"
+          :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+          :type="show1 ? 'text' : 'password'"
+          counter
+          @click:append="show1 = !show1"
         />
         <v-row>
           <v-col cols="12" md="7">
@@ -28,11 +31,11 @@
               height="50" src="../../assets/captcha.png">
             </v-img>
             <v-btn
-              color="red"
-              class="py-2 float-left white--text"
+              color="deep-orange darken-3"
+              class="py-6 float-left white--text"
             >
               بازیابی
-              <v-icon right dark>mdi-cloud-upload</v-icon>
+              <v-icon right dark>mdi-undo-variant</v-icon>
             </v-btn>
           </v-col>
         </v-row>
@@ -51,6 +54,7 @@ export default {
   data() {
     return {
       tab: null,
+      show1: false,
       tabTitle: [
         'ورود', 'ثبت نام',
       ],
