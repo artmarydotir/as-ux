@@ -1,5 +1,5 @@
 <template>
-  <v-card flat color="grey lighten-4">
+  <v-card flat color="grey lighten-5">
     <v-card-text>
       <v-form>
         <v-text-field
@@ -8,15 +8,30 @@
           type="text"
           dir="ltr"
         />
-        <v-text-field
-          id="password"
-          label="کلمه عبور"
-          name="password"
-          :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
-          :type="show1 ? 'text' : 'password'"
-          counter
-          @click:append="show1 = !show1"
-        />
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-text-field
+              id="password"
+              label="رمز عبور شخصی"
+              name="password"
+              :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+              :type="show1 ? 'text' : 'password'"
+              :hint="hint"
+              @click:append="show1 = !show1"
+            />
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field
+              id="password"
+              label="رمز یکبار مصرف"
+              name="password"
+              :hint="hint2"
+              :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+              :type="show1 ? 'text' : 'password'"
+              @click:append="show1 = !show1"
+            />
+          </v-col>
+        </v-row>
         <v-row>
           <v-col cols="12" md="7">
             <v-text-field
@@ -39,6 +54,9 @@
             </v-btn>
           </v-col>
         </v-row>
+        <h2 class="text-center">
+          و یا از طریق رمز یک بار مصرف وارد شوید
+        </h2>
       </v-form>
     </v-card-text>
     <v-card-actions>
@@ -54,6 +72,8 @@ export default {
   data() {
     return {
       tab: null,
+      hint: 'معایب استفاده از رمز عبور شخصی کدامند؟',
+      hint2: 'چرا باید از رمزیکبار مصرف استفاده کنیم؟',
       show1: false,
       tabTitle: [
         'ورود', 'ثبت نام',

@@ -6,14 +6,15 @@
           md="6"
           offset-md="1"
         >
-          <v-card color="basil">
+          <v-card>
             <v-card-title class="text-center justify-center py-6">
               <v-img width="80" contain height="80" src="../../assets/logo.png"></v-img>
             </v-card-title>
             <v-tabs
+              active-class="dd"
               v-model="tab"
-              background-color="blue lighten-5"
-              color="blue"
+              background-color="blue lighten-4"
+              color="blue darken-2"
               grow
             >
               <v-tab
@@ -56,3 +57,9 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.dd {
+  background-color:#90CAF9 !important;
+  color: #fff !important;
+}
+</style>
