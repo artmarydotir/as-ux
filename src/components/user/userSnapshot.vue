@@ -3,7 +3,7 @@
       <v-row justify="center">
         <v-col
           cols="12"
-          md="6"
+          md="7"
           offset-md="1"
         >
           <v-card>
