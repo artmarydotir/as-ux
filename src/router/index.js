@@ -9,6 +9,8 @@ import ListType from '../views/ListType.vue';
 // Users
 import Forgot from '@/components/User/Forgot.vue';
 
+import Recovery from '@/components/User/Recovery.vue';
+
 Vue.use(VueRouter);
 
 
@@ -39,9 +41,14 @@ const routes = [
     component: TypeTag,
   },
   {
-    path: '/user/Forgot',
+    path: '/user/forgot',
     name: 'forgot',
     component: Forgot,
+  },
+  {
+    path: '/user/recovery',
+    name: 'recovery',
+    component: Recovery,
   },
   {
     path: '/about',
