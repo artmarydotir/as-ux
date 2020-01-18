@@ -7,7 +7,7 @@ import ListTag from '../views/ListTag.vue';
 import TypeTag from '../views/TypeTag.vue';
 import ListType from '../views/ListType.vue';
 // Users
-// import Forgot from '@/components/User/Forgot.vue';
+import Forgot from '@/components/User/Forgot.vue';
 
 Vue.use(VueRouter);
 
@@ -39,6 +39,11 @@ const routes = [
     component: TypeTag,
   },
   {
+    path: '/user/Forgot',
+    name: 'forgot',
+    component: Forgot,
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -48,7 +53,7 @@ const routes = [
   },
 ];
 
-console.log(routes);
+
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,

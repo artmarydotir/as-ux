@@ -66,7 +66,7 @@
       <v-checkbox class="block text-center justify-center"
         v-model="rememberMe" label="مرا به خاطرت نگه دار">
       </v-checkbox>
-      <router-link to="/about">
+      <router-link to="/user/Forgot">
         رمز عبور خود را فراموش کرده اید؟
       </router-link>
     </div>
