@@ -1,12 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
 import Home from '../views/Home.vue';
 import TagForm from '../views/TagForm.vue';
 import ListTag from '../views/ListTag.vue';
 import TypeTag from '../views/TypeTag.vue';
 import ListType from '../views/ListType.vue';
+// Users
+// import Forgot from '@/components/User/Forgot.vue';
 
 Vue.use(VueRouter);
+
 
 const routes = [
   {
@@ -44,6 +48,7 @@ const routes = [
   },
 ];
 
+console.log(routes);
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,

@@ -38,8 +38,8 @@
   </v-container>
 </template>
 <script>
-import loginForm from '@/components/user/login.vue';
-import registerForm from '@/components/user/register.vue';
+import loginForm from '@/components/User/login.vue';
+import registerForm from '@/components/User/register.vue';
 
 export default {
   name: 'userSnapshot',

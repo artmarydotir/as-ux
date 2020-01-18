@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import userSnapshot from '@/components/user/userSnapshot.vue';
+import userSnapshot from '@/components/User/userSnapshot.vue';
 
 export default {
   name: 'home',

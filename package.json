@@ -27,6 +27,7 @@
     "@ckeditor/ckeditor5-vue": "^1",
     "@ckeditor/ckeditor5-word-count": "^10.0",
     "core-js": "^3.4",
+    "google-libphonenumber": "^3.2.6",
     "vue": "^2.6",
     "vue-router": "^3.1",
     "vuetify": "^2.1"

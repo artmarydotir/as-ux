@@ -61,6 +61,15 @@
       <v-btn color="primary">ورود</v-btn>
       <v-btn @click="reset" color="warning">لغو</v-btn>
     </v-card-actions>
+    <v-divider class="ma-4"></v-divider>
+    <div class="block text-center justify-center py-4">
+      <v-checkbox class="block text-center justify-center"
+        v-model="rememberMe" label="مرا به خاطرت نگه دار">
+      </v-checkbox>
+      <router-link to="/about">
+        رمز عبور خود را فراموش کرده اید؟
+      </router-link>
+    </div>
   </v-card>
 </template>
 <script>
@@ -76,6 +85,7 @@ export default {
       hint2: 'چرا باید از رمزیکبار مصرف استفاده کنیم؟',
       show1: false,
       show2: false,
+      rememberMe: false,
       otp: '',
       pass: '',
       lazy: false,

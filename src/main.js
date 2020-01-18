@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify';
 import '../node_modules/@aasaam/noto-font/dist/font-face.css';
 import '@/assets/styles/style.scss';
 import '@/assets/styles/variables.scss';
+import './filters';
 
 
 Vue.config.productionTip = false;

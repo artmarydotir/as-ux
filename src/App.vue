@@ -1,26 +1,18 @@
 <template>
   <v-app>
-  <v-navigation-drawer
-      v-model="drawer"
-      app
-      right
-      temporary
-    >
-    <aasaaMmenu />
+    <v-navigation-drawer v-model="drawer" app right temporary>
+      <aasaaMmenu />
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      color="teal"
-      dark
-    >
+    <v-app-bar app color="teal" dark>
       <v-toolbar-title>آسام Ux</v-toolbar-title>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
-
     </v-app-bar>
     <v-content>
-      <router-view></router-view>
+      <transition name="moveInUp">
+        <router-view />
+      </transition>
     </v-content>
   </v-app>
 </template>
@@ -42,8 +34,22 @@ export default {
 };
 </script>
 <style>
-/* @import '../node_modules/@aasaam/noto-font/dist/font-face.css';
-.v-btn {
-  font-family: 'aasaam-Noto' !important;
-} */
+.moveInUp-enter-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.moveInUp-enter-active {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
