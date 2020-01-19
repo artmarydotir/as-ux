@@ -36,6 +36,9 @@
                             <v-text-field
                               label="رمز عبور جدید"
                               v-model="userNewPass"
+                              :class="passwordClasses"
+                              :hint="userNewPass.length ? strength : ''"
+                              persistent-hint
                               :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
                               :type="show1 ? 'text' : 'password'"
                               @click:append="show1 = !show1"
@@ -79,6 +82,23 @@ export default {
       show1: false,
     };
   },
+  computed: {
+    strength() {
+      const { length } = this.userNewPass;
+      const strength = {
+        Strong: length >= 12,
+        Medium: length < 12 && length >= 8,
+        Weak: length < 8,
+      };
+      return Object.keys(strength).find(key => strength[key]);
+    },
+    passwordClasses() {
+      // if (this.strength === 'Strong') {
+      //   return 'password-strength--Str';
+      // }
+      return `password-strength--${this.strength}`;
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -89,4 +109,13 @@ export default {
   padding-right: 6px;
 }
 
+  .password-strength--Weak .v-messages__message {
+    color: red !important
+  }
+  .password-strength--Medium .v-messages__message {
+    color: orange !important
+  }
+  .password-strength--Strong .v-messages__message {
+    color: green !important
+  }
 </style>
