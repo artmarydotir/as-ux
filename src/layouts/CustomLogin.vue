@@ -1,6 +1,7 @@
 <template>
   <div class="body_bg">
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
+    <slot />
   </div>
 </template>
 

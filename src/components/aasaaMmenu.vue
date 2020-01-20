@@ -62,7 +62,6 @@
             v-for="(admin, i) in admins"
             :key="i"
             :to="admin.link"
-            @click="setLayout('custom-layout')"
           >
             <v-list-item-title v-text="admin.title"></v-list-item-title>
           </v-list-item>
@@ -165,11 +164,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    setLayout(layout) {
-      this.$store.commit('SET_LAYOUT', layout);
-    },
   },
 };
 </script>

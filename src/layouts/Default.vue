@@ -10,13 +10,10 @@
       <v-spacer />
     </v-app-bar>
     <v-content>
-      <v-alert type="success">
-        این پروژه صرفا برای داکیومنت کردن تحلیل ها و اسکچ های
-        ux آســـام میباشد.
-      </v-alert>
-      <transition name="moveInUp">
+      <slot />
+      <!-- <transition name="moveInUp">
         <router-view />
-      </transition>
+      </transition> -->
     </v-content>
   </v-app>
 </template>
@@ -38,22 +35,4 @@ export default {
 };
 </script>
 <style>
-.moveInUp-enter-active {
-  opacity: 0;
-  transition: opacity 1s ease-in;
-}
-.moveInUp-enter-active {
-  animation: fadeIn 1s ease-in;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 </style>

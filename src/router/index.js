@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '../views/Home.vue';
+import Dashboard from '../views/Dashboard.vue';
 import TagForm from '../views/TagForm.vue';
 import ListTag from '../views/ListTag.vue';
 import TypeTag from '../views/TypeTag.vue';
@@ -18,12 +19,18 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    meta: { layout: 'custom-login' },
     component: Home,
   },
   {
     path: '/addTag',
     name: 'addTag',
     component: TagForm,
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
   },
   {
     path: '/listTag',
@@ -42,11 +49,13 @@ const routes = [
   },
   {
     path: '/user/forgot',
+    meta: { layout: 'custom-login' },
     name: 'forgot',
     component: Forgot,
   },
   {
     path: '/user/recovery',
+    meta: { layout: 'custom-login' },
     name: 'recovery',
     component: Recovery,
   },

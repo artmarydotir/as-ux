@@ -75,7 +75,10 @@
       </v-form>
     </v-card-text>
     <v-card-actions class="mx-auto text-center justify-center">
-      <v-btn x-large color="pink white--text" class="pl-12 pr-12">
+      <v-btn x-large
+        color="pink white--text"
+        to="/dashboard/"
+        class="pl-12 pr-12">
         ورود به حساب کاربری
         <v-icon right dark>mdi-arrow-left</v-icon>
       </v-btn>
@@ -89,7 +92,7 @@
         </v-checkbox>
       </v-col>
       <v-col cols="12" md="6" class="pb-0">
-        <router-link to="/user/forgot" class="float-left" @click="setLayout('custom-layout')">
+        <router-link to="/user/forgot" class="float-left">
           رمز عبور خود را فراموش کرده اید؟
         </router-link>
       </v-col>
@@ -121,9 +124,6 @@ export default {
   methods: {
     reset() {
       this.$refs.form.reset();
-    },
-    setLayout(layout) {
-      this.$store.commit('SET_LAYOUT', layout);
     },
   },
 };
