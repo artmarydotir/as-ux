@@ -4,6 +4,7 @@
     max-width="400"
     flat
     color="transparent"
+    min-height="398"
   >
     <v-card-title class="text-center justify-center py-6">
       <v-img class="block"
