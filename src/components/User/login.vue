@@ -1,15 +1,22 @@
 <template>
-  <v-card flat color="grey lighten-5">
+  <v-card flat class="mx-auto grey lighten-4">
     <v-card-text>
       <v-form ref="form" v-model="valid" :lazy-validation="lazy">
-        <v-text-field
-          label="شماره تلفن , ایمیل یا نام کاربری"
-          name="login"
-          type="text"
-          dir="ltr"
-        />
         <v-row>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="8" class="mx-auto">
+            <v-text-field
+              label="شماره تلفن , ایمیل یا نام کاربری"
+              name="login"
+              type="text"
+              dir="ltr"
+              rounded
+              outlined
+              color="blue"
+              background-color="white"
+              prepend-inner-icon="mdi-home"
+            />
+          </v-col>
+          <v-col cols="12" md="8" class="mx-auto">
             <v-text-field
               label="رمز عبور شخصی"
               v-model="pass"
@@ -18,9 +25,13 @@
               :hint="hint1"
               @click:append="show1 = !show1"
               :disabled="otp.length > 0 ? '' : disabled"
+              rounded
+              outlined
+              color="blue"
+              background-color="white"
             />
           </v-col>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="8" class="mx-auto">
             <v-text-field
               label="رمز یکبار مصرف"
               v-model="otp"
@@ -29,6 +40,10 @@
               :hint="hint2"
               @click:append="show2 = !show2"
               :disabled="pass.length > 0 ? '' : disabled"
+              rounded
+              outlined
+              color="blue"
+              background-color="white"
             />
           </v-col>
         </v-row>
@@ -39,10 +54,14 @@
               name="captcha"
               type="text"
               dir="ltr"
+              rounded
+              outlined
+              color="blue"
+              background-color="white"
             />
           </v-col>
           <v-col cols="12" md="5">
-            <v-img class="float-right" width="210"
+            <v-img class="float-right" width="200"
               height="50" src="../../assets/captcha.png">
             </v-img>
             <v-btn

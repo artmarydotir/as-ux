@@ -10,6 +10,10 @@
       <v-spacer />
     </v-app-bar>
     <v-content>
+      <v-alert type="success">
+        این پروژه صرفا برای داکیومنت کردن تحلیل ها و اسکچ های
+        ux آســـام میباشد.
+      </v-alert>
       <transition name="moveInUp">
         <router-view />
       </transition>
