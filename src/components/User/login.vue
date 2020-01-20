@@ -89,7 +89,7 @@
         </v-checkbox>
       </v-col>
       <v-col cols="12" md="6" class="pb-0">
-        <router-link to="/user/forgot" class="float-left">
+        <router-link to="/user/forgot" class="float-left" @click="setLayout('custom-layout')">
           رمز عبور خود را فراموش کرده اید؟
         </router-link>
       </v-col>
@@ -121,6 +121,9 @@ export default {
   methods: {
     reset() {
       this.$refs.form.reset();
+    },
+    setLayout(layout) {
+      this.$store.commit('SET_LAYOUT', layout);
     },
   },
 };

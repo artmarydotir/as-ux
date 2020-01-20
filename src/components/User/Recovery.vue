@@ -1,10 +1,9 @@
 <template>
   <v-container>
-      <v-row justify="center">
+      <v-row justify="center" class="mx-auto">
         <v-col
           cols="12"
           md="7"
-          offset-md="1"
         >
           <v-card>
             <v-card-title class="text-center justify-center py-6">
@@ -21,8 +20,9 @@
                   <v-row justify="center">
                     <v-col cols="12">
                       <v-row>
-                        <v-col cols="9" dir="ltr" offset-md="3">
+                        <v-col cols="5" dir="ltr" class="mx-auto">
                           <vue-fake-input
+                            class="mx-auto"
                             :length="5"
                             :fontSize="60"
                             inputColor="#31bce6"
@@ -42,12 +42,20 @@
                               :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
                               :type="show1 ? 'text' : 'password'"
                               @click:append="show1 = !show1"
+                              outlined
+                              color="blue"
+                              background-color="white"
+                              prepend-inner-icon="mdi-lock-outline"
                             />
                           </v-col>
                           <v-col cols="12" md="6">
                             <v-text-field
                               label="تکرار رمز عبور"
                               v-model="userrpPass"
+                              outlined
+                              color="blue"
+                              background-color="white"
+                              prepend-inner-icon="mdi-lock-outline"
                             />
                           </v-col>
                         </v-row>
@@ -56,13 +64,16 @@
                   </v-row>
                 </v-form>
               </v-card-text>
-              <v-card-actions>
-                <v-spacer />
-                <v-btn color="primary">
-                  تایید و تغییر رمز
+              <v-card-actions class="mx-auto text-center justify-center">
+                <v-btn to="/"
+                  x-large color="pink white--text" class="pl-12 pr-12">
+                   تایید و تغییر رمز
+                  <v-icon right dark>mdi-arrow-left</v-icon>
                 </v-btn>
-                <v-btn color="warning" to="/user/forgot">
-                  بازگشت
+                <v-btn to="/user/forgot"
+                  x-large color="warning white--text" class="pl-12 pr-12">
+                    بازگشت
+                  <v-icon right dark>mdi-cancel</v-icon>
                 </v-btn>
               </v-card-actions>
           </v-card>
