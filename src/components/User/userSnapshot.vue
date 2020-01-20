@@ -37,9 +37,10 @@
           <v-col cols="12" md="8" class="box-sh pa-0 grey lighten-4">
             <v-tabs
               class="pa-6"
+              background-color="grey lighten-4"
               active-class="dd"
               v-model="tab"
-              left
+              centered
             >
               <v-tab
                 v-for="title in tabTitle"
@@ -86,6 +87,9 @@ export default {
 .dd {
   background-color:#90CAF9 !important;
   color: #fff !important;
+}
+.v-tab {
+  border-bottom: 2px solid  #1976d2 !important;
 }
 @media (min-width: 960px) {
   .offset-md-1 {

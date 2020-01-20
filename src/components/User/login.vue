@@ -9,11 +9,10 @@
               name="login"
               type="text"
               dir="ltr"
-              rounded
               outlined
               color="blue"
               background-color="white"
-              prepend-inner-icon="mdi-home"
+              prepend-inner-icon="mdi-account-outline"
             />
           </v-col>
           <v-col cols="12" md="8" class="mx-auto">
@@ -25,10 +24,10 @@
               :hint="hint1"
               @click:append="show1 = !show1"
               :disabled="otp.length > 0 ? '' : disabled"
-              rounded
               outlined
               color="blue"
               background-color="white"
+              prepend-inner-icon="mdi-lock-outline"
             />
           </v-col>
           <v-col cols="12" md="8" class="mx-auto">
@@ -40,55 +39,61 @@
               :hint="hint2"
               @click:append="show2 = !show2"
               :disabled="pass.length > 0 ? '' : disabled"
-              rounded
               outlined
               color="blue"
               background-color="white"
+              prepend-inner-icon="mdi-lock-reset"
             />
           </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="12" md="7">
-            <v-text-field
-              label="عبارت امنیتی"
-              name="captcha"
-              type="text"
-              dir="ltr"
-              rounded
-              outlined
-              color="blue"
-              background-color="white"
-            />
-          </v-col>
-          <v-col cols="12" md="5">
-            <v-img class="float-right" width="200"
-              height="50" src="../../assets/captcha.png">
-            </v-img>
-            <v-btn
-              color="error"
-              class="py-6 float-left white--text"
-            >
-              بازیابی
-              <v-icon right dark>mdi-undo-variant</v-icon>
-            </v-btn>
+          <v-col cols="12" md="8" class="mx-auto">
+            <v-row>
+              <v-col cols="12" md="7" class="py-0 pl-1">
+                <v-text-field
+                  label="عبارت امنیتی"
+                  name="captcha"
+                  type="text"
+                  dir="ltr"
+                  outlined
+                  color="blue"
+                  background-color="white"
+                  prepend-inner-icon="mdi-lock-question"
+                />
+              </v-col>
+              <v-col cols="12" md="4" class="pa-0 pl-0 pr-1">
+                <v-img width="180"
+                  height="54" src="../../assets/captcha.png">
+                </v-img>
+              </v-col>
+              <v-col cols="12" md="1" class="py-0 pl-0 pr-1 pt-1">
+                <v-btn large text icon color="pink">
+                  <v-icon>mdi-lock-reset</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-form>
     </v-card-text>
-    <v-card-actions>
-      <v-spacer />
-      <v-btn color="primary">ورود</v-btn>
-      <v-btn @click="reset" color="warning">لغو</v-btn>
+    <v-card-actions class="mx-auto text-center justify-center">
+      <v-btn x-large color="pink white--text" class="pl-12 pr-12">
+        ورود به حساب کاربری
+        <v-icon right dark>mdi-arrow-left</v-icon>
+      </v-btn>
     </v-card-actions>
-    <v-divider class="ma-4"></v-divider>
-    <div class="block text-center justify-center py-4">
-      <v-checkbox class="block text-center justify-center"
-        v-model="rememberMe" label="مرا به خاطرت نگه دار">
-      </v-checkbox>
-      <router-link to="/user/forgot">
-        رمز عبور خود را فراموش کرده اید؟
-      </router-link>
-    </div>
+    <v-divider class="ma-4 grey lighten-2"></v-divider>
+    <v-row class="pa-4">
+      <v-col cols="12" md="6" class="pb-0">
+        <v-checkbox
+          class="ma-0"
+          v-model="rememberMe" label="مرا به خاطرت نگه دار">
+        </v-checkbox>
+      </v-col>
+      <v-col cols="12" md="6" class="pb-0">
+        <router-link to="/user/forgot" class="float-left">
+          رمز عبور خود را فراموش کرده اید؟
+        </router-link>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 <script>
