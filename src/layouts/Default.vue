@@ -6,8 +6,20 @@
 
     <v-app-bar app color="teal" dark>
       <v-toolbar-title>آسام Ux</v-toolbar-title>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
+      <v-btn
+        icon
+        large
+        v-model="profile"
+      >
+        <v-avatar size="32px">
+          <img
+            src="../assets/index.svg.png"
+            alt="aasaam"
+          >
+        </v-avatar>
+      </v-btn>
     </v-app-bar>
     <v-content>
       <slot />
@@ -41,6 +53,7 @@ export default {
   data() {
     return {
       drawer: false,
+      profile: false,
     };
   },
 };
