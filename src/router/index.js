@@ -9,8 +9,8 @@ import TypeTag from '../views/TypeTag.vue';
 import ListType from '../views/ListType.vue';
 // Users
 import Forgot from '@/components/User/Forgot.vue';
-
 import Recovery from '@/components/User/Recovery.vue';
+import AddUser from '@/components/User/AddUser.vue';
 
 Vue.use(VueRouter);
 
@@ -58,6 +58,11 @@ const routes = [
     meta: { layout: 'custom-login' },
     name: 'recovery',
     component: Recovery,
+  },
+  {
+    path: '/user/add',
+    name: 'addUser',
+    component: AddUser,
   },
   {
     path: '/about',
