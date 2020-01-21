@@ -8,7 +8,7 @@
       <v-list-item-title> خانه </v-list-item-title>
     </v-list-item>
     <!-- 2 -->
-    <v-list-item link>
+    <v-list-item link to="/dashboard/">
       <v-list-item-icon>
         <v-icon>mdi-view-dashboard</v-icon>
       </v-list-item-icon>
@@ -116,23 +116,6 @@
 export default {
   data() {
     return {
-      // items: [
-      //   {
-      //     action: 'mdi-file-move',
-      //     title: 'برچسب ها',
-      //     active: true,
-      //     items: [
-      //       {
-      //         title: 'افزودن برچسب',
-      //         link: '/addTag',
-      //       },
-      //       {
-      //         title: 'لیست برچسب ها',
-      //         link: '/listTag',
-      //       },
-      //     ],
-      //   },
-      // ],
       admins: [
         {
           title: 'افزودن برچسب',

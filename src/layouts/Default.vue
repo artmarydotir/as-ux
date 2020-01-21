@@ -15,6 +15,17 @@
         <router-view />
       </transition> -->
     </v-content>
+    <v-footer padless absolute color="teal lighten-4">
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        <strong>
+          گروه نرم افزاری آسام
+        </strong>  —
+        {{ new Date().getFullYear() }}
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
