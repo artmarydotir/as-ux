@@ -8,9 +8,17 @@
       <v-toolbar-title>آسام Ux</v-toolbar-title>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
+      <v-menu
+      transition="slide-x-transition"
+      right
+      bottom
+      offset-y
+    >
+      <template v-slot:activator="{ on }">
       <v-btn
         icon
         large
+        v-on="on"
         v-model="profile"
       >
         <v-avatar size="32px">
@@ -20,6 +28,22 @@
           >
         </v-avatar>
       </v-btn>
+      </template>
+      <v-list>
+        <v-list-item to="/user/add" color="blue">
+          <v-list-item-title>
+            نمایش پروفایل
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-divider></v-divider>
+        <v-list-item>
+          <v-list-item-title>
+            خروج
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
     </v-app-bar>
     <v-content>
       <slot />

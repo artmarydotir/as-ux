@@ -10,7 +10,7 @@ export default {};
 </script>
 <style lang="scss">
 .body_bg {
-  background-image: url(../assets/31.png), url(../assets/2.png);
+  background-image: url(../assets/33.png), url(../assets/32.png);
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
 }
