@@ -30,14 +30,14 @@
       </v-btn>
       </template>
       <v-list>
-        <v-list-item to="/user/add" color="blue">
+        <v-list-item to="/user/profile" color="blue">
           <v-list-item-title>
             نمایش پروفایل
           </v-list-item-title>
         </v-list-item>
 
         <v-divider></v-divider>
-        <v-list-item>
+        <v-list-item @click="logOut">
           <v-list-item-title>
             خروج
           </v-list-item-title>
@@ -70,7 +70,6 @@ import aasaaMmenu from '../components/aasaaMmenu.vue';
 
 export default {
   name: 'App',
-
   components: {
     aasaaMmenu,
   },
@@ -79,6 +78,11 @@ export default {
       drawer: false,
       profile: false,
     };
+  },
+  methods: {
+    logOut() {
+      this.$router.push('/');
+    },
   },
 };
 </script>
