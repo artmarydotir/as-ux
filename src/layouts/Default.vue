@@ -35,6 +35,11 @@
             نمایش پروفایل
           </v-list-item-title>
         </v-list-item>
+        <v-list-item color="blue">
+          <v-list-item-title>
+            ویرایش پروفایل
+          </v-list-item-title>
+        </v-list-item>
 
         <v-divider></v-divider>
         <v-list-item @click="logOut">
