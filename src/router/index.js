@@ -12,6 +12,11 @@ import Forgot from '@/components/User/Forgot.vue';
 import Recovery from '@/components/User/Recovery.vue';
 import Profile from '@/components/User/ProfileUser.vue';
 
+// Group
+import AddGroup from '@/components/Group/AddGroup.vue';
+
+import ListGroup from '@/components/Group/ListGroup.vue';
+
 Vue.use(VueRouter);
 
 
@@ -63,6 +68,16 @@ const routes = [
     path: '/user/profile',
     name: 'userProfile',
     component: Profile,
+  },
+  {
+    path: '/group/add',
+    name: 'addGroup',
+    component: AddGroup,
+  },
+  {
+    path: '/group/list',
+    name: 'listGroup',
+    component: ListGroup,
   },
   {
     path: '/about',
