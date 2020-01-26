@@ -2,7 +2,7 @@
   <v-container>
     <v-data-table :headers="headers" :items="groupes" item-key="name"
       class="elevation-1">
-      <template v-slot:top>
+      <template v-slot:top >
         <v-toolbar flat class="grey lighten-2">
           <v-toolbar-title>
             لیست گروه ها
@@ -35,17 +35,17 @@
           <v-icon
             small
             class="blue--text ml-4"
-            @click="editItem(item)"
           >
             mdi-pencil
           </v-icon>
-          <v-icon
-            class="red--text"
-            small
+          <v-btn
+            icon color="pink"
+            @click.stop="showDialog = true"
             @click="deleteItem(item)"
           >
-            mdi-delete
-          </v-icon>
+            <v-icon>mdi-delete</v-icon>
+          </v-btn>
+          <globalDialog v-model="showDialog" />
       </template>
       <template v-slot:no-results>
         هیچ داده ای یافت نشد!
@@ -59,9 +59,8 @@ tbody tr:nth-of-type(even) {
 }
 </style>
 <script>
-// Table info.
-
 import tableData from '../../assets/groupList.json';
+import globalDialog from '@/components/globalCmp/globalDialog.vue';
 
 export default {
   data() {
@@ -74,9 +73,8 @@ export default {
       ],
       // Filter models.
       nameFilterValue: '',
-      serviceFilter: '',
-      typeFilterValue: null,
-      parentFilterValue: null,
+      showDialog: false,
+      userCount: '',
       statusFilterValue: null,
       // Table data.
       groupes: tableData.data,
@@ -98,8 +96,8 @@ export default {
           filter: this.statusFilter,
         },
         {
-          text: 'نوع ارتباط',
-          value: 'parent',
+          text: 'تعداد کاربران موجود',
+          value: 'userCount',
           sortable: false,
           filter: this.parentFilter,
         },
@@ -108,56 +106,25 @@ export default {
     },
   },
   methods: {
+    deleteItem(item) {
+      const index = this.groupes.indexOf(item);
+      this.groupes.splice(index, 1);
+    },
     nameFilter(value) {
       if (!this.nameFilterValue) {
         return true;
       }
       return value.toLowerCase().includes(this.nameFilterValue.toLowerCase());
     },
-    // eslint-disable-next-line consistent-return
-    servicesFilter(value) {
-      // console.log(value);
-      // If this filter has no value we just skip the entire filter.
-      if (!this.serviceFilter) {
-        return true;
-      }
-      return value.toLowerCase().includes(this.serviceFilter.toLowerCase());
-      // Check if the current loop value (The service name)
-      // partially contains the searched word.
-      // return value.includes(this.serviceFilter);
-    },
-    /**
-     * Filter for calories column.
-     * @param value Value to be tested.
-     * @returns {boolean}
-     */
-    caloriesFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.typeFilterValue) {
-        return true;
-      }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.typeFilterValue;
-    },
     statusFilter(value) {
-      // If this filter has no value we just skip the entire filter.
       if (!this.statusFilterValue) {
         return true;
       }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
       return value === this.statusFilterValue;
     },
-    parentFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.parentFilterValue) {
-        return true;
-      }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.parentFilterValue;
-    },
+  },
+  components: {
+    globalDialog,
   },
 };
 </script>

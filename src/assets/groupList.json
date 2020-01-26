@@ -3,35 +3,35 @@
     {
       "name": "عکاسان",
       "active": true,
-      "userName": "artmary",
+      "userCount": "2",
       "email": "artmary.ir@gmail.com",
       "mobile": "9017744142"
     },
     {
       "name": "مولفان",
       "active": true,
-      "userName": "suny51",
+      "userCount": "32",
       "email": "sunny@gmail.com",
       "mobile": "9017744365"
     },
     {
       "name": "خبرنگاران",
       "active": false,
-      "userName": "pmc23",
+      "userCount": "8",
       "email": "pmc@gmail.com",
       "mobile": "9127094856"
     },
     {
       "name": "روزنامه نگاران",
       "active": true,
-      "userName": "khashi8",
+      "userCount": "5",
       "email": "khashi@gmail.com",
       "mobile": "null"
     },
     {
       "name": "مدیران سامانه",
       "active": true,
-      "userName": "khashi8",
+      "userCount": "16",
       "email": "khashi@gmail.com",
       "mobile": "null"
     }
