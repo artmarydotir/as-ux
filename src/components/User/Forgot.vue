@@ -1,6 +1,6 @@
 <template>
   <v-container>
-      <v-row justify="center">
+      <v-row justify="center" class="my-12 py-8">
         <v-col
           cols="12"
           md="8"

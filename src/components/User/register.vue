@@ -116,11 +116,11 @@ export default {
   },
   methods: {
     formatters() {
-      // const ins = PhoneNumberUtil.getInstance();
+      const ins = PhoneNumberUtil.getInstance();
       // const tel = ins.parse('+989017744142');
       // console.log(tel);
-      // const numi = ins.parseAndKeepRawInput('+989017744142', 'IR');
-      // console.log(numi);
+      const numi = ins.parseAndKeepRawInput('+989017744142', 'IR');
+      console.log(numi);
       // console.log(numi.getCountryCode());
       // console.log(numi.getRawInput());
       // console.log(ins.isValidNumber(numi));

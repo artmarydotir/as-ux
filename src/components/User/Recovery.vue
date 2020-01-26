@@ -1,11 +1,11 @@
 <template>
-  <v-container>
-      <v-row justify="center" class="mx-auto">
+  <v-container class="my-12 py-8">
+      <v-row justify="center" class="mx-auto my-12 py-8">
         <v-col
           cols="12"
           md="7"
         >
-          <v-card>
+          <v-card class="py-12">
             <v-card-title class="text-center justify-center py-6">
               <p>
                 کد تایید به ایمیل شما ارسال شده است.
@@ -15,7 +15,7 @@
                 ارسال دوباره کد؟
               </span>
             </v-card-title>
-              <v-card-text>
+              <v-card-text class="py-4">
                 <v-form ref="form">
                   <v-row justify="center">
                     <v-col cols="12">
@@ -64,7 +64,7 @@
                   </v-row>
                 </v-form>
               </v-card-text>
-              <v-card-actions class="mx-auto text-center justify-center">
+              <v-card-actions class="mx-auto text-center justify-center py-12">
                 <v-btn to="/"
                   x-large color="pink white--text" class="pl-12 pr-12">
                    تایید و تغییر رمز
