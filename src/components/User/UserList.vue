@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-data-table :headers="headers" :items="desserts" item-key="name"
+    <v-data-table :headers="headers" :items="usersData" item-key="name"
       class="elevation-1">
       <template v-slot:top>
         <v-toolbar flat class="grey lighten-2">
@@ -13,42 +13,42 @@
             <!-- Filter for type name-->
             <v-text-field
               class="ml-10"
-              dense v-model="dessertFilterValue" type="text" label="نام">
+              dense v-model="nameFilterVal" type="text" label="نام">
             </v-text-field>
           </v-col>
           <v-col cols="2">
             <!-- Filter for type name-->
             <v-text-field
               class="ml-10"
-              dense v-model="dessertFilterValue" type="text" label="نام خانوادگی">
+              dense v-model="lnameFilterVal" type="text" label="نام خانوادگی">
             </v-text-field>
           </v-col>
           <v-col cols="2">
             <!-- Filter for type name-->
             <v-text-field
               dense class="ml-10"
-              v-model="serviceFilter" type="text" label="نام کاربری">
+              v-model="userNameFilterVal" type="text" label="نام کاربری">
             </v-text-field>
           </v-col>
           <v-col cols="2">
             <!-- Filter for type name-->
             <v-text-field
               dense class="ml-10"
-              v-model="serviceFilter" type="text" label="جستجو ایمیل">
+              v-model="emailFilterFilterVal" type="text" label="جستجو ایمیل">
             </v-text-field>
           </v-col>
           <v-col cols="2">
             <!-- Filter for type name-->
             <v-text-field
               dense class="ml-10"
-              v-model="serviceFilter" type="text" label="جستجو تلفن">
+              v-model="mobileFilterFilterVal" type="text" label="جستجو تلفن">
             </v-text-field>
           </v-col>
         </v-row>
       </template>
       <template v-slot:item.calories="{ item }">
           <v-chip small class="pink white--text">
-            {{ item.calories }}
+            {{ item.usersData }}
           </v-chip>
         </template>
       <template v-slot:no-results>
@@ -65,13 +65,13 @@ export default {
   data() {
     return {
       // Filter models.
-      dessertFilterValue: '',
-      serviceFilter: '',
-      typeFilterValue: null,
-      parentFilterValue: null,
-      statusFilterValue: null,
+      mobileFilterFilterVal: '',
+      emailFilterFilterVal: '',
+      userNameFilterVal: '',
+      lnameFilterVal: '',
+      nameFilterVal: '',
       // Table data.
-      desserts: tableData.data,
+      usersData: tableData.data,
     };
   },
   computed: {
@@ -85,26 +85,26 @@ export default {
         },
         {
           text: 'نام خانوادگی',
-          sortable: false,
+          sortable: true,
           value: 'lastName',
-          filter: this.nameFilter,
+          filter: this.lastNameFilter,
         },
         {
           text: 'نام کاربری',
           sortable: true,
           value: 'userName',
-          filter: this.servicesFilter,
+          filter: this.uNameFilter,
         },
         {
           text: 'ایمیل',
           value: 'email',
-          sortable: false,
-          filter: this.parentFilter,
+          sortable: true,
+          filter: this.emailFilter,
         },
         {
           text: 'تلفن',
           value: 'mobile',
-          filter: this.statusFilter,
+          filter: this.mobileFilter,
         },
       ];
     },
@@ -116,58 +116,39 @@ export default {
      * @returns {boolean}
      */
     nameFilter(value) {
-      // console.log('سرچ فیلتر');
       // If this filter has no value we just skip the entire filter.
-      if (!this.dessertFilterValue) {
+      if (!this.nameFilterVal) {
         return true;
       }
       // Check if the current loop value (The dessert name)
       // partially contains the searched word.
-      return value.toLowerCase().includes(this.dessertFilterValue.toLowerCase());
+      return value.toLowerCase().includes(this.nameFilterVal.toLowerCase());
     },
-    // eslint-disable-next-line consistent-return
-    servicesFilter(value) {
-      // console.log(value);
+    lastNameFilter(value) {
       // If this filter has no value we just skip the entire filter.
-      if (!this.serviceFilter) {
+      if (!this.lnameFilterVal) {
         return true;
       }
-      return value.toLowerCase().includes(this.serviceFilter.toLowerCase());
-      // Check if the current loop value (The service name)
-      // partially contains the searched word.
-      // return value.includes(this.serviceFilter);
+      return value.toLowerCase().includes(this.lnameFilterVal.toLowerCase());
     },
-    /**
-     * Filter for calories column.
-     * @param value Value to be tested.
-     * @returns {boolean}
-     */
-    caloriesFilter(value) {
+    uNameFilter(value) {
       // If this filter has no value we just skip the entire filter.
-      if (!this.typeFilterValue) {
+      if (!this.userNameFilterVal) {
         return true;
       }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.typeFilterValue;
+      return value.toLowerCase().includes(this.userNameFilterVal.toLowerCase());
     },
-    statusFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.statusFilterValue) {
+    emailFilter(value) {
+      if (!this.emailFilterFilterVal) {
         return true;
       }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.statusFilterValue;
+      return value.toLowerCase().includes(this.emailFilterFilterVal.toLowerCase());
     },
-    parentFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.parentFilterValue) {
+    mobileFilter(value) {
+      if (!this.mobileFilterFilterVal) {
         return true;
       }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.parentFilterValue;
+      return value.toLowerCase().includes(this.mobileFilterFilterVal.toLowerCase());
     },
   },
 };
