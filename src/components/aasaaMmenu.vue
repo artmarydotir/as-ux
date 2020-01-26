@@ -1,5 +1,5 @@
 <template>
-  <v-list shaped>
+  <v-list shaped dense>
     <!-- 1 -->
     <v-list-item link to="/">
       <v-list-item-icon>
