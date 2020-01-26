@@ -46,7 +46,7 @@
           </v-col>
         </v-row>
       </template>
-      <template v-slot:item.calories="{ item }">
+      <template v-slot:item.usersData="{ item }">
           <v-chip small class="pink white--text">
             {{ item.usersData }}
           </v-chip>
