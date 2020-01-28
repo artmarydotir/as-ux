@@ -41,7 +41,6 @@
           <v-btn
             icon color="pink"
             @click.stop="showDialog = true"
-            @click="deleteItem(item)"
           >
             <v-icon>mdi-delete</v-icon>
           </v-btn>
