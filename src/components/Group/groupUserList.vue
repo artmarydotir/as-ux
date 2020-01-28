@@ -1,16 +1,15 @@
 <template>
   <v-container>
     <v-col cols="3">
-        <v-select
-            dense
-            :items="groupes"
-            item-text="name"
-            item-value="id"
-            v-model="groupId"
-            label="نام گروه"
-        ></v-select>
-        {{ groupId }}
-      </v-col>
+      <v-select
+          dense
+          :items="groupes"
+          item-text="name"
+          item-value="id"
+          label="نام گروه"
+          v-model="groupId"
+      ></v-select>
+    </v-col>
     <v-data-table :headers="headers" :items="groupes" item-key="name"
       class="elevation-1">
         <template v-slot:top >
@@ -19,39 +18,20 @@
               ‍لیست کاربران گروه
             </v-toolbar-title>
           </v-toolbar>
-          <v-row class="pa-4">
-            <!-- <v-col cols="3">
-              <v-select
-                  dense
-                  :items="groupes"
-                  item-text="name"
-                  :return-object="true"
-                  item-value="id"
-                  v-model="groupesid"
-                  @change="updateTable(groupesid)"
-                  label="نام گروه"
-              ></v-select>
-            </v-col> -->
-          </v-row>
-          <globalDialog :dialog.sync="dialog" :uniqueId="id" />
+          <globalDialog :dialog.sync="dialog" :uniqueId="groupId" />
         </template>
-        <template v-slot:body="{ items }">
-          <tbody>
-            <div v-for="item in items" :key="item.name">
-              <div v-if="groupId == item.id">
-                <tr v-for="i in item.users" :key="i.id">
+        <template v-slot:body="{ items }" >
+            <tbody v-for="item in items" :key="item.name">
+              <tr v-for="i in item.users" :key="i.name"  >
+                <span v-if=" item.id == groupId" >
                   <td>{{ i.id }}</td>
                   <td>{{ i.name }}</td>
                   <td>{{ i.userName }}</td>
-                  <td>
-                    <v-btn small text dark color="primary">
-                      <v-icon dark>mdi-delete</v-icon>
-                    </v-btn>
-                  </td>
-                </tr>
-              </div>
-            </div>
-          </tbody>
+                  <td>{{  }}</td>
+                </span>
+              </tr>
+            </tbody>
+<!-- v-if=" item.id == groupId"  -->
         </template>
       <template v-slot:no-results>
         هیچ داده ای یافت نشد!
@@ -121,6 +101,16 @@ export default {
     },
     updateTable(groupId) {
       console.log(groupId);
+    },
+    sss() {
+      // eslint-disable-next-line no-unused-vars
+      const reformattedArray = this.groupes.map((obj) => {
+        const rObj = {};
+        rObj[obj.key] = obj.value;
+
+        return rObj;
+      });
+      console.log(reformattedArray);
     },
   },
   components: {
