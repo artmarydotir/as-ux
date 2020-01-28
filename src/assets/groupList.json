@@ -2,38 +2,33 @@
   "data": [
     {
       "name": "عکاسان",
+      "id": 1,
       "active": true,
-      "userCount": "2",
-      "email": "artmary.ir@gmail.com",
-      "mobile": "9017744142"
+      "userCount": "2"
     },
     {
       "name": "مولفان",
+      "id": 2,
       "active": true,
-      "userCount": "32",
-      "email": "sunny@gmail.com",
-      "mobile": "9017744365"
+      "userCount": "32"
     },
     {
       "name": "خبرنگاران",
+      "id": 3,
       "active": false,
-      "userCount": "8",
-      "email": "pmc@gmail.com",
-      "mobile": "9127094856"
+      "userCount": "8"
     },
     {
       "name": "روزنامه نگاران",
+      "id": 4,
       "active": true,
-      "userCount": "5",
-      "email": "khashi@gmail.com",
-      "mobile": "null"
+      "userCount": "5"
     },
     {
       "name": "مدیران سامانه",
+      "id": 5,
       "active": true,
-      "userCount": "16",
-      "email": "khashi@gmail.com",
-      "mobile": "null"
+      "userCount": "16"
     }
   ]
 }

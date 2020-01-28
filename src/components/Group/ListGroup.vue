@@ -2,36 +2,69 @@
   <v-container>
     <v-data-table :headers="headers" :items="groupes" item-key="name"
       class="elevation-1">
-      <template v-slot:top >
-        <v-toolbar flat class="grey lighten-2">
-          <v-toolbar-title>
-            لیست گروه ها
-          </v-toolbar-title>
-        </v-toolbar>
-        <v-row class="pa-4">
-          <v-col cols="2">
-            <!-- Filter for type name-->
-            <v-text-field
-              class="ml-10"
-              dense v-model="nameFilterValue" type="text" label="عنوان">
-            </v-text-field>
-          </v-col>
-          <v-col cols="2">
-            <v-select
-                dense
-                :items="status"
-                v-model="statusFilterValue"
-                label="وضعیت"
-            ></v-select>
-          </v-col>
-        </v-row>
-      </template>
-      <template v-slot:item.groupes="{ item }">
-          <v-chip small class="pink white--text">
-            {{ item.groupes }}
-          </v-chip>
+        <template v-slot:top >
+          <v-toolbar flat class="grey lighten-2">
+            <v-toolbar-title>
+              لیست گروه ها
+            </v-toolbar-title>
+          </v-toolbar>
+          <v-row class="pa-4">
+            <v-col cols="2">
+              <!-- Filter for type name-->
+              <v-text-field
+                class="ml-10"
+                dense v-model="nameFilterValue" type="text" label="عنوان">
+              </v-text-field>
+            </v-col>
+            <v-col cols="2">
+              <v-select
+                  dense
+                  :items="status"
+                  v-model="statusFilterValue"
+                  label="وضعیت"
+              ></v-select>
+            </v-col>
+          </v-row>
+          <globalDialog :dialog.sync="dialog" :uniqueId="id" />
         </template>
-        <template v-slot:item.action="{ item }">
+        <template v-slot:body="{ items }">
+          <tbody>
+            <tr v-for="item in items" :key="item.name">
+              <td>{{ item.name }}</td>
+              <td>{{ item.userCount }} </td>
+              <td>{{ item.active }} </td>
+              <td>
+                <v-btn
+                  icon color="pink"
+                  @click="dialog=true, editStudent(item.id)"
+                  @remover="id"
+                >
+                  {{ item.id }}
+                  <v-icon>mdi-delete</v-icon>
+                </v-btn>
+              </td>
+            </tr>
+          </tbody>
+        </template>
+        <!-- <template slot="items" slot-scope="props">
+          <td>{{ props.item.name }}</td>
+          <td>{{ props.item.active }}</td>
+          <td>{{ props.item.userCount }}</td>
+          <td>
+          <v-btn
+                icon color="pink"
+                @click.stop="showDialog = true"
+                @remover="item.id = $event"
+              >
+                <v-icon>mdi-delete</v-icon>
+            </v-btn>
+            <v-btn fab dark
+                  color="primary">
+              <v-icon dark>edit</v-icon>
+            </v-btn>
+          </td>
+        </template> -->
+        <!-- <template v-slot:item.action="{ item }">
           <v-icon
             small
             class="blue--text ml-4"
@@ -41,12 +74,16 @@
           <v-btn
             icon color="pink"
             @click.stop="showDialog = true"
+            @remover="item.id"
           >
+          {{ item.id }}
             <v-icon>mdi-delete</v-icon>
           </v-btn>
-          <globalDialog v-model="showDialog" />
-      </template>
+      </template> -->
       <template v-slot:no-results>
+        هیچ داده ای یافت نشد!
+      </template>
+      <template v-slot:no-data>
         هیچ داده ای یافت نشد!
       </template>
     </v-data-table>
@@ -72,11 +109,12 @@ export default {
       ],
       // Filter models.
       nameFilterValue: '',
-      showDialog: false,
+      dialog: false,
       userCount: '',
       statusFilterValue: null,
       // Table data.
       groupes: tableData.data,
+      id: 1,
     };
   },
   computed: {
@@ -105,9 +143,8 @@ export default {
     },
   },
   methods: {
-    deleteItem(item) {
-      const index = this.groupes.indexOf(item);
-      this.groupes.splice(index, 1);
+    editStudent(id) {
+      this.id = id;
     },
     nameFilter(value) {
       if (!this.nameFilterValue) {
