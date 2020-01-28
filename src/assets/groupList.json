@@ -4,31 +4,70 @@
       "name": "عکاسان",
       "id": 1,
       "active": true,
-      "userCount": "2"
+      "userCount": "2",
+      "users": [
+        {
+          "id": 2,
+          "userName": "alice34",
+          "name": "Alice"
+        },
+        {
+          "id": 3,
+          "userName": "Bob102",
+          "name": "Bob"
+        },
+        {
+          "id": 4,
+          "userName": "Carol103",
+          "name": "Carol"
+        }
+      ]
     },
     {
       "name": "مولفان",
       "id": 2,
       "active": true,
-      "userCount": "32"
+      "userCount": "32",
+      "users": [
+        {
+          "id": 5,
+          "userName": "sAlice103",
+          "name": "sAlice"
+        }
+      ]
     },
     {
       "name": "خبرنگاران",
       "id": 3,
       "active": false,
-      "userCount": "8"
+      "userCount": "8",
+      "users": []
     },
     {
       "name": "روزنامه نگاران",
       "id": 4,
       "active": true,
-      "userCount": "5"
+      "userCount": "5",
+      "users": [
+        {
+          "id": 6,
+          "userName": "mary6",
+          "name": "mary"
+        }
+      ]
     },
     {
       "name": "مدیران سامانه",
       "id": 5,
       "active": true,
-      "userCount": "16"
+      "userCount": "16",
+      "users": [
+        {
+          "id": 7,
+          "userName": "sarah9",
+          "name": "sarah"
+        }
+      ]
     }
   ]
 }
