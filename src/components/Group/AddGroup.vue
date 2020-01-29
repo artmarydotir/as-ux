@@ -1,9 +1,9 @@
 <template>
 <v-container>
-  <v-row>
-    <v-col cols="12" md="5">
-        <v-card flat color="white">
-          <v-card-title>
+  <v-row color="grey lighten-2">
+    <v-col cols="12" md="5" >
+        <v-card color="white">
+          <v-card-title class="blue white--text">
             افزودن گروه
           </v-card-title>
           <v-card-text>

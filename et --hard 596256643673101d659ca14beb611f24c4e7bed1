@@ -1,0 +1,374 @@
+[33mcommit 028951c49dd70ebea48bdd89deedaf51614686c5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 28 04:36:46 2020 +0330
+
+    list group.
+
+[33mcommit e913217330ee6668cf65a650c3eebed6aef7f895[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 23:04:38 2020 +0330
+
+    delete group row added.
+
+[33mcommit 596256643673101d659ca14beb611f24c4e7bed1[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 21:58:18 2020 +0330
+
+    group list in progress.
+
+[33mcommit c9a4f121f33682f19ceb3b9845e68436c0cd288a[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 17:04:29 2020 +0330
+
+    list user.
+
+[33mcommit a145433481b57ce03041a5fbc1abb78d75368c6b[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 16:35:33 2020 +0330
+
+    user table in pro.
+
+[33mcommit bb372920d18b4270a4f43656c63220838152b890[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 07:56:24 2020 +0330
+
+    user style fixed.
+
+[33mcommit 70d2a4cf7f99429b300fc23502374a70805d69a3[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 07:38:02 2020 +0330
+
+    docs created.
+
+[33mcommit 563d32c4c403241b5b25bc3d6a04755c095a5288[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 07:33:05 2020 +0330
+
+    group routers added.
+
+[33mcommit 06f094ab6b8e91fbd94a1e65447327d53801e0f0[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 07:21:42 2020 +0330
+
+    group menu added.
+
+[33mcommit 8650da6542db8510c4417cf076b49c1dc2ad44b8[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 26 00:42:31 2020 +0330
+
+    pro.
+
+[33mcommit 4dd03f4e19f20ee9c4b3d380a474ed3a56626b71[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sat Jan 25 18:27:53 2020 +0330
+
+    pro.
+
+[33mcommit 56322b3a106146fc716a20aa8241c2b0343e38cf[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Thu Jan 23 03:44:58 2020 +0330
+
+    menu in pro.
+
+[33mcommit 1aea179c8b0d302036c213f7014a2dee68ff15e4[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 21 23:27:11 2020 +0330
+
+    avatar added.
+
+[33mcommit 2ad07777981fa8552aefc7aa344cda75581a0307[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 21 15:44:04 2020 +0330
+
+    users in pro.
+
+[33mcommit fed7318c1aa07ab4a10faa5b6137ad049be740f7[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 21 13:10:51 2020 +0330
+
+    footer add.
+
+[33mcommit 18d279ad787701a9a6b3f7111e692fd343e92ea0[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Jan 20 22:43:15 2020 +0330
+
+    layout fixed.
+
+[33mcommit f245da50c105bdfb55762e12fcc0362df4ef83c1[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Jan 20 19:59:25 2020 +0330
+
+    log state. to reset layout.
+
+[33mcommit cb5dd3e884304beb4602b22db328d13928b1bcda[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Jan 20 18:50:10 2020 +0330
+
+    redesign.
+
+[33mcommit 1467cace8bdeca76fa771aaac8259d0b0cadd708[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Jan 20 17:27:12 2020 +0330
+
+    login in pro.
+
+[33mcommit 27e5b4786758ae9a422457bab62d1269531e4bdd[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Jan 20 07:31:10 2020 +0330
+
+    in pro layout.
+
+[33mcommit e9e6793c84b52d38318e04366c44e59d27074238[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 19 20:47:01 2020 +0330
+
+    custom layout init.
+
+[33mcommit 2dea0224e870f58e1ef37e65ba5c00733c57ed96[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 19 04:02:37 2020 +0330
+
+    pass meter.
+
+[33mcommit 4bcf8f1458a644c0a46bd8c24f40877cf76e2350[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 19 02:56:23 2020 +0330
+
+    recovery pass.
+
+[33mcommit 75a3288199f6df5915fb291d6247197caa3712cc[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sat Jan 18 23:18:24 2020 +0330
+
+    forgot.
+
+[33mcommit a14846173f7347fb020835ddca30d6f66869f9a4[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sat Jan 18 20:53:44 2020 +0330
+
+    in pro.
+
+[33mcommit 719c413089eb0ab70ca334c139211e0075471844[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sat Jan 18 01:22:14 2020 +0330
+
+    utils added.
+
+[33mcommit 1351418cea6f3b1d763eab307b5e7e94c25b3d14[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Thu Jan 16 02:00:11 2020 +0330
+
+    login without validate.
+
+[33mcommit e791b857db9e8528fdda58084a0fe015c1ba02aa[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Wed Jan 15 23:03:24 2020 +0330
+
+    user ux in pro.
+
+[33mcommit 2e9d4952284566c9762f1d7b2bc522f5c7f87d8b[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Wed Jan 15 04:51:28 2020 +0330
+
+    login modified.
+
+[33mcommit 285bfe4e9898dddcb73ce67ea5d1738a259eaadf[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Wed Jan 15 03:30:55 2020 +0330
+
+    add user in progress.
+
+[33mcommit 2f97d71ff0d611b6f11a1d7ab9fc1d5e3d041750[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 20:13:05 2020 +0330
+
+    route.
+
+[33mcommit 7468b45535e6c525ade0bf26a0e714485b86d1bc[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 20:00:09 2020 +0330
+
+    new changes done.
+
+[33mcommit d16328344a1cfba843570c8700396d839ddfa167[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 05:09:35 2020 +0330
+
+    docs
+
+[33mcommit 559a109e4ac7b85073726a0dd30231c3e0e8aebb[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 05:04:58 2020 +0330
+
+    docs.
+
+[33mcommit fcbe4b9f2f074ee877f7c6e0238b37e7c82be9aa[m
+Merge: d9b5709 1b3cccf
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 04:56:05 2020 +0330
+
+    Merge pull request #4 from artmarydotir/gh-pages
+    
+    Set theme jekyll-theme-cayman
+
+[33mcommit d9b570945f730bd10a732a9733c02e225ec40226[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 04:43:14 2020 +0330
+
+    add new dist.
+
+[33mcommit bcdc903ec583438ded6268666759aca3add00f1a[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 04:37:04 2020 +0330
+
+    dist no ignore.
+
+[33mcommit 1b3cccf1a2bfa7a95c66776f84842d1edacd2d4b[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 04:35:03 2020 +0330
+
+    Set theme jekyll-theme-cayman
+
+[33mcommit e5ded6aec54f2a027748f402095ef91847e31b1f[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 04:32:34 2020 +0330
+
+    error fixed.
+
+[33mcommit 83668e870444746c46ed40d8fa52fe7c300ff38e[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 04:22:13 2020 +0330
+
+    custom field added.
+
+[33mcommit 2d3896b313f6a076b71a3c39574d926bed99ec8c[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 03:22:23 2020 +0330
+
+    type layout added.
+
+[33mcommit c993af02e771880de4f53c246c7e0be3085dd050[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 03:02:06 2020 +0330
+
+    custom filed tag added.
+
+[33mcommit 80fc8654c023eb11b62a925e41f99bfa04366bfc[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 02:55:33 2020 +0330
+
+    weight added.
+
+[33mcommit e3130855482cfd19ab86ae115cc263b952e2fc11[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 02:25:20 2020 +0330
+
+    add tag finished.
+
+[33mcommit 9a60987b6a57615f3d08c901a1828cc42fa404f5[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Jan 7 02:10:58 2020 +0330
+
+    advance option added.
+
+[33mcommit 12d4362f9791a72aee74892eb19326b7fb7efa99[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Jan 6 23:43:59 2020 +0330
+
+    parent emit to ck.
+
+[33mcommit be7d7daa77f50540192ad28645f465e55e4de6f3[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Jan 5 21:04:14 2020 +0330
+
+    ck add.
+
+[33mcommit 5564bf44dd9bbbdc5d831dd82c9120e8681cb887[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Wed Jan 1 21:21:59 2020 +0330
+
+    acl edited
+
+[33mcommit f8aaf19c84a8457e0c87edb64e34fc2ea9cfb392[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 11:41:09 2019 +0330
+
+    lang and strip table fixed.
+
+[33mcommit 9288bcde560c41d5cb02b6753e77fbe3082b6b16[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 11:29:03 2019 +0330
+
+    lang added.
+
+[33mcommit c924dfbb0d1bbbbb1d7f2a850ad122d66624ba7a[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 11:22:59 2019 +0330
+
+    modules added.
+
+[33mcommit 794f5b35422a197fdfe0325480942f44ec38d415[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 10:58:40 2019 +0330
+
+    tag list finished.
+
+[33mcommit 7a9fd72ea8538eb5d8a11d9fbd7ca5357f170599[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 09:28:28 2019 +0330
+
+    footer no resualt.
+
+[33mcommit 1b905c0d98724c8517f7f4190194e9ebf27efacd[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 03:56:32 2019 +0330
+
+    status filter added.
+
+[33mcommit 17edbe7d9173b3acba01529810b5a6dde6c71d6f[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Tue Dec 31 03:48:00 2019 +0330
+
+    tag list in pro.
+
+[33mcommit 614a91734f5bedb1b28bddb05e7b169ba4be45cb[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Dec 30 23:30:52 2019 +0330
+
+    data table of type tag finished.
+
+[33mcommit e3a672fe87d28af334ab26ba8759acbe5d3e1e16[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Dec 30 23:06:16 2019 +0330
+
+    data table .
+
+[33mcommit bd5d6a671a41947e95f7835369f78fd216f230b6[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Mon Dec 30 21:16:14 2019 +0330
+
+    new type added.
+
+[33mcommit fb8c0e5b12aabe3eb7af1c1b84644737a5acfabf[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Dec 29 17:35:17 2019 +0330
+
+    micro.
+
+[33mcommit 36384666399a6a0a470588d74dcd3f1732a37858[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Dec 29 17:30:27 2019 +0330
+
+    tag list edit.
+
+[33mcommit 8354355552fa19974fed096ab0329d2b8baecd73[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Dec 22 22:17:40 2019 +0330
+
+    tag add and list page added.
+
+[33mcommit 8af84ccf82a885efdf394576263a71b5329ca18f[m
+Author: Art Mary <artmary.ir@gmail.com>
+Date:   Sun Dec 22 17:25:59 2019 +0330
+
+    init
