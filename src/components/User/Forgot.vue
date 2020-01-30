@@ -9,7 +9,7 @@
           <v-row>
             <!-- 1 -->
             <v-col cols="12" md="4" class="blue grad-color box-sh">
-              <intro />
+              <intro :title="title"/>
             </v-col>
             <!-- 2 -->
             <v-col cols="12" md="8" class="box-sh pa-0 grey lighten-4">
@@ -98,6 +98,11 @@ import intro from '@/components/globalCmp/intro.vue';
 
 export default {
   name: 'forgot',
+  data() {
+    return {
+      title: 'بازیابی رمز عبور',
+    };
+  },
   components: {
     intro,
   },

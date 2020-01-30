@@ -11,8 +11,8 @@
         width="200" contain height="200"
         src="../../assets/index.svg.png">
       </v-img>
-      <p class="py-5 white--text">
-        به آسام خوش آمدید
+      <p v-if="title" class="block justify-center py-5 white--text">
+        {{ title }}
       </p>
     </v-card-title>
     <v-card-subtitle class="text-center justify-center py-2">
@@ -28,5 +28,11 @@
 
 export default {
   name: 'intro',
+  props: {
+    title: {
+      default: 'به آسام خوش آمدید',
+      type: String,
+    },
+  },
 };
 </script>
