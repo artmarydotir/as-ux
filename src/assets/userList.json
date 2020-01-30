@@ -5,28 +5,32 @@
       "lastName": "حقگو",
       "userName": "artmary",
       "email": "artmary.ir@gmail.com",
-      "mobile": "9017744142"
+      "mobile": "9017744142",
+      "status": true
     },
     {
       "name": "ساناز",
       "lastName": "حسینی",
       "userName": "suny51",
       "email": "sunny@gmail.com",
-      "mobile": "9017744365"
+      "mobile": "9017744365",
+      "status": true
     },
     {
       "name": "نرگس",
       "lastName": "مقدسی",
       "userName": "pmc23",
       "email": "pmc@gmail.com",
-      "mobile": "9127094856"
+      "mobile": "9127094856",
+      "status": false
     },
     {
       "name": "خشایار",
       "lastName": "موسوی",
       "userName": "khashi8",
       "email": "khashi@gmail.com",
-      "mobile": "null"
+      "mobile": "null",
+      "status": true
     }
   ]
 }

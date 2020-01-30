@@ -66,6 +66,7 @@ export default {
   methods: {
     close() {
       this.$emit('update:dialog', false);
+      this.loading = false;
     },
     deleteGroup() {
       const index = this.groupes.indexOf(this.uniqueId);

@@ -13,43 +13,11 @@
           vertical
         ></v-divider>
         <v-spacer></v-spacer>
-        <v-dialog v-model="dialog" max-width="500px">
+        <v-dialog v-model="dialog" max-width="900px">
           <template v-slot:activator="{ on }">
-            <v-btn color="primary" dark class="mb-2" v-on="on">New Item</v-btn>
+            <v-btn color="primary" dark class="mb-2" v-on="on">کاربر جدید</v-btn>
           </template>
-          <v-card>
-            <v-card-title>
-              <span class="headline">افزودن کاربر جدید به گروه</span>
-            </v-card-title>
-
-            <v-card-text>
-              <v-container>
-                <v-row>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="name" label="Dessert name"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="calories" label="Calories"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="fat" label="Fat (g)"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="carbs" label="Carbs (g)"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="protein" label="Protein (g)"></v-text-field>
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card-text>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text >Cancel</v-btn>
-              <v-btn color="blue darken-1" text >Save</v-btn>
-            </v-card-actions>
-          </v-card>
+          <selectUserForGroup />
         </v-dialog>
       </v-toolbar>
     </template>
@@ -58,12 +26,7 @@
         small
         class="mr-2"
       >
-        edit
-      </v-icon>
-      <v-icon
-        small
-      >
-        delete
+        mdi-delete
       </v-icon>
     </template>
     <template v-slot:no-data>
@@ -77,7 +40,8 @@ tbody tr:nth-of-type(even) {
 }
 </style>
 <script>
-import tableData from '../../assets/groupList.json';
+import tableData from '../../assets/userList.json';
+import selectUserForGroup from '@/components/Group/selectUserForGroup.vue';
 
 export default {
   data() {
@@ -119,7 +83,7 @@ export default {
           sortable: true,
           filter: this.emailFilter,
         },
-        { text: 'تغییرات', value: 'action', sortable: false },
+        { text: 'گزینه ها', value: 'action', sortable: false },
       ];
     },
   },
@@ -142,7 +106,7 @@ export default {
     },
   },
   components: {
-    // globalDialog,
+    selectUserForGroup,
   },
 };
 </script>
