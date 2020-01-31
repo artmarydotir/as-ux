@@ -1,21 +1,16 @@
 <template>
-  <v-container>
+  <v-container class="ma-0 pa-0">
       <v-row justify="center">
         <v-col
           cols="12"
-          md="8"
-          offset-md="1"
+          md="9"
         >
-        <v-row>
+        <v-row class="ma-0 pa-0">
           <!-- 1 -->
-          <v-col cols="12" md="4" class="blue grad-color box-sh">
-            <intro />
-          </v-col>
-          <!-- 2 -->
-          <v-col cols="12" md="8" class="box-sh pa-0 grey lighten-4">
+          <v-col cols="12" md="7" class="box-sh white rounded-card1">
             <v-tabs
               class="pa-6"
-              background-color="grey lighten-4"
+              background-color="white"
               active-class="dd"
               v-model="tab"
               centered
@@ -36,6 +31,10 @@
                 </v-tab-item>
               </v-tabs-items>
             </v-col>
+          <!-- 2 -->
+          <v-col cols="12" md="5" class="white box-sh rounded-card2">
+            <intro />
+          </v-col>
           </v-row>
         </v-col>
       </v-row>
@@ -64,6 +63,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.v-application .white {
+  border-color: #F3F3F3 !important;
+}
+.rounded-card2 {
+  border-radius: 43px 0 0 34px;
+}
+.rounded-card1 {
+  border-radius: 0 43px 43px 0;
+  border-left: 1px solid #f3f3f3 !important;
+}
 .dd {
   background-color:#90CAF9 !important;
   color: #fff !important;
@@ -76,12 +85,12 @@ export default {
     margin-left: 3.333% !important;
   }
 }
-.box-sh {
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-  0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-  0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-}
-.grad-color {
-  background-image: linear-gradient(#2196F3, #09487A );
-}
+// .box-sh {
+//   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+//   0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+//   0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+// }
+// .grad-color {
+//   background-image: linear-gradient(#2196F3, #09487A );
+// }
 </style>

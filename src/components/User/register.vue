@@ -1,5 +1,5 @@
 <template>
-  <v-card flat color="grey lighten-4">
+  <v-card flat>
     <v-card-text>
       <v-form>
         <v-row>
@@ -96,7 +96,7 @@
       </v-form>
     </v-card-text>
     <v-card-actions class="mx-auto text-center justify-center">
-      <v-btn x-large color="pink white--text" class="pl-12 pr-12">
+      <v-btn x-large color="blue white--text" class="pl-12 pr-12">
           ثبت نام
         <v-icon right dark>mdi-arrow-left</v-icon>
       </v-btn>

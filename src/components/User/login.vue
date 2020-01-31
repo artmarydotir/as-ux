@@ -1,9 +1,9 @@
 <template>
-  <v-card flat class="mx-auto grey lighten-4">
+  <v-card flat class="mx-auto">
     <v-card-text>
       <v-form ref="form" v-model="valid" :lazy-validation="lazy">
         <v-row>
-          <v-col cols="12" md="8" class="mx-auto">
+          <v-col cols="12" md="8" class="mx-auto pa-0 ma-0">
             <v-text-field
               label="شماره تلفن , ایمیل یا نام کاربری"
               name="login"
@@ -11,11 +11,12 @@
               dir="ltr"
               outlined
               color="blue"
+              class="pa-0 ma-0"
               background-color="white"
               prepend-inner-icon="mdi-account-outline"
             />
           </v-col>
-          <v-col cols="12" md="8" class="mx-auto">
+          <v-col cols="12" md="8" class="mx-auto pa-0 ma-0">
             <v-text-field
               label="رمز عبور شخصی"
               v-model="pass"
@@ -30,7 +31,7 @@
               prepend-inner-icon="mdi-lock-outline"
             />
           </v-col>
-          <v-col cols="12" md="8" class="mx-auto">
+          <v-col cols="12" md="8" class="mx-auto pa-0 ma-0">
             <v-text-field
               label="رمز یکبار مصرف"
               v-model="otp"
@@ -45,7 +46,7 @@
               prepend-inner-icon="mdi-lock-reset"
             />
           </v-col>
-          <v-col cols="12" md="8" class="mx-auto">
+          <v-col cols="12" md="8" class="mx-auto pa-0 ma-0">
             <v-row>
               <v-col cols="12" md="7" class="py-0 pl-1">
                 <v-text-field
@@ -76,7 +77,7 @@
     </v-card-text>
     <v-card-actions class="mx-auto text-center justify-center">
       <v-btn x-large
-        color="pink white--text"
+        color="blue white--text"
         to="/dashboard/"
         class="pl-12 pr-12">
         ورود به حساب کاربری

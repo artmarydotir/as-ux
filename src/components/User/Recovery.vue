@@ -1,11 +1,11 @@
 <template>
-  <v-container class="my-12 py-8">
+  <v-container class="py-8">
       <v-row justify="center" class="mx-auto my-12 py-8">
         <v-col
           cols="12"
           md="7"
         >
-          <v-card class="py-12">
+          <v-card class="py-12" style="border-radius: 43px;">
             <v-card-title class="text-center justify-center py-6">
               <p>
                 کد تایید به ایمیل شما ارسال شده است.

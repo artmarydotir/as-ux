@@ -4,16 +4,15 @@
         <v-col
           cols="12"
           md="8"
-          offset-md="1"
         >
           <v-row>
             <!-- 1 -->
-            <v-col cols="12" md="4" class="blue grad-color box-sh">
+            <v-col cols="12" md="5" class="rounded-card1 white">
               <intro :title="title"/>
             </v-col>
             <!-- 2 -->
-            <v-col cols="12" md="8" class="box-sh pa-0 grey lighten-4">
-              <v-card flat class="mx-auto grey lighten-4">
+            <v-col cols="12" md="7" class="box-sh white rounded-card2">
+              <v-card flat class="mx-auto">
                   <v-card-title class="headline mx-auto text-center
                     justify-center pa-6">
                     بازیابی رمز عبور
@@ -108,3 +107,12 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+// .rounded-card2 {
+//   border-radius: 43px 0 0 34px;
+// }
+// .rounded-card1 {
+//   border-radius: 0 43px 43px 0;
+//   border-left: 1px solid #f3f3f3 !important;
+// }
+</style>
