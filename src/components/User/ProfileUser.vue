@@ -77,7 +77,6 @@
           </v-card-title>
           <v-card-text class="pa-4">
              <v-text-field
-                ref="textToCopy"
                 class="mt-1 mb-1"
                 v-model="userInfo.address"
                 label="آدرس"
@@ -85,7 +84,6 @@
                 readonly
               ></v-text-field>
              <v-text-field
-                ref="textToCopy"
                 class="mb-1"
                 v-model="userInfo.birthday"
                 label="تاریخ تولد"
@@ -94,14 +92,16 @@
               ></v-text-field>
              <v-text-field
                 ref="textToCopy"
+                @click:append="copyText() && hint"
+                :hint="hint"
                 class="mb-1"
                 v-model="userInfo.postalCode"
                 label="کدپستی"
                 outlined
                 readonly
+                append-icon="mdi-clipboard-text"
               ></v-text-field>
              <v-text-field
-                ref="textToCopy"
                 class="mb-1"
                 v-model="userInfo.location"
                 label="محل کار"
@@ -156,6 +156,7 @@ export default {
       birthday: '1376-07-21',
       postalCode: '453760721',
     },
+    hint: 'کپی شد.',
     items: [
       {
         avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
@@ -182,6 +183,13 @@ export default {
       },
     ],
   }),
+  methods: {
+    copyText() {
+      const textToCopy = this.$refs.textToCopy.$el.querySelector('input');
+      textToCopy.select();
+      document.execCommand('copy');
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
