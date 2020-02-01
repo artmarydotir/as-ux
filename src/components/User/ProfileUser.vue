@@ -50,14 +50,14 @@
                   <v-icon color="warning" small>mdi-email-outline</v-icon>
                 </v-card-subtitle>
                 <div class="pt-10">
-                  <v-btn color="grey lighten-2" fab small>
+                  <v-btn color="pink" text fab small>
                     <v-icon>mdi-email-outline</v-icon>
                   </v-btn>
-                  <v-btn color="grey lighten-2" class="ml-4 mr-4" fab small>
+                  <v-btn color="pink" text class="ml-4 mr-4" fab small>
                     <v-icon>mdi-twitter</v-icon>
                   </v-btn>
-                  <v-btn color="grey lighten-2" fab small>
-                    <v-icon>mdi-television</v-icon>
+                  <v-btn color="pink" text fab small>
+                    <v-icon color="pink lighten-2">mdi-facebook</v-icon>
                   </v-btn>
                 </div>
               </v-col>
