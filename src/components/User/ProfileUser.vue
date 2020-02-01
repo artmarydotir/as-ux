@@ -30,8 +30,9 @@
                 <v-card-actions>
                   <v-btn
                     color="orange" dark
+                    text
                   >
-                    نمایش جزیيات پروفایل
+                    جزییات بیشتر
                   </v-btn>
                 </v-card-actions>
               </v-col>
@@ -70,18 +71,48 @@
     </v-row>
     <v-row justify="center" class="mx-auto mb-12">
       <v-col cols="12" md="4">
-        <v-card>
+        <v-card height="450px">
           <v-card-title class="blue white--text">
             اطلاعات تکمیلی
           </v-card-title>
-
           <v-card-text class="pa-4">
-
+             <v-text-field
+                ref="textToCopy"
+                class="mt-1 mb-1"
+                v-model="userInfo.address"
+                label="آدرس"
+                outlined
+                readonly
+              ></v-text-field>
+             <v-text-field
+                ref="textToCopy"
+                class="mb-1"
+                v-model="userInfo.birthday"
+                label="تاریخ تولد"
+                outlined
+                readonly
+              ></v-text-field>
+             <v-text-field
+                ref="textToCopy"
+                class="mb-1"
+                v-model="userInfo.postalCode"
+                label="کدپستی"
+                outlined
+                readonly
+              ></v-text-field>
+             <v-text-field
+                ref="textToCopy"
+                class="mb-1"
+                v-model="userInfo.location"
+                label="محل کار"
+                outlined
+                readonly
+              ></v-text-field>
           </v-card-text>
         </v-card>
       </v-col>
       <v-col cols="12" md="4">
-        <v-card>
+        <v-card height="450px">
           <v-card-title class="blue white--text">
             آخرین مطالب
           </v-card-title>
@@ -119,6 +150,12 @@
 export default {
   name: 'profileUser',
   data: () => ({
+    userInfo: {
+      address: 'تهران زرتشت غربی تقاطع نوری',
+      location: 'تهران زرتشت غربی تقاطع نوری',
+      birthday: '1376-07-21',
+      postalCode: '453760721',
+    },
     items: [
       {
         avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
