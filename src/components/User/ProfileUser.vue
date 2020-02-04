@@ -1,5 +1,9 @@
 <template>
   <v-container class="mb-12">
+      <!-- <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div> -->
     <v-row justify="center">
       <v-col cols="12" md="8" class="pa-6">
         <v-card class="pa-8">

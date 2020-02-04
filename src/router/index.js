@@ -11,6 +11,8 @@ import ListType from '../views/ListType.vue';
 import Forgot from '@/components/User/Forgot.vue';
 import Recovery from '@/components/User/Recovery.vue';
 import Profile from '@/components/User/ProfileUser.vue';
+import profileEdit from '@/components/User/profileEdit.vue';
+
 import UserList from '@/components/User/UserList.vue';
 
 // Group
@@ -69,6 +71,11 @@ const routes = [
     path: '/user/profile',
     name: 'userProfile',
     component: Profile,
+  },
+  {
+    path: '/user/editprofile',
+    name: 'profileEdit',
+    component: profileEdit,
   },
   {
     path: '/user/list',
