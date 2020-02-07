@@ -84,7 +84,7 @@
               <v-card-text>
                 <v-form>
                   <v-row>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="نام"
                         name="userName"
@@ -97,7 +97,7 @@
                         prepend-inner-icon="mdi-account-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="نام خانوادگی"
                         name="userName"
@@ -110,7 +110,7 @@
                         prepend-inner-icon="mdi-account-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="نام کاربری"
                         name="userName"
@@ -123,7 +123,7 @@
                         prepend-inner-icon="mdi-account-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="ایمیل"
                         name="email"
@@ -136,7 +136,7 @@
                         prepend-inner-icon="mdi-email-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="شماره تلفن همراه"
                         name="mobileNumber"
@@ -149,7 +149,7 @@
                         prepend-inner-icon="mdi-lock-question"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="رمز عبور "
                         v-model="userPass"
@@ -162,7 +162,7 @@
                         prepend-inner-icon="mdi-lock-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="رمز عبور جدید"
                         v-model="userPass"
@@ -175,7 +175,7 @@
                         prepend-inner-icon="mdi-lock-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="تکرار رمز عبور جدید"
                         v-model="userPass"
@@ -185,7 +185,7 @@
                         prepend-inner-icon="mdi-lock-outline"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="رمز عبور قدیمی"
                         v-model="userPass"
@@ -198,7 +198,7 @@
                   </v-row>
                   <v-divider></v-divider>
                   <v-row class="pt-6">
-                    <v-col cols="12" md="4">
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         v-mask="birthdaymask"
                         label="تاریخ تولد"
@@ -208,6 +208,49 @@
                         background-color="white"
                         prepend-inner-icon="mdi-lock-outline"
                       />
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <v-text-field
+                        label="آدرس اینستاگرام"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-instagram"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <v-text-field
+                        label="آدرس توییتر"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-twitter"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <v-text-field
+                        label="آدرس فیسبوک"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-facebook"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <v-textarea
+                      prepend-inner-icon="mdi-home"
+                        outlined
+                        name="homeaddress"
+                        label="آدرس منزل"
+                      ></v-textarea>
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <v-textarea
+                      prepend-inner-icon="mdi-home"
+                        outlined
+                        name="homeaddress"
+                        label="آدرس محل کار"
+                      ></v-textarea>
                     </v-col>
                   </v-row>
                 </v-form>
