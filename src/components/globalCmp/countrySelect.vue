@@ -2,6 +2,7 @@
   <v-select
     v-model="countryDefault"
     :items="items"
+    outlined
     item-text="nativeName"
     item-value="alpha2Code"
     autocomplete

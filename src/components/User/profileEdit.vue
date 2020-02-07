@@ -1,83 +1,91 @@
 <template>
-  <v-container>
+  <div class="ma-4">
       <v-row justify="center">
-        <v-col cols="12" md="3">
-          <!-- avatar -->
-          <v-card
-              class="mx-auto text-center justify-center"
-            >
-              <v-card-text class="text--primary">
-                <v-row>
-                  <v-col cols="12">
-                    <v-avatar size="112px" class="border-wi">
-                    <img class="mx-auto "
-                      src="../../assets/userav.jpg"
-                      alt="aasaam"
-                    >
-                  </v-avatar>
-                  </v-col>
-                  <v-col cols="12" class="pa-0">
-                    <v-btn
-                        color="orange lighten-5 orange--text"
-                        depressed
-                      >
-                        افزودن آواتار
-                    </v-btn>
-                  </v-col>
-                </v-row>
-                <v-card-title class="display-5 justify-center ">
-                  حساب کاربری مریم حقگو
-                </v-card-title>
-              </v-card-text>
-            </v-card>
-          <!-- avatar -->
-          <!-- otp -->
-          <div class="mt-8">
-            <v-card
-              class="mx-auto text-center justify-center"
-            >
-              <v-card-title class="display-6 blue white--text">
-                فعال سازی رمز یکبار مصرف
-              </v-card-title>
-              <v-card-text class="text--primary ">
-                <v-row>
-                  <v-col cols="12" class="pt-4 mb-0 pb-0">
-                    <v-alert
-                      icon="mdi-shield-lock-outline"
-                      prominent
-                      text
-                      type="info"
-                    >
-                    برای فعال سازی رمز یک بار مصرف پس از نصب اپلیکیشن کد زیر را اسکن بفرمایید.
-                    </v-alert>
-                  </v-col>
-                  <v-col cols="12">
-                    <v-row class="ma-0 pa-0">
-                      <v-col cols="4" class="align-self-center">
-                        <v-tooltip bottom >
-                          <template v-slot:activator="{ on }">
-                            <v-btn color="warning" dark v-on="on">
-                              تولید مجدد کد
-                            </v-btn>
-                          </template>
-                          <span>
-                            با تولید مجدد کد, کد قبلی بلا استفاده میشود.
-                          </span>
-                        </v-tooltip>
+        <v-col cols="12" md="4" lg="3">
+          <v-row class="mt-0 pt-0">
+            <v-col cols="12" sm="6" md="12" class="mt-0 pt-0">
+              <!-- avatar -->
+                <v-card
+                    class="mx-auto text-center justify-center"
+                    height="400px"
+                  >
+                    <v-card-text class="text--primary">
+                      <v-row>
+                        <v-col cols="12">
+                          <v-avatar size="112px" class="border-wi">
+                          <img class="mx-auto "
+                            src="../../assets/userav.jpg"
+                            alt="aasaam"
+                          >
+                        </v-avatar>
+                        </v-col>
+                        <v-col cols="12" class="pa-0">
+                          <v-btn
+                              color="orange lighten-5 orange--text"
+                              depressed
+                            >
+                              افزودن آواتار
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                      <v-card-title class="display-5 justify-center ">
+                        حساب کاربری مریم حقگو
+                      </v-card-title>
+                    </v-card-text>
+                  </v-card>
+                <!-- avatar -->
+            </v-col>
+            <v-col cols="12" sm="6" md="12" class="mt-0 pt-0">
+              <!-- otp -->
+              <div>
+                <v-card
+                  height="400px"
+                  class="mx-auto text-center justify-center"
+                >
+                  <v-card-title class="display-6 blue white--text">
+                    فعال سازی رمز یکبار مصرف
+                  </v-card-title>
+                  <v-card-text class="text--primary ">
+                    <v-row>
+                      <v-col cols="12" class="pt-4 mb-0 pb-0">
+                        <v-alert
+                          icon="mdi-shield-lock-outline"
+                          prominent
+                          text
+                          type="info"
+                        >
+                        برای فعال سازی رمز یک بار مصرف پس از نصب اپلیکیشن کد زیر را اسکن بفرمایید.
+                        </v-alert>
                       </v-col>
-                      <v-col cols="8" class="ma-0 pa-0">
-                        <v-img src="../../assets/qcode.png" aspect-ratio="1.7" contain></v-img>
+                      <v-col cols="12">
+                        <v-row class="ma-0 pa-0">
+                          <v-col cols="4" class="align-self-center">
+                            <v-tooltip bottom >
+                              <template v-slot:activator="{ on }">
+                                <v-btn color="warning" dark v-on="on">
+                                  تولید مجدد کد
+                                </v-btn>
+                              </template>
+                              <span>
+                                با تولید مجدد کد, کد قبلی بلا استفاده میشود.
+                              </span>
+                            </v-tooltip>
+                          </v-col>
+                          <v-col cols="8" class="ma-0 pa-0">
+                            <v-img src="../../assets/qcode.png" aspect-ratio="1.7" contain></v-img>
+                          </v-col>
+                        </v-row>
                       </v-col>
                     </v-row>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-            </v-card>
-          </div>
-          <!-- otp -->
+                  </v-card-text>
+                </v-card>
+              </div>
+              <!-- otp -->
+            </v-col>
+          </v-row>
         </v-col>
-        <v-col cols="12" md="8">
-            <v-card>
+        <v-col cols="12" sm="7" md="8" lg="8">
+            <v-card class="mb-12">
               <v-card-title class="display-6 blue white--text">
                 ویرایش اطلاعات شخصی
               </v-card-title>
@@ -210,6 +218,18 @@
                       />
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <countryList />
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                      <v-select
+                        prepend-inner-icon="mdi-gender-male-female"
+                        v-model="gender"
+                        :items="genders"
+                        outlined
+                        label="جنسیت"
+                      ></v-select>
+                    </v-col>
+                    <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="آدرس اینستاگرام"
                         outlined
@@ -236,27 +256,22 @@
                         prepend-inner-icon="mdi-facebook"
                       />
                     </v-col>
-                    <v-col cols="12" md="4">
-                      <v-select
-                        prepend-inner-icon="mdi-gender-male-female"
-                        v-model="gender"
-                        :items="genders"
-                        outlined
-                        label="جنسیت"
-                      ></v-select>
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                    <v-col cols="12" md="6" class="py-0 my-0">
                       <v-textarea
-                      prepend-inner-icon="mdi-home"
+                        prepend-inner-icon="mdi-home-outline"
                         outlined
+                        height="120px"
                         name="homeaddress"
                         label="آدرس منزل"
+                        no-resize
                       ></v-textarea>
                     </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                    <v-col cols="12" md="6" class="py-0 my-0">
                       <v-textarea
-                      prepend-inner-icon="mdi-home"
+                        no-resize
+                        prepend-inner-icon="mdi-briefcase-outline"
                         outlined
+                        height="120px"
                         name="homeaddress"
                         label="آدرس محل کار"
                       ></v-textarea>
@@ -264,15 +279,22 @@
                   </v-row>
                 </v-form>
               </v-card-text>
+              <v-card-actions class="mt-0 pt-0">
+                <v-spacer ></v-spacer >
+                <v-btn to="/user/profile"
+                  large color="red white--text" class="ml-2 pl-8 pr-8 mb-2">
+                  ویرایش اطلاعات
+                  <v-icon right dark>mdi-pencil</v-icon>
+                </v-btn>
+              </v-card-actions>
             </v-card>
         </v-col>
       </v-row>
-  </v-container>
+  </div>
 </template>
 <script>
-// import countryList from '@/components/globalCmp/countrySelect.vue';
-
 import { mask } from 'vue-the-mask';
+import countryList from '@/components/globalCmp/countrySelect.vue';
 
 export default {
   name: 'login',
@@ -296,7 +318,7 @@ export default {
     };
   },
   components: {
-    // countryList,
+    countryList,
   },
 };
 </script>

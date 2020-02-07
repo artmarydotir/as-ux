@@ -58,13 +58,13 @@
                 </v-card-subtitle>
                 <div class="pt-10">
                   <v-btn color="pink" text fab small>
-                    <v-icon>mdi-email-outline</v-icon>
+                    <v-icon>mdi-instagram</v-icon>
                   </v-btn>
                   <v-btn color="pink" text class="ml-4 mr-4" fab small>
                     <v-icon>mdi-twitter</v-icon>
                   </v-btn>
                   <v-btn color="pink" text fab small>
-                    <v-icon color="pink lighten-2">mdi-facebook</v-icon>
+                    <v-icon>mdi-facebook</v-icon>
                   </v-btn>
                 </div>
               </v-col>
