@@ -10,7 +10,7 @@
     label="انتخاب کشور"
   >
     <template slot='item' slot-scope='{ item }'>
-      {{ item.emoji }} {{ item.nativeName }} ({{ item.name }})
+      <span dir="ltr" class="pl-2">{{ item.emoji }} </span>{{ item.nativeName }} ({{ item.name }})
     </template>
   </v-select>
 </template>
