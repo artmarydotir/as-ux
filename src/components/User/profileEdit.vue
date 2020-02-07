@@ -200,8 +200,9 @@
                   <v-row class="pt-6">
                     <v-col cols="12" md="4">
                       <v-text-field
-                        label="رمز عبور قدیمی"
-                        v-model="userPass"
+                        v-mask="birthdaymask"
+                        label="تاریخ تولد"
+                        v-model="birthday"
                         outlined
                         color="blue"
                         background-color="white"
@@ -219,10 +220,19 @@
 <script>
 // import countryList from '@/components/globalCmp/countrySelect.vue';
 
+import { mask } from 'vue-the-mask';
+
 export default {
   name: 'login',
+
+  directives: {
+    mask,
+  },
   data() {
     return {
+
+      birthdaymask: '####-##-##',
+      birthday: '13720727',
       userName: '',
       userEmail: '',
       userPass: '',
