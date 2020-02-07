@@ -6,7 +6,7 @@
           <v-card
               class="mx-auto text-center justify-center"
             >
-              <v-card-text class="text--primary ">
+              <v-card-text class="text--primary">
                 <v-row>
                   <v-col cols="12">
                     <v-avatar size="112px" class="border-wi">
@@ -94,7 +94,7 @@
                         outlined
                         color="blue"
                         background-color="white"
-                        prepend-inner-icon="mdi-account-outline"
+                        prepend-inner-icon="mdi-account-arrow-left-outline"
                       />
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
@@ -107,7 +107,7 @@
                         outlined
                         color="blue"
                         background-color="white"
-                        prepend-inner-icon="mdi-account-outline"
+                        prepend-inner-icon="mdi-account-multiple-outline"
                       />
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
@@ -146,7 +146,7 @@
                         outlined
                         color="blue"
                         background-color="white"
-                        prepend-inner-icon="mdi-lock-question"
+                        prepend-inner-icon="mdi-cellphone-iphone"
                       />
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
@@ -206,7 +206,7 @@
                         outlined
                         color="blue"
                         background-color="white"
-                        prepend-inner-icon="mdi-lock-outline"
+                        prepend-inner-icon="mdi-calendar-account-outline"
                       />
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
@@ -235,6 +235,15 @@
                         background-color="white"
                         prepend-inner-icon="mdi-facebook"
                       />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-select
+                        prepend-inner-icon="mdi-gender-male-female"
+                        v-model="gender"
+                        :items="genders"
+                        outlined
+                        label="جنسیت"
+                      ></v-select>
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-textarea
@@ -273,7 +282,10 @@ export default {
   },
   data() {
     return {
-
+      genders: [
+        'مرد',
+        'زن',
+      ],
       birthdaymask: '####-##-##',
       birthday: '13720727',
       userName: '',
