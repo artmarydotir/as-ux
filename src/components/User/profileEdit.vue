@@ -77,22 +77,161 @@
           <!-- otp -->
         </v-col>
         <v-col cols="12" md="8">
-          <v-divider vertical></v-divider>
+            <v-card>
+              <v-card-title class="display-6 blue white--text">
+                ویرایش اطلاعات شخصی
+              </v-card-title>
+              <v-card-text>
+                <v-form>
+                  <v-row>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="نام"
+                        name="userName"
+                        v-model="userName"
+                        type="text"
+                        dir="ltr"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-account-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="نام خانوادگی"
+                        name="userName"
+                        v-model="userName"
+                        type="text"
+                        dir="ltr"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-account-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="نام کاربری"
+                        name="userName"
+                        v-model="userName"
+                        type="text"
+                        dir="ltr"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-account-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="ایمیل"
+                        name="email"
+                        v-model="userEmail"
+                        type="text"
+                        dir="ltr"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-email-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="شماره تلفن همراه"
+                        name="mobileNumber"
+                        v-model="mobileNumber"
+                        type="text"
+                        dir="ltr"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-lock-question"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="رمز عبور "
+                        v-model="userPass"
+                        :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+                        :type="show1 ? 'text' : 'password'"
+                        @click:append="show1 = !show1"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-lock-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="رمز عبور جدید"
+                        v-model="userPass"
+                        :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+                        :type="show1 ? 'text' : 'password'"
+                        @click:append="show1 = !show1"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-lock-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="تکرار رمز عبور جدید"
+                        v-model="userPass"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-lock-outline"
+                      />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="رمز عبور قدیمی"
+                        v-model="userPass"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-lock-outline"
+                      />
+                    </v-col>
+                  </v-row>
+                  <v-divider></v-divider>
+                  <v-row class="pt-6">
+                    <v-col cols="12" md="4">
+                      <v-text-field
+                        label="رمز عبور قدیمی"
+                        v-model="userPass"
+                        outlined
+                        color="blue"
+                        background-color="white"
+                        prepend-inner-icon="mdi-lock-outline"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-form>
+              </v-card-text>
+            </v-card>
         </v-col>
       </v-row>
   </v-container>
 </template>
 <script>
+// import countryList from '@/components/globalCmp/countrySelect.vue';
 
 export default {
   name: 'login',
   data() {
     return {
-
+      userName: '',
+      userEmail: '',
+      userPass: '',
+      mobileNumber: '',
+      show1: false,
     };
   },
-  methods: {
-
+  components: {
+    // countryList,
   },
 };
 </script>
