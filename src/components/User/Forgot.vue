@@ -14,7 +14,7 @@
             <v-col cols="12" md="7" class="box-sh white rounded-card2">
               <v-card flat class="mx-auto">
                   <v-card-title class="headline mx-auto text-center
-                    justify-center pa-6">
+                    justify-center pa-6 mb-12">
                     بازیابی رمز عبور
                   </v-card-title>
                   <v-card-text>
@@ -24,18 +24,6 @@
                           <v-text-field
                             label="شماره تلفن , ایمیل یا نام کاربری"
                             name="login"
-                            type="text"
-                            dir="ltr"
-                            outlined
-                            color="blue"
-                            background-color="white"
-                            prepend-inner-icon="mdi-account-outline"
-                          />
-                        </v-col>
-                        <v-col cols="12" md="8" class="mx-auto">
-                          <v-text-field
-                            label="عبارت امنیتی"
-                            name="captcha"
                             type="text"
                             dir="ltr"
                             outlined

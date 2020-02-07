@@ -87,6 +87,18 @@
         هیچ داده ای یافت نشد!
       </template>
     </v-data-table>
+    <div class="my-8">
+      <v-alert
+        outlined
+        type="error"
+        text
+      >
+        باتوجه به تجربه ی کار با سایت های مختلف قرار بر این شده است که:
+        چند گروه دیفالت از ابتدا ساخته شود.
+        مانند گروه تبلیغات و یا
+        گروه کاربران با دسترسی روزنامه و ...
+      </v-alert>
+    </div>
   </v-container>
 </template>
 <style lang="scss" scoped>
