@@ -17,6 +17,7 @@
           v-for="subItem in item.items"
           :key="subItem.title"
           :to="subItem.link"
+          class="my-2"
         >
           <v-list-item-content>
             <v-list-item-title v-text="subItem.title"></v-list-item-title>
@@ -34,13 +35,17 @@ export default {
       items: [
         {
           action: 'mdi-toolbox-outline',
-          title: 'Dining',
+          title: 'مدیریت سرویس',
           active: true,
-          link: '/serviceForm',
           items: [
-            { title: 'Breakfast & brunch' },
-            { title: 'New American' },
-            { title: 'Sushi' },
+            {
+              title: 'افزودن سرویس',
+              link: '/serviceForm',
+            },
+            {
+              title: 'لیست سرویس',
+              link: '/serviceList',
+            },
           ],
         },
       ],
