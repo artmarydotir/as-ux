@@ -40,7 +40,7 @@ export default {
           items: [
             {
               title: 'افزودن سرویس',
-              link: '/serviceForm',
+              link: '/service/add',
             },
             {
               title: 'لیست سرویس',

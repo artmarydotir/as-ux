@@ -17,8 +17,9 @@ import UserList from '@/components/User/UserList.vue';
 
 // Group
 import AddGroup from '@/components/Group/AddGroup.vue';
-
 import ListGroup from '@/components/Group/ListGroup.vue';
+// Services
+import serviceForm from '@/components/Service/serviceForm.vue';
 
 Vue.use(VueRouter);
 
@@ -91,6 +92,11 @@ const routes = [
     path: '/group/list',
     name: 'listGroup',
     component: ListGroup,
+  },
+  {
+    path: '/service/add',
+    name: 'serviceForm',
+    component: serviceForm,
   },
   {
     path: '/about',
