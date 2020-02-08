@@ -17,6 +17,8 @@
     <!-- 3 -->
     <userManage />
     <!-- 4 -->
+    <serviceManage />
+    <!-- 5 -->
     <v-list-group
         prepend-icon="mdi-file-move"
         value="true"
@@ -97,6 +99,7 @@
 
 <script>
 import userManage from '@/components/menu/users.vue';
+import serviceManage from '@/components/menu/service.vue';
 
 export default {
   data() {
@@ -135,6 +138,7 @@ export default {
   },
   components: {
     userManage,
+    serviceManage,
   },
 };
 </script>
