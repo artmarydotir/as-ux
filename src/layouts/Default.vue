@@ -9,11 +9,11 @@
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
       <v-menu
-      transition="slide-x-transition"
-      right
-      bottom
-      offset-y
-    >
+        transition="slide-x-transition"
+        right
+        bottom
+        offset-y
+      >
       <template v-slot:activator="{ on }">
       <v-btn
         icon
