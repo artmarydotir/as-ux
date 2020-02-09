@@ -1,29 +1,26 @@
 <template>
   <div>
       <v-treeview
-      :items="items"
-      :activatable="activatable"
-      :selected-color="selectedColor"
-      open-all
-      :color="color"
-      return-object
+        :items="items"
+        :activatable="activatable"
+        :selected-color="selectedColor"
+        :active.sync="active"
+        open-all
+        :open.sync="open"
+        :color="color"
+        return-object
+        hoverable
       >
         <!-- <template slot="label" slot-scope="{ item }">
           {{ item }}
         </template> -->
-        <template slot="append" slot-scope="{ item }" v-if="item.isleaf">
+        <template slot="append" slot-scope="{ item, active }" v-if="item.isleaf">
             <!-- add  -->
             <v-btn @click="addChild(item);" text icon class="ml-3" color="success">
               <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
-            <!-- remove  -->
-            <v-btn @click="removeChild(item);" text icon class="ml-3" color="error">
-              <v-icon>mdi-delete-outline</v-icon>
-            </v-btn>
-            <!-- edit  -->
-            <v-btn @click="editChild(item);" text icon class="ml-3" color="secondary">
-              <v-icon>mdi-pencil-outline</v-icon>
-            </v-btn>
+            <!-- {{ item }} -->
+            {{ active }}
         </template>
       </v-treeview>
   </div>
@@ -34,6 +31,8 @@ export default {
   name: 'tree',
   data() {
     return {
+      active: [],
+      open: [],
       nextId: 1000,
       activatable: true,
       openOnClick: true,
@@ -72,6 +71,24 @@ export default {
         },
       ],
     };
+  },
+  props: {
+    item: {
+      type: Array,
+    },
+  },
+  created() {
+    this.$emit('readyToUpdate', this.items);
+  },
+  computed: {
+    selected() {
+      if (!this.active.length) return undefined;
+
+      const id = this.active[0];
+
+      console.log('lll');
+      return this.items.find(item => item.id === id);
+    },
   },
   methods: {
     addChild(item) {
