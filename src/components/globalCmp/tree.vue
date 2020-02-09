@@ -6,20 +6,21 @@
         :selected-color="selectedColor"
         :active.sync="active"
         open-all
-        :open.sync="open"
         :color="color"
         return-object
+
         hoverable
+        selection-type="independent"
       >
         <!-- <template slot="label" slot-scope="{ item }">
           {{ item }}
         </template> -->
-        <template slot="append" slot-scope="{ item, active }" v-if="item.isleaf">
+        <template slot="append" slot-scope="{ item, active }" v-if="item.isleaf" selected()>
             <!-- add  -->
             <v-btn @click="addChild(item);" text icon class="ml-3" color="success">
               <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
-            <!-- {{ item }} -->
+            {{ item }}
             {{ active }}
         </template>
       </v-treeview>
@@ -77,11 +78,36 @@ export default {
       type: Array,
     },
   },
+  // eslint-disable-next-line consistent-return
   created() {
-    this.$emit('readyToUpdate', this.items);
+    // this.$emit('readyToUpdate', this.items);
+    // if (!this.active.length) {
+    //   console.log('a');
+    //   const id = this.active[0];
+    //   console.log(id);
+    // }
+
+    // const id = this.active[0];
+
+    // console.log('lll');
+    // return this.items.find(item => item.id === id);
+  },
+  watch: {
+    active(to) {
+      if (to) {
+        this.open = to;
+        console.log(to);
+        this.$emit('readyToUpdate', this.open);
+      }
+      // console.log(to);
+      // if (!this.open.includes(to)) {
+      //   this.open.push(to);
+      // }
+    },
   },
   computed: {
     selected() {
+      console.log('lll');
       if (!this.active.length) return undefined;
 
       const id = this.active[0];

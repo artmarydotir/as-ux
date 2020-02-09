@@ -25,12 +25,12 @@
         <v-divider vertical></v-divider>
         <v-col class="d-flex text-center">
           <v-form>
-            <v-row>
+            <v-row v-for="i in item" :key="i.id">
               <v-col cols="12" md="4" class="pb-0 mb-0">
                 <v-text-field
                   label="عنوان"
                   name="serviceName"
-                  v-model="serviceName"
+                  v-model="i.name"
                   type="text"
                   outlined
                   color="blue"
