@@ -12,16 +12,13 @@
         hoverable
         selection-type="independent"
       >
-        <!-- <template slot="label" slot-scope="{ item }">
-          {{ item }}
-        </template> -->
-        <template slot="append" slot-scope="{ item, active }" v-if="item.isleaf" selected()>
+        <template slot="append" slot-scope="{ item }" v-if="item.isleaf">
             <!-- add  -->
             <v-btn @click="addChild(item);" text icon class="ml-3" color="success">
               <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
-            {{ item }}
-            {{ active }}
+            <!-- {{ item }}
+            {{ active }} -->
         </template>
       </v-treeview>
   </div>
@@ -81,16 +78,6 @@ export default {
   // eslint-disable-next-line consistent-return
   created() {
     // this.$emit('readyToUpdate', this.items);
-    // if (!this.active.length) {
-    //   console.log('a');
-    //   const id = this.active[0];
-    //   console.log(id);
-    // }
-
-    // const id = this.active[0];
-
-    // console.log('lll');
-    // return this.items.find(item => item.id === id);
   },
   watch: {
     active(to) {
@@ -105,17 +92,17 @@ export default {
       // }
     },
   },
-  computed: {
-    selected() {
-      console.log('lll');
-      if (!this.active.length) return undefined;
+  // computed: {
+  //   selected() {
+  //     console.log('lll');
+  //     if (!this.active.length) return undefined;
 
-      const id = this.active[0];
+  //     const id = this.active[0];
 
-      console.log('lll');
-      return this.items.find(item => item.id === id);
-    },
-  },
+  //     console.log('lll');
+  //     return this.items.find(item => item.id === id);
+  //   },
+  // },
   methods: {
     addChild(item) {
       if (!item.children) {

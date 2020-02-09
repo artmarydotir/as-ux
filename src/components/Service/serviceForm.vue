@@ -36,7 +36,6 @@
                   color="blue"
                   background-color="white"
                 />
-                <!-- {{ selected }} -->
                 {{ item }}
               </v-col>
               <v-col cols="12" md="4" class="pb-0 mb-0">
