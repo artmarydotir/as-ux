@@ -25,7 +25,12 @@
         <v-divider vertical></v-divider>
         <v-col class="d-flex text-center">
           <v-form>
-            <v-row v-for="i in item" :key="i.id">
+            <v-row v-if="!item.length">
+              <v-col cols="12">
+                هیچ فرزندی انتخاب نشده است.
+              </v-col>
+            </v-row>
+            <v-row v-else v-for="i in item" :key="i.id">
               <v-col cols="12" md="4" class="pb-0 mb-0">
                 <v-text-field
                   label="عنوان"
@@ -36,7 +41,7 @@
                   color="blue"
                   background-color="white"
                 />
-                {{ item }}
+                <!-- {{ item }} -->
               </v-col>
               <v-col cols="12" md="4" class="pb-0 mb-0">
                 <v-select
@@ -81,9 +86,35 @@
                   v-model="rememberMe" label="دنبال کردن">
                 </v-checkbox>
               </v-col>
+              <v-divider></v-divider>
+              <v-col cols="12" md="4">
+                <v-file-input outlined accept="image/*" label="انتخاب عکس"></v-file-input>
+              </v-col>
+              <v-col cols="12" md="4">
+                <v-text-field
+                  label="افزودن کلاس"
+                  name="className"
+                  type="text"
+                  outlined
+                  color="blue"
+                  background-color="white"
+                />
+              </v-col>
             </v-row>
+            <v-card-actions>
+              <v-spacer />
+              <v-btn to="/user/recovery"
+                large color="pink white--text" class="pl-12 pr-12">
+                  ذخیره
+              </v-btn>
+              <v-btn to="/"
+                large color="warning white--text" class="pl-12 pr-12">
+                  لغو
+              </v-btn>
+            </v-card-actions>
           </v-form>
         </v-col>
+
       </v-row>
     </v-card>
   </v-container>
