@@ -44,7 +44,7 @@ export default {
             },
             {
               title: 'لیست سرویس',
-              link: '/serviceList',
+              link: '/service/list',
             },
           ],
         },

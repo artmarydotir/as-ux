@@ -17,6 +17,17 @@
             <v-btn @click="addChild(item);" text icon class="ml-3" color="success">
               <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
+            <div v-if="edit">
+              <v-btn :to="edit" @click="editChild(item);" text icon class="ml-3" color="primary">
+                <v-icon>mdi-pencil-outline</v-icon>
+              </v-btn>
+            </div>
+            <div v-if="remove">
+              <v-btn @click="deleteChild(item);" text icon class="ml-3" color="error">
+                <v-icon>mdi-delete-outline</v-icon>
+              </v-btn>
+            </div>
+
             <!-- {{ item }}
             {{ active }} -->
         </template>
@@ -73,6 +84,12 @@ export default {
   props: {
     item: {
       type: Array,
+    },
+    edit: {
+      type: String,
+    },
+    remove: {
+      type: Boolean,
     },
   },
   // eslint-disable-next-line consistent-return

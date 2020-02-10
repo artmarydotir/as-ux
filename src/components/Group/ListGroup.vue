@@ -42,6 +42,11 @@
                   {{ item.id }}
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>
+                <!-- <btn
+                  className="white--text"
+                  color="teal"
+                  :onClick="consoleClick">a
+                </btn> -->
               </td>
             </tr>
           </tbody>
@@ -109,6 +114,7 @@ tbody tr:nth-of-type(even) {
 <script>
 import tableData from '../../assets/groupList.json';
 import globalDialog from '@/components/globalCmp/globalDialog.vue';
+import btn from '@/components/globalCmp/Button/button.vue';
 
 export default {
   data() {
@@ -155,6 +161,9 @@ export default {
     },
   },
   methods: {
+    consoleClick() {
+      console.log('Button clicked');
+    },
     editStudent(id) {
       this.id = id;
     },
@@ -173,6 +182,8 @@ export default {
   },
   components: {
     globalDialog,
+    // eslint-disable-next-line vue/no-unused-components
+    btn,
   },
 };
 </script>
