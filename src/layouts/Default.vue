@@ -50,6 +50,7 @@
       </v-list>
     </v-menu>
     </v-app-bar>
+
     <v-content>
       <slot />
       <!-- <transition name="moveInUp">
@@ -72,11 +73,13 @@
 
 <script>
 import aasaaMmenu from '../components/aasaaMmenu.vue';
+// import theme from '@/components/globalCmp/themeSwitcher.vue';
 
 export default {
   name: 'App',
   components: {
     aasaaMmenu,
+    // theme,
   },
   data() {
     return {

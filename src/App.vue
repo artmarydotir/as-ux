@@ -12,6 +12,7 @@
 // eslint-disable-next-line camelcase
 const default_layout = 'default';
 
+
 export default {
   computed: {
     layout() {
