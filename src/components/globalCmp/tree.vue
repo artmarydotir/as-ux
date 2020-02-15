@@ -14,7 +14,7 @@
       >
         <template slot="append" slot-scope="{ item }" v-if="item.isleaf">
             <!-- add  -->
-            <v-btn @click="addChild(item);" text icon class="ml-3" color="success">
+            <v-btn v-if="add" @click="addChild(item);" text icon class="ml-3" color="success">
               <v-icon>mdi-plus-circle-outline</v-icon>
             </v-btn>
             <div v-if="edit">
@@ -74,6 +74,16 @@ export default {
                   //   },
                   // ],
                 },
+                {
+                  id: 4,
+                  name: 'اقتصادی',
+                  isleaf: true,
+                },
+                {
+                  id: 5,
+                  name: 'فرهنگی',
+                  isleaf: true,
+                },
               ],
             },
           ],
@@ -89,6 +99,9 @@ export default {
       type: String,
     },
     remove: {
+      type: Boolean,
+    },
+    add: {
       type: Boolean,
     },
   },

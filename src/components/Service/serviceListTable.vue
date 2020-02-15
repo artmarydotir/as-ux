@@ -1,13 +1,13 @@
 <template>
   <v-container>
-    <v-data-table :headers="headers" :items="usersData"
-      class="elevation-1">
+    <v-data-table  :headers="headers" :items="usersData"
+      class="grey lighten-5 elevation-4">
       <template v-slot:top>
-        <v-toolbar flat class="grey lighten-2">
+        <!-- <v-toolbar flat class="grey lighten-2">
           <v-toolbar-title>
             لیست سرویس ها
           </v-toolbar-title>
-        </v-toolbar>
+        </v-toolbar> -->
         <v-row class="pa-4">
           <v-col cols="2">
             <!-- Filter for type name-->

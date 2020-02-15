@@ -31,9 +31,10 @@
         </v-col>
       </v-row>
       <!-- 2 -->
-      <v-row class="mb-10" justify="space-between">
+      <v-row class="mb-10" justify="center">
         <!-- tree  -->
-        <v-col cols="12" md="8" v-if="select.value == 'treeView'">
+        <v-col class="elevation-2 grey lighten-5 mb-8" md="11" cols="12"
+            v-if="select.value == 'treeView'">
             <tree :remove="remove"
             :edit="edit" :item="item" @readyToUpdate="updateparentDate"></tree>
         </v-col>
