@@ -51,9 +51,22 @@
             {{ item.usersData }}
           </v-chip>
         </template>
-      <template v-slot:no-results>
-        هیچ داده ای یافت نشد!
-      </template>
+        <template v-slot:item.action="{ item }">
+          <v-switch
+            v-model="item.status"
+            color="blue"
+          >
+            <template v-slot:label v-if="item.status">
+             فعال
+            </template>
+            <template v-slot:label v-else>
+             غیر فعال
+            </template>
+          </v-switch>
+        </template>
+        <template v-slot:no-results>
+          هیچ داده ای یافت نشد!
+        </template>
     </v-data-table>
   </v-container>
 </template>
@@ -70,6 +83,7 @@ export default {
       userNameFilterVal: '',
       lnameFilterVal: '',
       nameFilterVal: '',
+      // switch1: true,
       // Table data.
       usersData: tableData.data,
     };
@@ -106,6 +120,7 @@ export default {
           value: 'mobile',
           filter: this.mobileFilter,
         },
+        { text: 'وضعیت', value: 'action', sortable: false },
       ];
     },
   },
