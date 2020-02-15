@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "title": "اخبار",
+      "id": "2",
+      "publish": true,
+      "lock": "lock",
+      "layout": [ "default"]
+    },
+    {
+      "title": "سیاسی",
+      "id": "3",
+      "publish": true,
+      "lock": "lock",
+      "layout": ["tag"]
+    },
+    {
+      "title": "اقتصادی",
+      "id": "4",
+      "publish": true,
+      "lock": "lock",
+      "layout": ["landing"]
+    },
+    {
+      "title": "فرهنگی",
+      "id": "5",
+      "publish": false,
+      "lock": "unlock",
+      "layout": [ "default"]
+    },
+    {
+      "title": "هنری",
+      "id": "6",
+      "publish": false,
+      "lock": "unlock",
+      "layout": ["landing"]
+    }
+  ]
+}

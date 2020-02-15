@@ -100,6 +100,11 @@ const routes = [
     component: serviceForm,
   },
   {
+    path: '/service/edit/:id',
+    name: 'serviceForm',
+    component: serviceForm,
+  },
+  {
     path: '/service/list',
     name: 'serviceList',
     component: serviceList,
