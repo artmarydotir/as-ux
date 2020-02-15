@@ -34,6 +34,102 @@
           </v-col>
         </v-row>
       </template>
+      <!-- delete  -->
+      <template v-slot:body.prepend>
+          <v-dialog v-model="dialog" max-width="800px">
+            <v-card>
+              <v-card-title>
+                <span class="headline mb-3">
+                  حذف سرویس
+                </span>
+              </v-card-title>
+              <v-card-text>
+                <v-stepper v-model="e1">
+                  <v-stepper-header>
+                    <v-stepper-step
+                      step="1"
+
+                    >
+                      <span class="pl-2 pr-2">
+                        هشدار
+                      </span>
+                    </v-stepper-step>
+                    <v-divider></v-divider>
+
+                    <v-stepper-step
+                      step="2"
+                      editable
+                      :complete="e1 > 1"
+                    >
+                      <span class="pl-2 pr-2">
+                        انتخاب سرویس جایگزین
+                      </span>
+                    </v-stepper-step>
+                  </v-stepper-header>
+                  <v-stepper-items>
+                      <v-stepper-content step="1">
+                        <v-alert
+                          color="warning"
+                          dark
+                          icon="mdi-alert"
+                          border="left"
+                          prominent
+                        >
+                        کاربر گرامی سرویسی که قصد حذف آن را دارید
+                        در ۴۵۳ خبر و ۴۸ فایل و ۶ نظرسنجی استفاده شده است.
+                        آیا برای حذف این سرویس مطمعنید؟
+                        </v-alert>
+                        <div class="mx-auto text-center justify-center">
+                          <v-btn
+                            color="secondary"
+                            @click="e1 = 2"
+                          >
+                            بله مطمعنم
+                          </v-btn>
+                        </div>
+                      </v-stepper-content>
+                      <v-stepper-content step="2">
+                          <v-row>
+                            <v-col cols="12">
+                              <v-alert
+                                border="left"
+                                type="success"
+                              >
+                                کاربر گرامی برای سرویسی که حذف کرده اید
+                                یک گروه جدید انتخاب کنید.
+                              </v-alert>
+                            </v-col>
+                            <v-col cols="12">
+                              <v-select
+                                outlined
+                                :items="newgroup"
+                                label="انتخاب سرویس جدید"
+                              ></v-select>
+                            </v-col>
+                            <v-col cols="12">
+                              <v-checkbox
+                                v-model="checkbox"
+                                label="تمامی تغییرات جدید مربوط به این سرویس را میپذیرم."
+                              ></v-checkbox>
+                            </v-col>
+                            <v-col cols="12">
+                            <v-btn
+                                :disabled="!checkbox"
+                                color="secondary"
+                                @click="asurance"
+                              >
+                                اعمال تغییرات
+                              </v-btn>
+                            </v-col>
+                          </v-row>
+                      </v-stepper-content>
+                    </v-stepper-items>
+                </v-stepper>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
+      </template>
+      <!-- body  -->
       <template v-slot:item.lock="{ item }">
           <v-chip small class="success white--text" v-if="item.lock == 'lock'">
             قفل
@@ -54,7 +150,7 @@
             <v-btn :to="`/service/edit/${item.id}`" text icon class="ml-3" color="primary">
               <v-icon>mdi-pencil-outline</v-icon>
             </v-btn>
-            <v-btn text icon class="ml-3" color="error">
+            <v-btn @click="deleteItem(item.id)" text icon class="ml-3" color="error">
               <v-icon>mdi-delete-outline</v-icon>
             </v-btn>
         </template>
@@ -71,11 +167,15 @@ export default {
   name: 'serviceTableList',
   data() {
     return {
+      e1: 1,
+      dialog: false,
+      checkbox: false,
       publish: [
         { text: 'همه', value: null },
         { text: 'منتشر شده', value: true },
         { text: 'منتشر نشده', value: false },
       ],
+      newgroup: ['اخبار', 'سیاسی', 'اجتماعی'],
       lock: [
         { text: 'همه', value: null },
         { text: 'قفل', value: 'lock' },
@@ -121,33 +221,37 @@ export default {
     },
   },
   methods: {
-    /**
-     * Filter for dessert names column.
-     * @param value Value to be tested.
-     * @returns {boolean}
-     */
+    nextStep(n) {
+      if (n === this.e1) {
+        this.e1 = this.e1 + 1;
+      } else {
+        this.e1 = 1;
+      }
+    },
     nameFilter(value) {
       if (!this.titleFilterVal) {
         return true;
       }
       return value.toLowerCase().includes(this.titleFilterVal.toLowerCase());
     },
-
     publishFilter(value) {
-      // If this filter has no value we just skip the entire filter.
       if (!this.publishFilterValue) {
         return true;
       }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
       return value === this.publishFilterValue;
     },
     lockFilter(value) {
-      // console.log(this.lockFilterValue);
       if (!this.lockFilterValue) {
         return true;
       }
       return value === this.lockFilterValue;
+    },
+    deleteItem(item) {
+      this.dialog = true;
+      console.log(item);
+    },
+    asurance() {
+      this.dialog = false;
     },
   },
 };
