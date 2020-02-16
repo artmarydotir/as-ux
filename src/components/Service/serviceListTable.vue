@@ -248,7 +248,8 @@ export default {
     },
     deleteItem(item) {
       this.dialog = true;
-      console.log(item);
+      return item;
+      // console.log(item);
     },
     asurance() {
       this.dialog = false;

@@ -46,7 +46,7 @@ export default {
       openOnClick: true,
       selectedColor: 'accent',
       color: 'primary',
-      childName: 'عنوان',
+      childName: 'بدون عنوان',
       items: [
         {
           id: 1,
@@ -102,6 +102,7 @@ export default {
     },
     add: {
       type: Boolean,
+      default: true,
     },
   },
   // eslint-disable-next-line consistent-return

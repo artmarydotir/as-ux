@@ -73,6 +73,7 @@ export default {
       rememberMe: true,
       edit: '/service/add',
       remove: true,
+      add: false,
       selectlang: [
         {
           text: 'فارسی',
