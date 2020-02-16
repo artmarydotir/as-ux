@@ -82,7 +82,7 @@ export default {
   },
 
   created() {
-    console.log('user data from parent component:');
+    // console.log('user data from parent component:');
     // console.log(this.uniqueId);
   },
 };
