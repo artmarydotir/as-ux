@@ -8,7 +8,6 @@
         open-all
         :color="color"
         return-object
-
         hoverable
         selection-type="independent"
       >
@@ -159,3 +158,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.v-treeview-node__root  {
+  background-color: red !important;
+}
+</style>
