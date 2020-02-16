@@ -36,7 +36,7 @@
         <v-col class="elevation-2 grey lighten-5 mb-8" md="11" cols="12"
             v-if="select.value == 'treeView'">
             <tree :remove="remove"
-            :edit="edit" :item="item" @readyToUpdate="updateparentDate"></tree>
+            :edit="edit" :add="add" :item="item" @readyToUpdate="updateparentDate"></tree>
         </v-col>
         <!-- table  -->
         <v-col cols="12" v-if="select.value == 'tableView'">
