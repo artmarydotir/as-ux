@@ -31,22 +31,25 @@
           <tbody>
             <tr v-for="item in items" :key="item.name">
               <td>{{ item.name }}</td>
-              <td>{{ item.userCount }} </td>
               <td>{{ item.active }} </td>
+              <td>{{ item.userCount }} </td>
               <td>
                 <v-btn
                   icon color="pink"
                   @click="dialog=true, editStudent(item.id)"
                   @remover="id"
                 >
-                  {{ item.id }}
+                  <!-- {{ item.id }} -->
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>
-                <!-- <btn
-                  className="white--text"
-                  color="teal"
-                  :onClick="consoleClick">a
-                </btn> -->
+              </td>
+              <td>
+                <v-btn
+                  icon color="primary"
+                >
+                  <!-- {{ item.id }} -->
+                  <v-icon>mdi-pencil</v-icon>
+                </v-btn>
               </td>
             </tr>
           </tbody>
@@ -156,6 +159,7 @@ export default {
           sortable: false,
           filter: this.parentFilter,
         },
+        { text: 'تغییرات', value: 'action', sortable: false },
         { text: 'تغییرات', value: 'action', sortable: false },
       ];
     },
