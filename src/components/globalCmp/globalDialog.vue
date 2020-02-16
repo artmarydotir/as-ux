@@ -71,7 +71,7 @@ export default {
     deleteGroup() {
       const index = this.groupes.indexOf(this.uniqueId);
       this.groupes.splice(index, 1);
-      console.log(this.uniqueId);
+      // console.log(this.uniqueId);
 
       this.loading = true;
       setTimeout(() => {
@@ -83,7 +83,7 @@ export default {
 
   created() {
     console.log('user data from parent component:');
-    console.log(this.uniqueId);
+    // console.log(this.uniqueId);
   },
 };
 </script>

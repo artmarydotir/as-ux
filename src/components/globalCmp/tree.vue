@@ -112,7 +112,7 @@ export default {
     active(to) {
       if (to) {
         this.open = to;
-        console.log(to);
+        // console.log(to);
         this.$emit('readyToUpdate', this.open);
       }
       // console.log(to);
