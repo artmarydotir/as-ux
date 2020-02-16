@@ -41,6 +41,15 @@
                   color="blue"
                   background-color="white"
                 />
+                <v-text-field
+                  label="عنوان سئو"
+                  name="serviceName"
+                  v-model="i.name"
+                  type="text"
+                  outlined
+                  color="blue"
+                  background-color="white"
+                />
                 <!-- {{ item }} -->
               </v-col>
               <v-col cols="12" md="4" class="pb-0 mb-0">
