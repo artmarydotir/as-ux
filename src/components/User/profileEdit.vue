@@ -3,11 +3,11 @@
       <v-row justify="center">
         <v-col cols="12" md="4" lg="3">
           <v-row class="mt-0 pt-0">
-            <v-col cols="12" sm="6" md="12" class="mt-0 pt-0">
+            <v-col cols="12" sm="6" md="12">
               <!-- avatar -->
                 <v-card
                     class="mx-auto text-center justify-center"
-                    height="400px"
+                    height="337px"
                   >
                     <v-card-text class="text--primary">
                       <v-row>
@@ -35,14 +35,13 @@
                   </v-card>
                 <!-- avatar -->
             </v-col>
-            <v-col cols="12" sm="6" md="12" class="mt-0 pt-0">
+            <v-col cols="12" sm="6" md="12" class="mt-5">
               <!-- otp -->
               <div>
                 <v-card
-                  height="400px"
                   class="mx-auto text-center justify-center"
                 >
-                  <v-card-title class="display-6 blue white--text">
+                  <v-card-title class="display-6 indigo white--text">
                     فعال سازی رمز یکبار مصرف
                   </v-card-title>
                   <v-card-text class="text--primary ">
@@ -85,9 +84,148 @@
           </v-row>
         </v-col>
         <v-col cols="12" sm="7" md="8" lg="8">
+          <v-row>
+            <v-col cols="12">
+              <v-card class="mb-5" >
+                <v-card-title class="display-6 indigo white--text">
+                  ویرایش اطلاعات اصلی
+                </v-card-title>
+                <v-card-text>
+                  <v-form>
+                    <v-row>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="نام کاربری"
+                          name="userName"
+                          v-model="userName"
+                          type="text"
+                          dir="ltr"
+                          readonly
+                          outlined
+                          color="blue"
+                          background-color="white"
+                          prepend-inner-icon="mdi-account-outline"
+                        />
+                      </v-col>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="ایمیل"
+                          name="email"
+                          v-model="userEmail"
+                          type="text"
+                          dir="ltr"
+                          outlined
+                          color="blue"
+                          background-color="white"
+                          prepend-inner-icon="mdi-email-outline"
+                        />
+                      </v-col>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="شماره تلفن همراه"
+                          name="mobileNumber"
+                          v-model="mobileNumber"
+                          type="text"
+                          dir="ltr"
+                          outlined
+                          color="blue"
+                          background-color="white"
+                          prepend-inner-icon="mdi-cellphone-iphone"
+                        />
+                      </v-col>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="رمز عبور فعلی"
+                          v-model="userPass"
+                          :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+                          :type="show1 ? 'text' : 'password'"
+                          @click:append="show1 = !show1"
+                          outlined
+                          hint="رمز عبور فعلی را جهت ویرایش اطلاعات اصلی وارد کنید."
+                          color="blue"
+                          background-color="white"
+                          prepend-inner-icon="mdi-lock-outline"
+                        />
+                      </v-col>
+                    </v-row>
+                  </v-form>
+                </v-card-text>
+                <v-card-actions class="mt-0 pt-0">
+                  <v-spacer ></v-spacer >
+                  <v-btn to="/user/profile"
+                    large color="red white--text" class="ml-2 pl-8 pr-8 mb-2">
+                    ویرایش اطلاعات
+                    <v-icon right dark>mdi-pencil</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+          <!-- 2 -->
+          <v-row>
+            <v-col cols="12">
+              <v-card class="mb-5" height="380px">
+                <v-card-title class="display-6 indigo white--text">
+                  ویرایش رمز عبور
+                </v-card-title>
+                <v-card-text>
+                  <v-form>
+                    <v-row>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="رمز عبور فعلی"
+                          v-model="userPass"
+                          :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+                          :type="show1 ? 'text' : 'password'"
+                          @click:append="show1 = !show1"
+                          outlined
+                          color="blue"
+                          background-color="white"
+                          prepend-inner-icon="mdi-lock-outline"
+                        />
+                      </v-col>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="رمز عبور جدید"
+                          v-model="userPass"
+                          :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+                          :type="show1 ? 'text' : 'password'"
+                          @click:append="show1 = !show1"
+                          outlined
+                          color="blue"
+                          background-color="white"
+                          prepend-inner-icon="mdi-lock-outline"
+                        />
+                      </v-col>
+                      <v-col cols="12" md="6" class="pb-0 mb-0">
+                        <v-text-field
+                          label="تکرار رمز عبور جدید"
+                          v-model="userPass"
+                          outlined
+                          color="blue"
+                          type="password"
+                          background-color="white"
+                          prepend-inner-icon="mdi-lock-outline"
+                        />
+                      </v-col>
+                    </v-row>
+                  </v-form>
+                </v-card-text>
+                <v-card-actions class="mt-0 pt-0">
+                  <v-spacer ></v-spacer >
+                  <v-btn to="/user/profile"
+                    large color="red white--text" class="ml-2 pl-8 pr-8 mb-2">
+                    ویرایش رمز عبور
+                    <v-icon right dark>mdi-pencil</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+          <!-- 2 -->
             <v-card class="mb-12">
-              <v-card-title class="display-6 blue white--text">
-                ویرایش اطلاعات شخصی
+              <v-card-title class="display-6 indigo white--text">
+                ویرایش اطلاعات تکمیلی
               </v-card-title>
               <v-card-text>
                 <v-form>
@@ -119,94 +257,12 @@
                       />
                     </v-col>
                     <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="نام کاربری"
-                        name="userName"
-                        v-model="userName"
-                        type="text"
-                        dir="ltr"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-account-outline"
-                      />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="ایمیل"
-                        name="email"
-                        v-model="userEmail"
-                        type="text"
-                        dir="ltr"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-email-outline"
-                      />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="شماره تلفن همراه"
-                        name="mobileNumber"
-                        v-model="mobileNumber"
-                        type="text"
-                        dir="ltr"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-cellphone-iphone"
-                      />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="رمز عبور "
-                        v-model="userPass"
-                        :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
-                        :type="show1 ? 'text' : 'password'"
-                        @click:append="show1 = !show1"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-lock-outline"
-                      />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="رمز عبور جدید"
-                        v-model="userPass"
-                        :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
-                        :type="show1 ? 'text' : 'password'"
-                        @click:append="show1 = !show1"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-lock-outline"
-                      />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="تکرار رمز عبور جدید"
-                        v-model="userPass"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-lock-outline"
-                      />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-text-field
-                        label="رمز عبور قدیمی"
-                        v-model="userPass"
-                        outlined
-                        color="blue"
-                        background-color="white"
-                        prepend-inner-icon="mdi-lock-outline"
-                      />
+                      <countryList />
                     </v-col>
                   </v-row>
                   <v-divider></v-divider>
                   <v-row class="pt-6">
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
+                    <!-- <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         v-mask="birthdaymask"
                         label="تاریخ تولد"
@@ -216,19 +272,7 @@
                         background-color="white"
                         prepend-inner-icon="mdi-calendar-account-outline"
                       />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <countryList />
-                    </v-col>
-                    <v-col cols="12" md="4" class="pb-0 mb-0">
-                      <v-select
-                        prepend-inner-icon="mdi-gender-male-female"
-                        v-model="gender"
-                        :items="genders"
-                        outlined
-                        label="جنسیت"
-                      ></v-select>
-                    </v-col>
+                    </v-col> -->
                     <v-col cols="12" md="4" class="pb-0 mb-0">
                       <v-text-field
                         label="آدرس اینستاگرام"
@@ -256,26 +300,6 @@
                         prepend-inner-icon="mdi-facebook"
                       />
                     </v-col>
-                    <v-col cols="12" md="6" class="py-0 my-0">
-                      <v-textarea
-                        prepend-inner-icon="mdi-home-outline"
-                        outlined
-                        height="120px"
-                        name="homeaddress"
-                        label="آدرس منزل"
-                        no-resize
-                      ></v-textarea>
-                    </v-col>
-                    <v-col cols="12" md="6" class="py-0 my-0">
-                      <v-textarea
-                        no-resize
-                        prepend-inner-icon="mdi-briefcase-outline"
-                        outlined
-                        height="120px"
-                        name="homeaddress"
-                        label="آدرس محل کار"
-                      ></v-textarea>
-                    </v-col>
                   </v-row>
                 </v-form>
               </v-card-text>
@@ -283,7 +307,7 @@
                 <v-spacer ></v-spacer >
                 <v-btn to="/user/profile"
                   large color="red white--text" class="ml-2 pl-8 pr-8 mb-2">
-                  ویرایش اطلاعات
+                  ویرایش اطلاعات تکمیلی
                   <v-icon right dark>mdi-pencil</v-icon>
                 </v-btn>
               </v-card-actions>
