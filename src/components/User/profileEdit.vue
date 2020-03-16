@@ -53,7 +53,53 @@
                           text
                           type="info"
                         >
-                        برای فعال سازی رمز یک بار مصرف پس از نصب اپلیکیشن کد زیر را اسکن بفرمایید.
+                        برای فعال سازی رمز یک بار مصرف
+                        ابتدا بر روی گزینه ی راهنمای نصب کلیک کرده و اپلیکیشن را نصب کنید.
+                          <v-btn text color="warning" dark>
+                            راهنمای نصب
+                          </v-btn>
+                        </v-alert>
+                      </v-col>
+                      <v-col cols="12" class="pt-4 mb-0 pb-0">
+                        <v-alert
+                          icon="mdi-shield-lock-outline"
+                          prominent
+                          text
+                          type="info"
+                        >
+                        لطفا رمز عبور فعلی خود را وارد کنید و گزینه ی تایید هویت را انتخاب کنبد.
+
+                          <div class="pt-5">
+                            <v-text-field
+                              label="رمز عبور فعلی"
+                              v-model="userPass"
+                              :append-icon="show1 ? 'mdi-eye-off-outline' : 'mdi-eye'"
+                              :type="show1 ? 'text' : 'password'"
+                              @click:append="show1 = !show1"
+                              outlined
+                              color="indigo"
+                              background-color="blue darken-1"
+                              prepend-inner-icon="mdi-lock-outline"
+                            />
+                          </div>
+                          <v-btn text color="warning" dark>
+                            تایید هویت
+                          </v-btn>
+                        </v-alert>
+
+                      </v-col>
+                      <v-col cols="12" class="pt-4 mb-0 pb-0">
+                        <v-alert
+                          icon="mdi-shield-lock-outline"
+                          prominent
+                          text
+                          type="info"
+                        >
+                          بر روی گزینه ی ایجاد کدجدید کلیک کرده و کد ایجاد شده را در
+                          اپلیکیشن خود اسکن کنید.
+                          <v-btn text color="warning" dark>
+                            ایجاد کد
+                          </v-btn>
                         </v-alert>
                       </v-col>
                       <v-col cols="12">
