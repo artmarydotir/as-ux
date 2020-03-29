@@ -64,6 +64,10 @@ export default {
     return {
       users: [
         {
+          title: 'افزودن کاربر',
+          link: '/user/add',
+        },
+        {
           title: 'لیست کاربران',
           link: '/user/list',
         },

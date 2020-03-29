@@ -7,6 +7,7 @@ import TagForm from '../views/TagForm.vue';
 import ListTag from '../views/ListTag.vue';
 import TypeTag from '../views/TypeTag.vue';
 import ListType from '../views/ListType.vue';
+import UserAdd from '../views/UserAdd.vue';
 // Users
 import Forgot from '@/components/User/Forgot.vue';
 import Recovery from '@/components/User/Recovery.vue';
@@ -83,6 +84,11 @@ const routes = [
     path: '/user/list',
     name: 'userList',
     component: UserList,
+  },
+  {
+    path: '/user/add',
+    name: 'UserAdd',
+    component: UserAdd,
   },
   {
     path: '/group/add',
