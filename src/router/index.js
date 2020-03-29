@@ -22,6 +22,9 @@ import ListGroup from '@/components/Group/ListGroup.vue';
 // Services
 import serviceForm from '@/components/Service/serviceForm.vue';
 import serviceList from '@/components/Service/serviceList.vue';
+// Comments
+import commentDashboard from '@/views/comment/dashboard.vue';
+import commentList from '@/views/comment/list.vue';
 
 Vue.use(VueRouter);
 
@@ -114,6 +117,16 @@ const routes = [
     path: '/service/list',
     name: 'serviceList',
     component: serviceList,
+  },
+  {
+    path: '/comment/list',
+    name: 'commentList',
+    component: commentList,
+  },
+  {
+    path: '/comment/dashboard',
+    name: 'commentDashboard',
+    component: commentDashboard,
   },
   {
     path: '/about',
