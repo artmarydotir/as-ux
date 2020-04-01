@@ -1,10 +1,12 @@
 <template>
   <div>
+    <p class="subheading mx-auto text-center justify-center">
+      Hi there
+    </p>
     <commentList />
   </div>
 </template>
 <script>
-// @ is an alias to /src
 import commentList from '@/components/Comment/list.vue';
 
 export default {

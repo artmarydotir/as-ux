@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" app right temporary>
+    <v-navigation-drawer v-model="drawer" app right temporary width="340">
       <aasaaMmenu />
     </v-navigation-drawer>
 
