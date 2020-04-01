@@ -34,7 +34,7 @@
             <v-col cols="3">
               <v-select
                 dense
-                :items="isParent"
+                :items="status"
                 v-model="parentFilterValue"
                 label="برچسب والد"
               ></v-select>
@@ -72,11 +72,8 @@
           </v-icon>
         </template>
         <template v-slot:item.readFunc="{ item }">
-          <v-checkbox
-            v-model="selectedCustomerCodes"
-            v-bind:value="item"
-            @change="loadCustomerDispensers(item.status)">
-          </v-checkbox>
+
+
         </template>
         <template v-slot:no-results>
           هیچ داده ای یافت نشد!
@@ -93,17 +90,13 @@ export default {
   data() {
     return {
       expanded: [],
-      selectedCustomerCodes: [],
+      selectedCustomerCodes: true,
       // We need some values for our select.
-      isParent: [
-        { text: 'همه', value: null },
-        { text: 'والد', value: true },
-        { text: 'فرزند', value: false },
-      ],
       status: [
         { text: 'همه', value: null },
-        { text: 'تایید شده', value: 'verify' },
-        { text: 'پیش نویس', value: 'draft' },
+        { text: 'خوانده شده', value: 1 },
+        { text: 'منتشر شده', value: 2 },
+        { text: 'منتشر نشده', value: 3 },
       ],
       // Filter models.
       dessertFilterValue: '',
@@ -177,8 +170,8 @@ export default {
     },
   },
   methods: {
-    loadCustomerDispensers(customerCode) {
-      console.log(customerCode);
+    loadCustomerDispensers(newValue, oldValue) {
+      console.log(newValue, oldValue);
     },
     nameFilter(value) {
       // console.log('سرچ فیلتر');
