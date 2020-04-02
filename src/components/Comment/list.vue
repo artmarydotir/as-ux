@@ -9,6 +9,7 @@
       item-key="id"
       class="elevation-1"
     >
+      <!-- 1 -->
         <template v-slot:top>
           <v-toolbar dark flat class="blue lighten-1">
             <v-toolbar-title>
@@ -28,7 +29,6 @@
               <v-select
                   dense
                   :items="status"
-                  v-model="statusFilterValue"
                   label="وضعیت"
               ></v-select>
             </v-col>
@@ -41,14 +41,22 @@
             </v-col>
           </v-row>
         </template>
+        <!-- 2 -->
+        <template v-slot:top>
+          hi:{{ triggerDialog }}
+          <EditComment :dialog="triggerDialog" @input="update" :fill="filled" />
+        </template>
+        <!-- 3 -->
         <template v-slot:expanded-item="{ headers, item }">
           <td :colspan="headers.length">
             {{ item.title }}
           </td>
         </template>
+        <!-- 4 -->
         <template v-slot:item.title="{ item }">
           {{ item.title  | str_limit(24) }}
         </template>
+        <!-- 5 -->
         <template v-slot:item.action="{ item }">
           <v-icon
             class="blue--text ml-4"
@@ -62,6 +70,7 @@
             mdi-delete
           </v-icon>
         </template>
+        <!-- 6 -->
         <template v-slot:no-results>
           هیچ داده ای یافت نشد!
         </template>
@@ -71,11 +80,16 @@
 <script>
 
 import tableData from '../../assets/sampleCm.json';
+import EditComment from '@/components/Comment/edit.vue';
 
 export default {
   name: 'commentList',
   data() {
     return {
+      filled: {
+        title: '',
+      },
+      triggerDialog: false,
       expanded: [],
       selectedCustomerCodes: true,
       // We need some values for our select.
@@ -85,12 +99,6 @@ export default {
         { text: 'منتشر شده', value: 2 },
         { text: 'منتشر نشده', value: 3 },
       ],
-      // Filter models.
-      dessertFilterValue: '',
-      serviceFilter: '',
-      typeFilterValue: null,
-      parentFilterValue: null,
-      statusFilterValue: null,
       // Table data.
       desserts: tableData.data,
     };
@@ -152,6 +160,17 @@ export default {
     },
   },
   methods: {
+    editItem(item) {
+      console.log(item.title);
+      this.filled.title = item.title;
+      this.triggerDialog = true;
+    },
+    update(val) {
+      this.triggerDialog = val;
+    },
+  },
+  components: {
+    EditComment,
   },
 };
 </script>
