@@ -21,23 +21,8 @@
               <!-- Filter for type name-->
               <v-text-field
                 class="ml-10"
-                dense v-model="dessertFilterValue" type="text" label="جستجو عنوان">
+                dense type="text" label="جستجو آیدی">
               </v-text-field>
-            </v-col>
-            <v-col cols="3">
-              <!-- Filter for type name-->
-              <v-text-field
-                dense class="ml-10"
-                v-model="serviceFilter" type="text" label="جستجو سرویس">
-              </v-text-field>
-            </v-col>
-            <v-col cols="3">
-              <v-select
-                dense
-                :items="status"
-                v-model="parentFilterValue"
-                label="برچسب والد"
-              ></v-select>
             </v-col>
             <v-col cols="2">
               <v-select
@@ -46,6 +31,13 @@
                   v-model="statusFilterValue"
                   label="وضعیت"
               ></v-select>
+            </v-col>
+            <v-col cols="2">
+              <!-- Filter for type name-->
+              <v-text-field
+                class="mr-10"
+                dense type="text" label="جستجو کدخبر">
+              </v-text-field>
             </v-col>
           </v-row>
         </template>
@@ -66,14 +58,9 @@
           </v-icon>
           <v-icon
             class="red--text"
-            @click="deleteItem(item)"
           >
             mdi-delete
           </v-icon>
-        </template>
-        <template v-slot:item.readFunc="{ item }">
-
-
         </template>
         <template v-slot:no-results>
           هیچ داده ای یافت نشد!
@@ -116,7 +103,6 @@ export default {
           text: 'آیدی',
           sortable: false,
           value: 'id',
-          filter: this.nameFilter,
         },
         {
           text: 'عنوان دیدگاه',
@@ -146,13 +132,9 @@ export default {
         {
           text: 'مشخصه خبر',
           value: 'newsId',
-          filter: this.statusFilter,
         },
         {
           text: 'تغییرات', value: 'action', sortable: false,
-        },
-        {
-          text: 'بررسی', value: 'readFunc', sortable: false,
         },
       ];
     },
@@ -170,63 +152,6 @@ export default {
     },
   },
   methods: {
-    loadCustomerDispensers(newValue, oldValue) {
-      console.log(newValue, oldValue);
-    },
-    nameFilter(value) {
-      // console.log('سرچ فیلتر');
-      // If this filter has no value we just skip the entire filter.
-      if (!this.dessertFilterValue) {
-        return true;
-      }
-      // Check if the current loop value (The dessert name)
-      // partially contains the searched word.
-      return value.toLowerCase().includes(this.dessertFilterValue.toLowerCase());
-    },
-    // eslint-disable-next-line consistent-return
-    servicesFilter(value) {
-      // console.log(value);
-      // If this filter has no value we just skip the entire filter.
-      if (!this.serviceFilter) {
-        return true;
-      }
-      return value.toLowerCase().includes(this.serviceFilter.toLowerCase());
-      // Check if the current loop value (The service name)
-      // partially contains the searched word.
-      // return value.includes(this.serviceFilter);
-    },
-    /**
-     * Filter for calories column.
-     * @param value Value to be tested.
-     * @returns {boolean}
-     */
-    caloriesFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.typeFilterValue) {
-        return true;
-      }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.typeFilterValue;
-    },
-    statusFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.statusFilterValue) {
-        return true;
-      }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.statusFilterValue;
-    },
-    parentFilter(value) {
-      // If this filter has no value we just skip the entire filter.
-      if (!this.parentFilterValue) {
-        return true;
-      }
-      // Check if the current loop value (The calories value)
-      // equals to the selected value at the <v-select>.
-      return value === this.parentFilterValue;
-    },
   },
 };
 </script>
