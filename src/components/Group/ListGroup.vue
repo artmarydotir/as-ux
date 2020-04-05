@@ -95,18 +95,7 @@
         هیچ داده ای یافت نشد!
       </template>
     </v-data-table>
-    <div class="my-8">
-      <v-alert
-        outlined
-        type="error"
-        text
-      >
-        باتوجه به تجربه ی کار با سایت های مختلف قرار بر این شده است که:
-        چند گروه دیفالت از ابتدا ساخته شود.
-        مانند گروه تبلیغات و یا
-        گروه کاربران با دسترسی روزنامه و ...
-      </v-alert>
-    </div>
+    <group-doc/>
   </v-container>
 </template>
 <style lang="scss" scoped>
@@ -118,6 +107,7 @@ tbody tr:nth-of-type(even) {
 import tableData from '../../assets/groupList.json';
 import globalDialog from '@/components/globalCmp/globalDialog.vue';
 import btn from '@/components/globalCmp/Button/button.vue';
+import groupDoc from '@/components/Group/GroupDoc.vue';
 
 export default {
   data() {
@@ -188,6 +178,7 @@ export default {
     globalDialog,
     // eslint-disable-next-line vue/no-unused-components
     btn,
+    groupDoc,
   },
 };
 </script>
