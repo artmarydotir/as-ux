@@ -111,15 +111,27 @@
             <v-divider ></v-divider>
             <!-- advanced box  -->
             <v-row v-show="open" class="pt-3 pb-3">
+              <!-- 1 -->
               <v-col cols="12" md="6" >
                 <v-text-field
-                class="text-lg-left"
+                  class="text-lg-left"
                   label="ویرایش لینک"
                   value="/sevices/1/ورزشی"
                   outlined
                   dir="ltr"
                 ></v-text-field>
               </v-col>
+              <!-- 2 -->
+              <v-col cols="12" md="6" >
+                <v-text-field
+                  class="text-lg-left"
+                  label="ویرایش آدرس RSS"
+                  value="/fa/feeds/?p=ZGF0ZVJhbmdlJTVCc3RhcnQlNUQ9LTI1OTIwMA%2C%2C"
+                  outlined
+                  dir="ltr"
+                ></v-text-field>
+              </v-col>
+              <!-- 3 -->
               <v-col cols="12" md="6">
                 <v-file-input outlined accept="image/*" label="انتخاب عکس"></v-file-input>
               </v-col>
