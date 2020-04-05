@@ -95,6 +95,10 @@
                   v-model="rememberMe" label="دنبال کردن">
                 </v-checkbox>
               </v-col>
+              <v-col cols="12" md="4" class="pb-0 mb-0">
+                <tagCmp :val="tagselect" @tagchanged="parentTag"/>
+                <!-- {{ tagselect }} -->
+              </v-col>
               <v-divider></v-divider>
               <v-col cols="12" md="4">
                 <v-file-input outlined accept="image/*" label="انتخاب عکس"></v-file-input>
@@ -130,11 +134,14 @@
 </template>
 <script>
 import tree from '@/components/globalCmp/tree.vue';
+import tagCmp from '@/components/globalCmp/TagCmp.vue';
 
 export default {
   name: 'serviceForm',
   methods: {
-
+    parentTag(tag) {
+      this.tagselect = tag;
+    },
     updateparentDate(newDate) {
       this.item = newDate;
       // console.log('parent', this.date);
@@ -142,6 +149,7 @@ export default {
   },
   data() {
     return {
+      tagselect: [],
       item: [
         {
           id: 1,
@@ -177,6 +185,7 @@ export default {
   },
   components: {
     tree,
+    tagCmp,
   },
 };
 </script>
