@@ -131,6 +131,15 @@
                   dir="ltr"
                 ></v-text-field>
               </v-col>
+              <v-col cols="12" md="6" >
+                <v-text-field
+                  class="text-lg-left"
+                  label="لینک کوتاه"
+                  value="/s/1"
+                  outlined
+                  dir="ltr"
+                ></v-text-field>
+              </v-col>
               <!-- 3 -->
               <v-col cols="12" md="6">
                 <v-file-input outlined accept="image/*" label="انتخاب عکس"></v-file-input>
