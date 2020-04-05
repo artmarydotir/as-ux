@@ -95,26 +95,37 @@
                   v-model="rememberMe" label="دنبال کردن">
                 </v-checkbox>
               </v-col>
-              <v-col cols="12" md="4" class="pb-0 mb-0">
+              <v-col cols="12" md="9" class="pb-0 mb-0">
                 <tagCmp :val="tagselect" @tagchanged="parentTag"/>
                 <!-- {{ tagselect }} -->
               </v-col>
-              <v-divider></v-divider>
-              <v-col cols="12" md="4">
-                <v-file-input outlined accept="image/*" label="انتخاب عکس"></v-file-input>
-              </v-col>
-              <v-col cols="12" md="4">
-                <v-text-field
-                  label="افزودن کلاس"
-                  name="className"
-                  type="text"
-                  outlined
-                  color="blue"
-                  background-color="white"
-                />
+              <v-col cols="12" md="3" class="pb-0 mb-0">
+                <v-btn
+                  color="blue-grey"
+                  class="white--text"
+                  @click='open = !open'>
+                    جزیات پیشرفته
+                </v-btn>
               </v-col>
             </v-row>
-            <v-card-actions>
+            <v-divider ></v-divider>
+            <!-- advanced box  -->
+            <v-row v-show="open" class="pt-3 pb-3">
+              <v-col cols="12" md="6" >
+                <v-text-field
+                class="text-lg-left"
+                  label="ویرایش لینک"
+                  value="/sevices/1/ورزشی"
+                  outlined
+                  dir="ltr"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-file-input outlined accept="image/*" label="انتخاب عکس"></v-file-input>
+              </v-col>
+            </v-row>
+            <!-- save  -->
+            <v-card-actions class="mb-6">
               <v-spacer />
               <v-btn to="/user/recovery"
                 large color="pink white--text" class="pl-12 pr-12">
@@ -150,6 +161,7 @@ export default {
   data() {
     return {
       tagselect: [],
+      open: false,
       item: [
         {
           id: 1,
