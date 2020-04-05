@@ -159,9 +159,10 @@
             </v-card-actions>
           </v-form>
         </v-col>
-
       </v-row>
     </v-card>
+
+    ۳ مورد برای سرویس انجام ندادی توی قسمت جزییات پیشرفته
   </v-container>
 </template>
 <script>
