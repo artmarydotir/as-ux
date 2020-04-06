@@ -25,6 +25,9 @@ import serviceList from '@/components/Service/serviceList.vue';
 // Comments
 import commentDashboard from '@/views/comment/dashboard.vue';
 import commentList from '@/views/comment/list.vue';
+// Menu
+import addMenu from '@/views/menu/add.vue';
+import listMenu from '@/views/menu/list.vue';
 
 Vue.use(VueRouter);
 
@@ -127,6 +130,16 @@ const routes = [
     path: '/comment/dashboard',
     name: 'commentDashboard',
     component: commentDashboard,
+  },
+  {
+    path: '/menu/add',
+    name: 'addMenu',
+    component: addMenu,
+  },
+  {
+    path: '/menu/list',
+    name: 'listMenu',
+    component: listMenu,
   },
   {
     path: '/about',

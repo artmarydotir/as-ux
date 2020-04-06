@@ -21,6 +21,8 @@
     <!-- 5 -->
     <commentManage />
     <!-- 6 -->
+    <menuMange />
+    <!-- 7 -->
     <v-list-group
         prepend-icon="mdi-file-move"
         value="true"
@@ -103,6 +105,7 @@
 import userManage from '@/components/menu/users.vue';
 import serviceManage from '@/components/menu/service.vue';
 import commentManage from '@/components/menu/comment.vue';
+import menuMange from '@/components/menu/menu.vue';
 
 export default {
   data() {
@@ -143,6 +146,7 @@ export default {
     userManage,
     serviceManage,
     commentManage,
+    menuMange,
   },
 };
 </script>
