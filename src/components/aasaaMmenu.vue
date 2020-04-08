@@ -7,6 +7,13 @@
       </v-list-item-icon>
       <v-list-item-title> خانه </v-list-item-title>
     </v-list-item>
+    <!-- doc -->
+    <v-list-item link to="/menu/doc">
+      <v-list-item-icon>
+        <v-icon>mdi-pencil</v-icon>
+      </v-list-item-icon>
+      <v-list-item-title> داکیومنت </v-list-item-title>
+    </v-list-item>
     <!-- 2 -->
     <v-list-item link to="/dashboard/">
       <v-list-item-icon>

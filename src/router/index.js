@@ -29,6 +29,10 @@ import commentList from '@/views/comment/list.vue';
 import addMenu from '@/views/menu/add.vue';
 import listMenu from '@/views/menu/list.vue';
 
+// Doc
+import menuDoc from '@/components/menu/doc.vue';
+
+
 Vue.use(VueRouter);
 
 
@@ -140,6 +144,12 @@ const routes = [
     path: '/menu/list',
     name: 'listMenu',
     component: listMenu,
+  },
+  // docs >>>>>>>>>>>
+  {
+    path: '/menu/doc',
+    name: 'menuDoc',
+    component: menuDoc,
   },
   {
     path: '/about',
