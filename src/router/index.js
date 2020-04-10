@@ -31,6 +31,7 @@ import listMenu from '@/views/menu/list.vue';
 
 // Doc
 import menuDoc from '@/components/menu/doc.vue';
+import serviceDoc from '@/components//Service/doc.vue';
 
 
 Vue.use(VueRouter);
@@ -150,6 +151,11 @@ const routes = [
     path: '/menu/doc',
     name: 'menuDoc',
     component: menuDoc,
+  },
+  {
+    path: '/service/doc',
+    name: 'serviceDoc',
+    component: serviceDoc,
   },
   {
     path: '/about',

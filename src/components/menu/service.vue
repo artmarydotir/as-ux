@@ -46,6 +46,10 @@ export default {
               title: 'لیست سرویس',
               link: '/service/list',
             },
+            {
+              title: 'اکیومنت',
+              link: '/service/doc',
+            },
           ],
         },
       ],
