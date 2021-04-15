@@ -20,7 +20,7 @@
     "@ckeditor/ckeditor5-heading": "^11.0",
     "@ckeditor/ckeditor5-image": "^27.0",
     "@ckeditor/ckeditor5-link": "^11.1",
-    "@ckeditor/ckeditor5-media-embed": "^11.1",
+    "@ckeditor/ckeditor5-media-embed": "^27.0",
     "@ckeditor/ckeditor5-paragraph": "^11.0",
     "@ckeditor/ckeditor5-table": "^13.0",
     "@ckeditor/ckeditor5-theme-lark": "^14.1",
